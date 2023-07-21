@@ -1,0 +1,137 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  background-image: -webkit-gradient(linear, left top, right bottom, from(hotpink), to(pink));
+  background-image: linear-gradient(to bottom right, hotpink, pink);
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main .card {
+  background-color: #fff;
+  border-radius: 16px;
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  max-width: 320px;
+  padding: 20px;
+  position: relative;
+  text-align: center;
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
+  width: 100%;
+}
+
+main .card .image {
+  background-color: #fff;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  height: calc(320px / 1.5);
+  margin: -8rem auto 1.5rem;
+  overflow: hidden;
+  padding: 0.25rem;
+  position: relative;
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
+  width: calc(320px / 1.5);
+}
+
+main .card .image img {
+  border: 3px solid hotpink;
+  border-radius: 50%;
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
+  width: 100%;
+}
+
+main .card .name {
+  color: #888;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+main .card .content {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
+}
+
+main .card .content p {
+  color: #888;
+  font-size: 1.125rem;
+}
+
+main .card .content .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 1.5rem;
+}
+
+main .card .content .buttons button {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: hotpink;
+  border-radius: 0.5rem;
+  color: #fff;
+  display: block;
+  font-size: 1rem;
+  margin: 0 0.5rem;
+  min-width: 160px;
+  padding: 0.5rem 1rem;
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
+}
+
+main .card .content .buttons button:hover {
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  -webkit-transform: translateY(-0.5rem) scale(1.15);
+          transform: translateY(-0.5rem) scale(1.15);
+}
+
+main .card:hover {
+  max-width: 480px;
+}
+
+main .card:hover .image {
+  border-radius: 2rem;
+  margin-top: -4rem;
+}
+
+main .card:hover .image img {
+  border-radius: 2rem;
+}
+
+main .card:hover .name {
+  margin-bottom: 1.5rem;
+}
+
+main .card:hover .content {
+  max-height: 300px;
+  opacity: 1;
+}

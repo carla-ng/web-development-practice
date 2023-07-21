@@ -1,0 +1,124 @@
+$accent-color-1: hotpink;
+$accent-color-2: pink;
+$accent-color-3: #888;
+$card-width: 320px;
+$image-width: calc(#{$card-width} / 1.5);
+
+
+* {
+    box-sizing: border-box;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    background-image: linear-gradient(to bottom right, $accent-color-1, $accent-color-2);
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .card {
+        background-color: #fff;
+        border-radius: 16px;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+        max-width: $card-width;
+        padding: 20px;
+        position: relative;
+        text-align: center;
+        transition: 0.4s ease;
+        width: 100%;
+
+        .image {
+            background-color: #fff;
+            border-radius: 50%;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+            height: $image-width;
+            margin: -8rem auto 1.5rem;
+            overflow: hidden;
+            padding: 0.25rem;
+            position: relative;
+            transition: 0.4s ease;
+            width: $image-width;
+
+            img {
+                border: 3px solid $accent-color-1;
+                border-radius: 50%;
+                transition: 0.4s ease;
+                width: 100%;
+            }
+        }
+
+        .name {
+            color: $accent-color-3;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .content {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: 0.4s ease;
+
+            p {
+                color: $accent-color-3;
+                font-size: 1.125rem;
+            }
+
+            .buttons {
+                display: flex;
+                justify-content: center;
+                margin-top: 1.5rem;
+
+                button {
+                    appearance: none;
+                    background: none;
+                    border: none;
+                    outline: none;
+
+                    cursor: pointer;
+                    background-color: $accent-color-1;
+                    border-radius: 0.5rem;
+                    color: #fff;
+                    display: block;
+                    font-size: 1rem;
+                    margin: 0 0.5rem;
+                    min-width: 160px;
+                    padding: 0.5rem 1rem;
+                    transition: 0.4s ease;
+
+                    &:hover {
+                        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+                        transform: translateY(-0.5rem) scale(1.15);
+                    }
+                }
+            }
+
+        }
+
+        &:hover {
+            max-width: 480px;
+
+            .image {
+                border-radius: 2rem;
+                margin-top: -4rem;
+
+                img {
+                    border-radius: 2rem;
+                }
+            }
+
+            .name {
+                margin-bottom: 1.5rem;
+            }
+
+            .content {
+                max-height: 300px;
+                opacity: 1;
+            }
+        }
+    }
+}

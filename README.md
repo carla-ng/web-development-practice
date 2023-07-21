@@ -29,10 +29,12 @@ https://carla-ng.github.io/web-development-practice/animated-profile-card/index.
 * [Chrome Theme Extension](https://github.com/florinpop17/app-ideas/blob/master/Projects/2-Intermediate/Chrome-Theme-Extension.md)
 * [Christmas Lights](https://github.com/florinpop17/app-ideas/blob/master/Projects/1-Beginner/Christmas-Lights-App.md)
 * [Elevator](https://github.com/florinpop17/app-ideas/blob/master/Projects/3-Advanced/Elevator-App.md)
-* https://devchallenges.io/
+* [Movie Seat Booking](https://github.com/bradtraversy/vanillawebprojects/tree/master/movie-seat-booking)
+* [Simple Breathing App](https://github.com/bradtraversy/vanillawebprojects/tree/master/relaxer-app)
 
 <br>
 
 ### Ideas for bigger projects:
 * https://api.nasa.gov/
 * https://kaboomjs.com/
+* Esoteric app

@@ -20,7 +20,7 @@ HTML, SCSS
 <br/><br/>
 
 ## 02. Space Tourism Website
-Simple multi-page website about space tourism made with Vue 3 (composition API).
+Simple website about space tourism made with Vue 3 (composition API).
 
 ### Built with
 HTML, SCSS, Vue, JavaScript
@@ -29,7 +29,7 @@ HTML, SCSS, Vue, JavaScript
 -
 
 ### Credits
-* [Frontend Mentor's](https://www.frontendmentor.io/challenges/space-tourism-multipage-website-gRWj1URZ3) space tourism multi-page website challenge
+* [Frontend Mentor's space tourism website challenge](https://www.frontendmentor.io/challenges/space-tourism-multipage-website-gRWj1URZ3)
 
 
 

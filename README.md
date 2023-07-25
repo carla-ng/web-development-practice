@@ -4,7 +4,7 @@ A repository where I'll be including many different small and medium sized proje
 <br/><br/>
 
 ## 01. Animated Profile Card
-Hover animation of a profile Card and buttons with SCSS.
+**Small sized project**. Hover animation of a profile Card and buttons with SCSS.
 
 ### Demo
 https://carla-ng.github.io/web-development-practice/animated-profile-card/index.html
@@ -20,13 +20,13 @@ HTML, SCSS
 <br/><br/>
 
 ## 02. Space Tourism Website
-Simple website about space tourism made with Vue 3 (composition API).
+**Medium sized project**. Simple website about space tourism made with Vue 3 (Composition API).
 
 ### Built with
-HTML, SCSS, Vue, JavaScript
+HTML, SCSS, Vue, Vuex, JavaScript
 
 ### Demo
--
+* Coming soon
 
 ### Credits
 * [Frontend Mentor's space tourism website challenge](https://www.frontendmentor.io/challenges/space-tourism-multipage-website-gRWj1URZ3)

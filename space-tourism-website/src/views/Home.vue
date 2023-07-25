@@ -2,12 +2,19 @@
 
     <Layout>
 
-        <div id="home">
+        <div class="home">
             Home Page
 
             <div v-if="jsonData">
-                <h1>{{ jsonData.destinations[0].name }}</h1>
-                <!-- <p>{{ jsonData.description }}</p> -->
+                <!-- <h1>{{ jsonData.destinations[0].name }}</h1> -->
+
+                So, you want to travel to
+                Space
+                Let’s face it; if you want to go to space, you might as well genuinely go to 
+                outer space and not hover kind of on the edge of it. Well sit back, and relax 
+                because we’ll give you a truly out of this world experience! 
+
+                Explore
             </div>
             <div v-else>
                 Loading...
@@ -51,12 +58,12 @@ export default {
             jsonData
         };
     }
-    }
+}
 </script>
 
 
 <style lang="scss" scoped>
-    #home {
+.home {
 
-    }
+}
 </style>

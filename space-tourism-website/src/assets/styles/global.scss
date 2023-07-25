@@ -141,6 +141,11 @@ input, button, textarea, select {
 
 .uppercase { text-transform: uppercase; }
 
+.letter-spacing-01 { letter-spacing: $letter-spacing-01; }
+.letter-spacing-02 { letter-spacing: $letter-spacing-02; }
+.letter-spacing-03 { letter-spacing: $letter-spacing-03; }
+
+
 /* Headings */
 h1 {
     font-family: $font-family-serif;

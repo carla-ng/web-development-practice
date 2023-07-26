@@ -1,35 +1,40 @@
 <template>
 
     <header class="header">
-        <div class="header__logo"></div>
+
+        <div class="header__logo">
+            <img src="../assets/shared/logo.svg" alt="Space Tourism logo" class="header__logo-img">
+        </div>
+
         <nav class="header__nav">
             <ul>
                 <li class="active">
-                    <router-link to="/" class="text-light letter-spacing-02 uppercase">
+                    <router-link to="/" class="text-light ff-sans-cond letter-spacing-02 uppercase">
                         <span class="number">00</span>
                         <span>Home</span>
                     </router-link>
                 </li>
                 <li>
-                    <router-link to="/destination" class="text-light letter-spacing-02 uppercase">
+                    <router-link to="/destination" class="text-light ff-sans-cond letter-spacing-02 uppercase">
                         <span class="number">01</span>
                         <span>Destination</span>
                     </router-link>
                 </li>
                 <li>
-                    <router-link to="/crew" class="text-light letter-spacing-02 uppercase">
+                    <router-link to="/crew" class="text-light ff-sans-cond letter-spacing-02 uppercase">
                         <span class="number">02</span>
                         <span>Crew</span>
                     </router-link>
                 </li>
                 <li>
-                    <router-link to="/technology" class="text-light letter-spacing-02 uppercase">
+                    <router-link to="/technology" class="text-light ff-sans-cond letter-spacing-02 uppercase">
                         <span class="number">03</span>
                         <span>Technology</span>
                     </router-link>
                 </li>
             </ul>
         </nav>
+
     </header>
 
 </template>
@@ -50,6 +55,9 @@ export default {
 @import '@/assets/styles/global.scss';
 
 .header {
+    display: none;  //TEMP
+    @media (min-width: $breakpoint-min-desktop) { display: flex; }
+    
     .header__nav {
         ul {
             display: flex;
@@ -72,7 +80,7 @@ export default {
             & > * {
                 border-bottom: 0.2rem solid $palette-color-light;
                 cursor: pointer;
-                padding: 1rem 0;
+                padding: 2rem 0;
 
                 &:hover, &:focus { border-color: rgba($palette-color-light, 0.25); }
                 &.active, &[aria-selected="true"] { border-color: rgba($palette-color-light, 1); }

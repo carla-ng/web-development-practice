@@ -1,33 +1,35 @@
 <template>
-
     <Layout>
 
-        <div class="home">
-            Home Page
+        <div class="home page-container">
 
-            <div v-if="jsonData">
-                <!-- <h1>{{ jsonData.destinations[0].name }}</h1> -->
+            <div class="home__first-container">
+                <h1 class="home__heading">
+                    <span class="home__heading-intro text-accent ff-sans-cond uppercase">So, you want to travel to</span>
+                    <span class="home__heading-text">space</span>
+                </h1>
 
-                So, you want to travel to
-                Space
-                Let’s face it; if you want to go to space, you might as well genuinely go to 
-                outer space and not hover kind of on the edge of it. Well sit back, and relax 
-                because we’ll give you a truly out of this world experience! 
-
-                Explore
+                <p class="home__text text-accent">
+                    Let's face it; if you want to go to space, you might as well genuinely go to 
+                    outer space and not hover kind of on the edge of it. Well sit back, and relax 
+                    because we'll give you a truly out of this world experience!
+                </p>
             </div>
-            <div v-else>
-                Loading...
+
+            <div class="home__second-container">
+                <div class="home__explore-button ff-serif text-dark bg-light uppercase">
+                    <span>Explore</span>
+                </div>
             </div>
+
         </div>
         
     </Layout>
-
 </template>
 
 
 <script>
-import { onMounted, computed } from 'vue';
+import { computed, onBeforeMount, onMounted } from 'vue';
 import { useStore } from 'vuex';
 
 // @ is an alias to /src
@@ -49,8 +51,13 @@ export default {
         // Access the JSON data from the store using computed
         const jsonData = computed(() => store.state.jsonData)
 
+
         onMounted(() => {
             fetchData();  // Call the fetchData function when the component is mounted
+        });
+
+        onBeforeMount(() => {
+            document.body.className = 'home-page'; // Set a class on the body tag based on the current page
         });
 
 
@@ -63,7 +70,118 @@ export default {
 
 
 <style lang="scss" scoped>
-.home {
+@import '@/assets/styles/global.scss';
 
+.home {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    @media (min-width: $breakpoint-min-tablet) {}
+
+    @media (min-width: $breakpoint-min-desktop) {
+        align-items: flex-end;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .home__first-container {
+        text-align: center;
+        @media (min-width: $breakpoint-min-desktop) { text-align: left; }
+
+        .home__heading {
+            .home__heading-intro {
+                display: block;
+                font-size: 16px;
+                letter-spacing: 2.7px;
+                line-height: normal;
+                margin-bottom: 16px;
+
+                @media (min-width: $breakpoint-min-tablet) {
+                    font-size: 20px;
+                    letter-spacing: 3.375px;
+                    margin-bottom: 24px;
+                }
+
+                @media (min-width: $breakpoint-min-desktop) {
+                    font-size: 28px;
+                    letter-spacing: 4.725px;
+                }
+            }
+
+            .home__heading-text {
+                margin-bottom: 16px;
+                @media (min-width: $breakpoint-min-tablet) { margin-bottom: 24px; }
+            }
+        }
+
+        .home__text {
+            font-size: 15px;
+            line-height: 25px;
+            margin-bottom: 80px;
+            max-width: 45ch;
+
+            @media (min-width: $breakpoint-min-tablet) {
+                font-size: 16px;
+                line-height: 28px;
+                margin-bottom: 150px;
+            }
+
+            @media (min-width: $breakpoint-min-desktop) {
+                font-size: 18px;
+                line-height: 32px;
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .home__second-container {
+        .home__explore-button {
+            aspect-ratio: 1;
+            border-radius: 50%;
+            cursor: pointer;
+            display: inline-grid;
+            letter-spacing: 2px;
+            padding: 0 2em;
+            position: relative;
+            place-items: center;
+            text-decoration: none;
+            z-index: 1;
+
+            &::after {
+                content: '';
+                background: rgba($palette-color-light, 0.15);
+                border-radius: 50%;
+                height: 100%;
+                opacity: 0;
+                position: absolute;
+                transition: opacity 500ms linear, transform 500ms ease-in-out;
+                width: 100%;
+                z-index: -1;
+            }
+
+            &:hover, &:focus {
+                &::after {
+                    opacity: 1;
+                    transform: scale(1.5);
+                }
+            }
+
+            span {
+                font-size: 20px;
+                line-height: normal;
+                letter-spacing: 1.25px;
+
+                @media (min-width: $breakpoint-min-tablet) {
+                    font-size: 32px;
+                    letter-spacing: 2px;
+                }
+
+                @media (min-width: $breakpoint-min-desktop) {
+                    font-size: 32px;
+                }
+            }
+        }
+    }
 }
 </style>

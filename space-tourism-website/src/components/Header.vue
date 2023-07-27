@@ -6,8 +6,12 @@
             <img src="../assets/shared/logo.svg" alt="Space Tourism logo" class="header__logo-img">
         </div>
 
-        <nav class="header__nav">
-            <ul>
+        <button class="header__hamburger" aria-controls="header__nav-ul" @click="toggleNavVisibility">
+            <span class="sr-only" :aria-expanded="ariaExpanded">Menu</span>
+        </button>
+
+        <nav class="header__nav" :class="{ 'header--visible': navVisible }">
+            <ul class="header__nav-ul">
                 <li class="active">
                     <router-link to="/" class="text-light ff-sans-cond letter-spacing-02 uppercase">
                         <span class="number">00</span>
@@ -41,11 +45,31 @@
 
 
 <script>
+import { computed, ref } from 'vue';
+
 export default {
     name: 'Header',
 
     setup() {
-        return {}
+
+        const navVisible = ref(false);
+
+
+        // Open/close nav with hamburger button
+        const toggleNavVisibility = () => {
+            navVisible.value = !navVisible.value
+        };
+
+
+        // Computed property to set aria-expanded attribute
+        const ariaExpanded = computed(() => String(navVisible.value))
+
+
+        return {
+            ariaExpanded,
+            navVisible,
+            toggleNavVisibility,
+        }
     }
 }
 </script>
@@ -55,16 +79,72 @@ export default {
 @import '@/assets/styles/global.scss';
 
 .header {
-    display: none;  //TEMP
-    @media (min-width: $breakpoint-min-desktop) { display: flex; }
-    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .header__logo {
+        .header__logo-img {
+            margin: 2rem clamp(1.5rem, 5vw, 3.5rem);
+        }
+    }
+
+    .header__hamburger {
+        display: none;
+
+        @media (max-width: $breakpoint-min-tablet) {
+            aspect-ratio: 1;
+            border: 0;
+            display: block;
+            position: absolute;
+            right: 1rem;
+            top: 2rem;
+            width: 1.5rem;
+            z-index: 2000;
+
+            background: transparent;
+            background-image: url('~@/assets/shared/icon-hamburger.svg');
+            background-repeat: no-repeat;
+            background-position: center;
+
+            &:has(> span[aria-expanded="true"]) {
+                background-image: url('~@/assets/shared/icon-close.svg');
+            }
+
+            &:focus-visible {
+                outline: 5px solid #fff;
+                outline-offset: 5px;
+            }
+        }
+    }
+
     .header__nav {
-        ul {
+        ul.header__nav-ul {
             display: flex;
-            gap: 8rem;
             list-style: none;
             margin: 0;
             padding: 0;
+
+            background: rgba($palette-color-dark, 0.95);
+
+            @supports (backdrop-filter: blur(1rem)) {
+                background: rgba($palette-color-light, 0.05);
+                backdrop-filter: blur(3rem);
+            }
+
+            @media (max-width: $breakpoint-min-tablet) {
+                flex-direction: column;
+                inset: 0 0 0 30%;
+                padding: 5rem 2rem 2rem 2rem;
+                position: fixed;
+                transform: translateX(100%);
+                transition: transform 500ms ease-in-out;
+                z-index: 1000;
+
+                &[data-visible="true"] { transform: translateX(0); }
+
+                & > .active { border: 0; }
+            }
 
             li {
                 a {
@@ -76,14 +156,34 @@ export default {
                     }
                 }
             }
+
+            @media (min-width: $breakpoint-min-tablet) and (max-width: $breakpoint-min-desktop) {
+                gap: clamp(1.5rem, 6vw, 3.5rem);
+                padding-inline: 2rem;
+
+                li {
+                    //margin-inline: 14px;
+                    a {
+                        .number { display: none; }
+                    }
+                }
+            }
             
             & > * {
-                border-bottom: 0.2rem solid $palette-color-light;
+                border-bottom: 0.2rem solid rgba($palette-color-light, 0);
                 cursor: pointer;
-                padding: 2rem 0;
+                padding: 1rem 0;
 
                 &:hover, &:focus { border-color: rgba($palette-color-light, 0.25); }
                 &.active, &[aria-selected="true"] { border-color: rgba($palette-color-light, 1); }
+
+                @media (min-width: $breakpoint-min-tablet) { padding: 2rem 0; }
+            }
+        }
+
+        &.header--visible {
+            ul.header__nav-ul {
+                @media (max-width: $breakpoint-min-tablet) { transform: translateX(0); }
             }
         }
     }

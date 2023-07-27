@@ -77,8 +77,6 @@ export default {
     align-items: center;
     flex-direction: column;
 
-    @media (min-width: $breakpoint-min-tablet) {}
-
     @media (min-width: $breakpoint-min-desktop) {
         align-items: flex-end;
         flex-direction: row;
@@ -118,13 +116,14 @@ export default {
         .home__text {
             font-size: 15px;
             line-height: 25px;
+            margin-inline: auto;
             margin-bottom: 80px;
             max-width: 45ch;
 
             @media (min-width: $breakpoint-min-tablet) {
                 font-size: 16px;
                 line-height: 28px;
-                margin-bottom: 150px;
+                margin-inline: unset;
             }
 
             @media (min-width: $breakpoint-min-desktop) {
@@ -136,17 +135,30 @@ export default {
     }
 
     .home__second-container {
+        margin-inline: 2rem;
         .home__explore-button {
             aspect-ratio: 1;
             border-radius: 50%;
             cursor: pointer;
             display: inline-grid;
             letter-spacing: 2px;
-            padding: 0 2em;
             position: relative;
             place-items: center;
             text-decoration: none;
             z-index: 1;
+
+            height: 150px;
+            width: 150px;
+
+            @media (min-width: $breakpoint-min-tablet) {
+                height: 242px;
+                width: 242px;
+            }
+
+            @media (min-width: $breakpoint-min-desktop) {
+                height: 274px;
+                width: 274px;
+            }
 
             &::after {
                 content: '';

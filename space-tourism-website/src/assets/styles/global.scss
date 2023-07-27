@@ -133,8 +133,9 @@ input, button, textarea, select {
 
 /* Pages */
 .page-container {
+    background-repeat: no-repeat;
     margin-inline: auto;
-    max-width: 80rem;
+    max-width: 70rem;
     padding-inline: 2em;
 }
 

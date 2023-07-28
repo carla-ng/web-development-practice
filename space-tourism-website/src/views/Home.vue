@@ -1,7 +1,7 @@
 <template>
     <Layout>
 
-        <div class="home page-container">
+        <main id="main" class="home page-container">
 
             <div class="home__first-container">
                 <h1 class="home__heading">
@@ -17,22 +17,20 @@
             </div>
 
             <div class="home__second-container">
-                <div class="home__explore-button ff-serif text-dark bg-light uppercase">
+                <a href="#" class="home__explore-button ff-serif text-dark bg-light uppercase">
                     <span>Explore</span>
-                </div>
+                </a>
             </div>
 
-        </div>
-        
+        </main>
+
     </Layout>
 </template>
 
 
 <script>
-import { computed, onBeforeMount, onMounted } from 'vue';
-import { useStore } from 'vuex';
+import { onBeforeMount } from 'vue';
 
-// @ is an alias to /src
 import Layout from '@/components/Layout.vue';
 
 export default {
@@ -41,29 +39,12 @@ export default {
         Layout
     },
     setup() {
-        const store = useStore()
-
-        // Dispatch the action to fetch JSON data
-        const fetchData = async () => {
-            await store.dispatch('fetchJsonData')
-        };
-
-        // Access the JSON data from the store using computed
-        const jsonData = computed(() => store.state.jsonData)
-
-
-        onMounted(() => {
-            fetchData();  // Call the fetchData function when the component is mounted
-        });
 
         onBeforeMount(() => {
             document.body.className = 'home-page'; // Set a class on the body tag based on the current page
         });
 
-
-        return {
-            jsonData
-        };
+        return { };
     }
 }
 </script>

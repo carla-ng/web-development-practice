@@ -14,25 +14,25 @@
             <ul class="header__nav-ul">
                 <li class="active">
                     <router-link to="/" class="text-light ff-sans-cond letter-spacing-02 uppercase">
-                        <span class="number">00</span>
+                        <span class="number" aria-hidden="true">00</span>
                         <span>Home</span>
                     </router-link>
                 </li>
                 <li>
                     <router-link to="/destination" class="text-light ff-sans-cond letter-spacing-02 uppercase">
-                        <span class="number">01</span>
+                        <span class="number" aria-hidden="true">01</span>
                         <span>Destination</span>
                     </router-link>
                 </li>
                 <li>
                     <router-link to="/crew" class="text-light ff-sans-cond letter-spacing-02 uppercase">
-                        <span class="number">02</span>
+                        <span class="number" aria-hidden="true">02</span>
                         <span>Crew</span>
                     </router-link>
                 </li>
                 <li>
                     <router-link to="/technology" class="text-light ff-sans-cond letter-spacing-02 uppercase">
-                        <span class="number">03</span>
+                        <span class="number" aria-hidden="true">03</span>
                         <span>Technology</span>
                     </router-link>
                 </li>
@@ -83,6 +83,20 @@ export default {
     align-items: center;
     justify-content: space-between;
 
+    @media (min-width: $breakpoint-min-desktop) {
+        &::after {
+            content: '';
+            background: rgba($palette-color-light, 0.25);
+            display: block;
+            height: 2px;
+            margin-left: 2.5rem;
+            margin-right: -2.5rem;
+            order: 1;
+            position: relative;
+            width: 100%;
+        }
+    }
+
     .header__logo {
         .header__logo-img {
             margin: 2rem clamp(1.5rem, 5vw, 3.5rem);
@@ -92,7 +106,7 @@ export default {
     .header__hamburger {
         display: none;
 
-        @media (max-width: $breakpoint-min-tablet) {
+        @media (max-width: $breakpoint-max-tablet) {
             aspect-ratio: 1;
             border: 0;
             display: block;
@@ -119,6 +133,9 @@ export default {
     }
 
     .header__nav {
+
+        @media (min-width: $breakpoint-min-desktop) { order: 2; }
+
         ul.header__nav-ul {
             display: flex;
             list-style: none;
@@ -132,7 +149,7 @@ export default {
                 backdrop-filter: blur(3rem);
             }
 
-            @media (max-width: $breakpoint-min-tablet) {
+            @media (max-width: $breakpoint-max-tablet) {
                 flex-direction: column;
                 inset: 0 0 0 30%;
                 padding: 5rem 2rem 2rem 2rem;
@@ -157,16 +174,25 @@ export default {
                 }
             }
 
-            @media (min-width: $breakpoint-min-tablet) and (max-width: $breakpoint-min-desktop) {
-                gap: clamp(1.5rem, 6vw, 3.5rem);
-                padding-inline: 2rem;
+            @media (min-width: $breakpoint-min-tablet) {
+                //gap: clamp(1.5rem, 6vw, 3.5rem);
+                gap: clamp(2rem, 5vw, 7rem);
+            }
 
+            @media (min-width: $breakpoint-min-tablet) and (max-width: $breakpoint-max-desktop) {
+                padding-inline: 2rem;
                 li {
-                    //margin-inline: 14px;
                     a {
                         .number { display: none; }
                     }
                 }
+            }
+
+            @media (min-width: $breakpoint-min-desktop) {
+                //gap: clamp(2rem, 5vw, 7rem);
+                margin-block: 2rem;
+                //padding-inline: 3rem;
+                padding-inline: clamp(3rem, 7vw, 7rem);
             }
             
             & > * {
@@ -183,7 +209,7 @@ export default {
 
         &.header--visible {
             ul.header__nav-ul {
-                @media (max-width: $breakpoint-min-tablet) { transform: translateX(0); }
+                @media (max-width: $breakpoint-max-tablet) { transform: translateX(0); }
             }
         }
     }

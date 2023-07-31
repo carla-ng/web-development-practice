@@ -5,13 +5,14 @@
         <main id="main" class="destination page-container">
             <div v-if="jsonData">
                 <h1 class="numbered-title">
-                    <span aria-hidden="true">01</span>
+                    <span aria-hidden="true" class="number">01</span>
                     <span>Pick your destination</span>
                 </h1>
 
                 <div class="destination__main-container">
                     <div class="destination__first-container">
-                        <!-- <img :src="jsonData.destinations[0].images.png" alt="the moon"> -->
+                        <!-- <img class="first-img" :src="jsonData.destinations[0].images.png" alt="the moon"> -->
+                        <img src="@/assets/img/destination/image-moon.png" alt="the moon">
                     </div>
 
                     <div class="destination__second-container">
@@ -22,16 +23,22 @@
                             <button aria-selected="false" class="ff-sans-cond text-accent bg-dark letter-spacing-02 uppercase">{{ jsonData.destinations[3].name }}</button>
                         </div>
 
-                        <article>
+                        <article class="destination__info">
                             <h2>{{ jsonData.destinations[0].name }}</h2>
 
                             <p>{{ jsonData.destinations[0].description }}</p>
 
-                            <h3>Avg. distance</h3>
-                            <p>{{ jsonData.destinations[0].distance }}</p>
+                            <div class="destination__data">
+                                <div>
+                                    <h6>Avg. distance</h6>
+                                    <p>{{ jsonData.destinations[0].distance }}</p>
+                                </div>
 
-                            <h3>Est. travel time</h3>
-                            <p>{{ jsonData.destinations[0].travel }}</p>
+                                <div>
+                                    <h6>Est. travel time</h6>
+                                    <p>{{ jsonData.destinations[0].travel }}</p>
+                                </div>
+                            </div>
                         </article>
                     </div>
                 </div>
@@ -73,7 +80,6 @@ export default {
         // Access the JSON data from the store using computed
         const jsonData = computed(() => store.state.jsonData)
 
-
         onMounted(() => {
             fetchData();  // Call the fetchData function when the component is mounted
         });
@@ -94,4 +100,127 @@ export default {
 <style lang="scss" scoped>
 @import '@/assets/styles/global.scss';
 
+.destination {
+
+    .numbered-title {
+        @media (max-width: $breakpoint-max-mobile) { text-align: center; }
+    }
+    .destination__main-container {
+        @media (min-width: $breakpoint-min-desktop) {
+            display: flex;
+            flex-direction: row;
+        }
+    }
+
+    .destination__first-container {
+        @media (max-width: $breakpoint-max-tablet) {
+            display: flex;
+            justify-content: center;
+        }
+
+        @media (min-width: $breakpoint-min-desktop) {
+            width: 50%;
+        }
+    }
+
+    .destination__second-container {
+        @media (min-width: $breakpoint-min-desktop) {
+            width: 50%;
+        }
+
+        .destination__tabs {
+            & > * {
+                border: 0;
+                border-bottom: 0.2rem solid;
+                border-color: rgba($palette-color-light, 0);
+                color: $palette-color-accent;
+                cursor: pointer;
+                font-size: 14px;
+                font-weight: 400;
+                margin: 0 1.1rem;
+                padding: 0.7rem 0;
+                letter-spacing: 2.362px;
+                line-height: normal;
+
+                &:first-child { margin-left: 0; }
+                &:last-child { margin-right: 0; }
+
+                &:hover, &:focus { border-color: rgba($palette-color-light, 0.5); }
+
+                &.active, &[aria-selected="true"] {
+                    border-color: rgba($palette-color-light, 1); 
+                    color: rgba($palette-color-light, 1);
+                }
+
+                @media (min-width: $breakpoint-min-tablet) {
+                    font-size: 16px;
+                    letter-spacing: 2.7px;
+                }
+
+                @media (max-width: $breakpoint-max-tablet) {
+                    display: flex;
+                    justify-content: center;
+                }
+            }     
+        }
+
+        article.destination__info {
+
+            & > h2 {
+                @media (max-width: $breakpoint-max-tablet) { text-align: center; }
+            }
+
+            & > p {
+                color: $palette-color-accent;
+                font-size: 15px;
+                font-weight: 400;
+                line-height: 25px;
+
+                @media (min-width: $breakpoint-min-tablet) {
+                    font-size: 16px;
+                    line-height: 28px;
+                }
+
+                @media (max-width: $breakpoint-max-tablet) { text-align: center; }
+
+                @media (min-width: $breakpoint-min-desktop) {
+                    font-size: 18px;
+                    line-height: 32px;
+                }
+            }
+
+            .destination__data {
+                display: flex;
+
+                @media (max-width: $breakpoint-max-tablet) {
+                    justify-content: space-around;
+                }
+
+                & > div {
+                    & > h6 {
+                        color: $palette-color-accent;
+                        font-size: 14px;
+                        font-weight: 400;
+                        font-family: $font-family-sans-cond;
+                        line-height: normal;
+                        letter-spacing: 2.362px;
+                        text-transform: uppercase;
+
+                        @media (max-width: $breakpoint-max-tablet) { text-align: center; }
+                    }
+
+                    & > p {
+                        font-family: $font-family-serif;
+                        font-size: 28px;
+                        font-weight: 400;
+                        line-height: normal;
+                        text-transform: uppercase;
+
+                        @media (max-width: $breakpoint-max-tablet) { text-align: center; }
+                    }
+                }
+            }
+        }
+    }
+}
 </style>

@@ -106,7 +106,7 @@ export default {
     .header__hamburger {
         display: none;
 
-        @media (max-width: $breakpoint-max-tablet) {
+        @media (max-width: $breakpoint-max-mobile) {
             aspect-ratio: 1;
             border: 0;
             display: block;
@@ -149,7 +149,7 @@ export default {
                 backdrop-filter: blur(3rem);
             }
 
-            @media (max-width: $breakpoint-max-tablet) {
+            @media (max-width: $breakpoint-max-mobile) {
                 flex-direction: column;
                 inset: 0 0 0 30%;
                 padding: 5rem 2rem 2rem 2rem;
@@ -179,7 +179,7 @@ export default {
                 gap: clamp(2rem, 5vw, 7rem);
             }
 
-            @media (min-width: $breakpoint-min-tablet) and (max-width: $breakpoint-max-desktop) {
+            @media (min-width: $breakpoint-min-tablet) and (max-width: $breakpoint-max-tablet) {
                 padding-inline: 2rem;
                 li {
                     a {
@@ -209,7 +209,7 @@ export default {
 
         &.header--visible {
             ul.header__nav-ul {
-                @media (max-width: $breakpoint-max-tablet) { transform: translateX(0); }
+                @media (max-width: $breakpoint-max-mobile) { transform: translateX(0); }
             }
         }
     }

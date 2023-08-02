@@ -139,7 +139,9 @@ input, button, textarea, select {
     background-repeat: no-repeat;
     margin-inline: auto;
     max-width: 70rem;
-    padding-inline: 2em;
+    padding-inline: 1em;
+    
+    @media (min-width: $breakpoint-min-tablet) { padding-inline: 2em; }
 }
 
 /* Colors */

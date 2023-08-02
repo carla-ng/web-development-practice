@@ -102,8 +102,14 @@ export default {
 
 .destination {
 
+    * {
+        border: 1px solid limegreen;
+    }
+
     .numbered-title {
+        margin-bottom: 2rem;
         @media (max-width: $breakpoint-max-mobile) { text-align: center; }
+        @media (min-width: $breakpoint-min-tablet) { margin-bottom: 3rem; }
     }
     .destination__main-container {
         @media (min-width: $breakpoint-min-desktop) {
@@ -118,8 +124,16 @@ export default {
             justify-content: center;
         }
 
-        @media (min-width: $breakpoint-min-desktop) {
-            width: 50%;
+        @media (min-width: $breakpoint-min-desktop) { width: 50%; }
+
+        img {
+            margin-bottom: 2rem;
+            max-width: 60%;
+
+            @media (min-width: $breakpoint-min-tablet) {
+                margin-bottom: 3rem;
+                max-width: 50%;
+            }
         }
     }
 
@@ -129,6 +143,13 @@ export default {
         }
 
         .destination__tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 0.5rem;
+
+            @media (min-width: $breakpoint-min-tablet) { margin-bottom: 1rem; }
+            @media (min-width: $breakpoint-min-desktop) { justify-content: flex-start; }
+
             & > * {
                 border: 0;
                 border-bottom: 0.2rem solid;
@@ -157,10 +178,10 @@ export default {
                     letter-spacing: 2.7px;
                 }
 
-                @media (max-width: $breakpoint-max-tablet) {
-                    display: flex;
-                    justify-content: center;
-                }
+                // @media (max-width: $breakpoint-max-tablet) {
+                //     display: flex;
+                //     justify-content: center;
+                // }
             }     
         }
 
@@ -171,14 +192,22 @@ export default {
             }
 
             & > p {
+                border-bottom: 1px solid rgba($palette-color-light, 0.3);
                 color: $palette-color-accent;
                 font-size: 15px;
                 font-weight: 400;
                 line-height: 25px;
+                margin-bottom: 1.5rem;
+                margin-inline: auto;
+                max-width: 65ch;
+                padding-bottom: 1.5rem;
+                text-align: center;
 
                 @media (min-width: $breakpoint-min-tablet) {
                     font-size: 16px;
                     line-height: 28px;
+                    margin-bottom: 2rem;
+                    padding-bottom: 3rem;
                 }
 
                 @media (max-width: $breakpoint-max-tablet) { text-align: center; }
@@ -191,12 +220,16 @@ export default {
 
             .destination__data {
                 display: flex;
+                flex-direction: column;
 
-                @media (max-width: $breakpoint-max-tablet) {
-                    justify-content: space-around;
+                @media (min-width: $breakpoint-min-tablet) {
+                    flex-direction: row;
+                    justify-content: space-evenly;
                 }
 
                 & > div {
+                    margin-bottom: 2rem;
+
                     & > h6 {
                         color: $palette-color-accent;
                         font-size: 14px;
@@ -204,6 +237,7 @@ export default {
                         font-family: $font-family-sans-cond;
                         line-height: normal;
                         letter-spacing: 2.362px;
+                        margin-bottom: 0.9em;
                         text-transform: uppercase;
 
                         @media (max-width: $breakpoint-max-tablet) { text-align: center; }

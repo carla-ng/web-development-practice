@@ -10,33 +10,37 @@
                 </h1>
 
                 <div class="destination__main-container">
-                    <div class="destination__first-container">
-                        <!-- <img class="first-img" :src="jsonData.destinations[0].images.png" alt="the moon"> -->
-                        <img src="@/assets/img/destination/image-moon.png" alt="the moon">
+                    <div class="destination__first-container">                        <!-- <img class="first-img" :src="selectedDestination.images.png" :alt="selectedDestination.name"> -->
+                        <img :src="selectedImage" :alt="selectedDestination.name">
                     </div>
 
                     <div class="destination__second-container">
                         <div class="destination__tabs">
-                            <button aria-selected="true" class="ff-sans-cond text-accent bg-dark letter-spacing-02 uppercase">{{ jsonData.destinations[0].name }}</button>
-                            <button aria-selected="false" class="ff-sans-cond text-accent bg-dark letter-spacing-02 uppercase">{{ jsonData.destinations[1].name }}</button>
-                            <button aria-selected="false" class="ff-sans-cond text-accent bg-dark letter-spacing-02 uppercase">{{ jsonData.destinations[2].name }}</button>
-                            <button aria-selected="false" class="ff-sans-cond text-accent bg-dark letter-spacing-02 uppercase">{{ jsonData.destinations[3].name }}</button>
+                            <button
+                                v-for="(destination, index) in jsonData.destinations"
+                                :key="index"
+                                :aria-selected="index === selectedDestinationIndex"
+                                class="ff-sans-cond text-accent letter-spacing-02 uppercase"
+                                @click="selectDestination(index)"
+                            >
+                                {{ destination.name }}
+                            </button>
                         </div>
 
                         <article class="destination__info">
-                            <h2>{{ jsonData.destinations[0].name }}</h2>
+                            <h2>{{ selectedDestination.name }}</h2>
 
-                            <p>{{ jsonData.destinations[0].description }}</p>
+                            <p>{{ selectedDestination.description }}</p>
 
                             <div class="destination__data">
                                 <div>
                                     <h6>Avg. distance</h6>
-                                    <p>{{ jsonData.destinations[0].distance }}</p>
+                                    <p>{{ selectedDestination.distance }}</p>
                                 </div>
 
                                 <div>
                                     <h6>Est. travel time</h6>
-                                    <p>{{ jsonData.destinations[0].travel }}</p>
+                                    <p>{{ selectedDestination.travel }}</p>
                                 </div>
                             </div>
                         </article>
@@ -58,7 +62,7 @@
 
 
 <script>
-import { computed, onBeforeMount, onMounted } from 'vue';
+import { computed, onBeforeMount, onMounted, ref } from 'vue';
 import { useStore } from 'vuex';
 
 // @ is an alias to /src
@@ -71,6 +75,8 @@ export default {
     },
     setup() {
         const store = useStore()
+        const selectedDestinationIndex = ref(0)
+
 
         // Dispatch the action to fetch JSON data
         const fetchData = async () => {
@@ -80,17 +86,35 @@ export default {
         // Access the JSON data from the store using computed
         const jsonData = computed(() => store.state.jsonData)
 
+        // Access the selected destination based on the index
+        const selectedDestination = computed(() => jsonData.value.destinations[selectedDestinationIndex.value])
+
+        // Obtain the image of the selected destination
+        const selectedImage = computed(() => {
+            return require(`@/assets/img/destination/${selectedDestination.value.images.png}`)
+        })
+
+        // Function to select a destination when a button/tag is clicked
+        const selectDestination = (index) => {
+            selectedDestinationIndex.value = index
+        }
+
+
         onMounted(() => {
-            fetchData();  // Call the fetchData function when the component is mounted
-        });
+            fetchData()  // Call the fetchData function when the component is mounted
+        })
 
         onBeforeMount(() => {
             document.body.className = 'destination-page'; // Set a class on the body tag based on the current page
-        });
+        })
 
 
         return {
-            jsonData
+            jsonData,
+            selectDestination,
+            selectedDestination,
+            selectedDestinationIndex,
+            selectedImage,
         };
     }
 }
@@ -135,7 +159,7 @@ export default {
             @media (min-width: $breakpoint-min-desktop) {
                 margin-inline: auto;
                 margin-top: 2rem;
-                max-width: 80%;
+                max-width: 75%;
             }
         }
     }

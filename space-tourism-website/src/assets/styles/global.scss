@@ -65,6 +65,7 @@ html:focus-within {
 
 /* Set core body defaults */
 body {
+    background-attachment: fixed;
     background-color: $palette-color-dark;
     background-position: bottom center;
     background-size: cover;
@@ -92,7 +93,14 @@ body {
         @media (min-width: $breakpoint-min-tablet) { background-image: url('~@/assets/img/destination/background-destination-tablet.jpg'); }
         @media (min-width: $breakpoint-min-desktop) { background-image: url('~@/assets/img/destination/background-destination-desktop.jpg'); }
     }
+
+    &.crew-page {
+        background-image: url('~@/assets/img/crew/background-crew-mobile.jpg');
+        @media (min-width: $breakpoint-min-tablet) { background-image: url('~@/assets/img/crew/background-crew-tablet.jpg'); }
+        @media (min-width: $breakpoint-min-desktop) { background-image: url('~@/assets/img/crew/background-crew-desktop.jpg'); }
+    }
 }
+
 
 /* A elements that don't have a class get default styles */
 a:not([class]) {

@@ -75,15 +75,22 @@ body {
     min-height: 100vh;
     overflow-x: hidden;
     text-rendering: optimizeSpeed;
+    
+    @media (min-width: $breakpoint-min-tablet) { background-position: center center; }
+
 
     /* Background images for each page */
+
     &.home-page {
         background-image: url('~@/assets/img/home/background-home-mobile.jpg');
-        @media (min-width: $breakpoint-min-tablet) {
-            background-image: url('~@/assets/img/home/background-home-tablet.jpg');
-            background-position: center center;
-        }
+        @media (min-width: $breakpoint-min-tablet) { background-image: url('~@/assets/img/home/background-home-tablet.jpg'); }
         @media (min-width: $breakpoint-min-desktop) { background-image: url('~@/assets/img/home/background-home-desktop.jpg'); }
+    }
+
+    &.destination-page {
+        background-image: url('~@/assets/img/destination/background-destination-mobile.jpg');
+        @media (min-width: $breakpoint-min-tablet) { background-image: url('~@/assets/img/destination/background-destination-tablet.jpg'); }
+        @media (min-width: $breakpoint-min-desktop) { background-image: url('~@/assets/img/destination/background-destination-desktop.jpg'); }
     }
 }
 

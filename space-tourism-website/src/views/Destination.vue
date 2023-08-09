@@ -102,9 +102,9 @@ export default {
 
 .destination {
 
-    * {
-        border: 1px solid limegreen;
-    }
+    // * {
+    //     border: 1px solid limegreen;
+    // }
 
     .numbered-title {
         margin-bottom: 2rem;
@@ -128,11 +128,14 @@ export default {
 
         img {
             margin-bottom: 2rem;
-            max-width: 60%;
+            max-width: 50%;
 
-            @media (min-width: $breakpoint-min-tablet) {
-                margin-bottom: 3rem;
-                max-width: 50%;
+            @media (min-width: $breakpoint-min-tablet) { margin-bottom: 3rem; }
+
+            @media (min-width: $breakpoint-min-desktop) {
+                margin-inline: auto;
+                margin-top: 2rem;
+                max-width: 80%;
             }
         }
     }
@@ -151,6 +154,7 @@ export default {
             @media (min-width: $breakpoint-min-desktop) { justify-content: flex-start; }
 
             & > * {
+                background-color: transparent;
                 border: 0;
                 border-bottom: 0.2rem solid;
                 border-color: rgba($palette-color-light, 0);
@@ -177,11 +181,6 @@ export default {
                     font-size: 16px;
                     letter-spacing: 2.7px;
                 }
-
-                // @media (max-width: $breakpoint-max-tablet) {
-                //     display: flex;
-                //     justify-content: center;
-                // }
             }     
         }
 
@@ -201,7 +200,6 @@ export default {
                 margin-inline: auto;
                 max-width: 65ch;
                 padding-bottom: 1.5rem;
-                text-align: center;
 
                 @media (min-width: $breakpoint-min-tablet) {
                     font-size: 16px;
@@ -227,8 +225,14 @@ export default {
                     justify-content: space-evenly;
                 }
 
+                @media (min-width: $breakpoint-min-desktop) {
+                    justify-content: flex-start;
+                }
+
                 & > div {
                     margin-bottom: 2rem;
+
+                    @media (min-width: $breakpoint-min-desktop) { width: 50%; }
 
                     & > h6 {
                         color: $palette-color-accent;

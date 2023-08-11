@@ -12,11 +12,12 @@
                 <div class="crew__main-container">
 
                     <div class="crew__text-container">
-                        <div class="crew__dot-indicators">
+                        <div class="crew__dot-indicators" aria-label="crew members list">
                             <button
                                 v-for="(member, index) in jsonData.crew"
                                 :key="index"
                                 :aria-selected="index === selectedCrewMemberIndex"
+                                :aria-controls="`${member.role.replace(/\s+/g, '-').toLowerCase()}-tab`"
                                 @click="selectCrewMember(index)"
                             >
                                 <span class="sr-only">{{ member.role }}</span>                                
@@ -49,7 +50,7 @@
 
 
 <script>
-import { computed, onBeforeMount, onMounted, ref } from 'vue';
+import { computed, onBeforeMount, onBeforeUnmount, onMounted, ref } from 'vue';
 import { useStore } from 'vuex';
 
 // @ is an alias to /src
@@ -80,19 +81,35 @@ export default {
             return require(`@/assets/img/crew/${selectedCrewMember.value.images.png}`)
         })
 
-        // Function to select a destination when a button/tag is clicked
+        // Function to select a destination when a button/tab is clicked
         const selectCrewMember = (index) => {
             selectedCrewMemberIndex.value = index
         }
 
+        // Change tabs with keyboard arrows
+        const handleKeyDown = (event) => {
+            if ( event.key === 'ArrowLeft' ) {
+                selectCrewMember(selectedCrewMemberIndex.value === 0 ? jsonData.value.crew.length - 1 : selectedCrewMemberIndex.value - 1)
+                event.preventDefault()
+            } else if ( event.key === 'ArrowRight' ) {
+                selectCrewMember(selectedCrewMemberIndex.value === jsonData.value.crew.length - 1 ? 0 : selectedCrewMemberIndex.value + 1)
+                event.preventDefault()
+            }
+        }
 
-        onMounted(() => {
-            fetchData();  // Call the fetchData function when the component is mounted
-        });
 
         onBeforeMount(() => {
             document.body.className = 'crew-page'; // Set a class on the body tag based on the current page
-        });
+        })
+
+        onMounted(() => {
+            window.addEventListener('keydown', handleKeyDown)
+            fetchData();  // Call the fetchData function when the component is mounted
+        })
+
+        onBeforeUnmount(() => {
+            window.removeEventListener('keydown', handleKeyDown)
+        })
 
 
         return {
@@ -195,6 +212,7 @@ export default {
                     line-height: normal;
                     margin-bottom: 1rem;
                     text-transform: uppercase;
+                    white-space: nowrap;
 
                     @media (min-width: $breakpoint-min-tablet) { font-size: 40px; }
                     @media (min-width: $breakpoint-min-desktop) { font-size: 56px; }

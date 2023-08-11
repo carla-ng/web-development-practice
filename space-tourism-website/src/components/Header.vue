@@ -12,28 +12,10 @@
 
         <nav class="header__nav" :class="{ 'header--visible': navVisible }">
             <ul class="header__nav-ul">
-                <li class="active">
-                    <router-link to="/" class="text-light ff-sans-cond letter-spacing-02 uppercase">
-                        <span class="number" aria-hidden="true">00</span>
-                        <span>Home</span>
-                    </router-link>
-                </li>
-                <li>
-                    <router-link to="/destination" class="text-light ff-sans-cond letter-spacing-02 uppercase">
-                        <span class="number" aria-hidden="true">01</span>
-                        <span>Destination</span>
-                    </router-link>
-                </li>
-                <li>
-                    <router-link to="/crew" class="text-light ff-sans-cond letter-spacing-02 uppercase">
-                        <span class="number" aria-hidden="true">02</span>
-                        <span>Crew</span>
-                    </router-link>
-                </li>
-                <li>
-                    <router-link to="/technology" class="text-light ff-sans-cond letter-spacing-02 uppercase">
-                        <span class="number" aria-hidden="true">03</span>
-                        <span>Technology</span>
+                <li v-for="item in navItems" :key="item.path" :class="{ active: isActive(item.path) }">
+                    <router-link :to="item.path" class="text-light ff-sans-cond letter-spacing-02 uppercase">
+                        <span class="number" aria-hidden="true">{{ item.number }}</span>
+                        <span>{{ item.label }}</span>
                     </router-link>
                 </li>
             </ul>
@@ -46,20 +28,32 @@
 
 <script>
 import { computed, ref } from 'vue';
+import { useRoute } from 'vue-router';
 
 export default {
     name: 'Header',
 
     setup() {
+        const navVisible = ref(false)
+        const route = useRoute()
 
-        const navVisible = ref(false);
+        const navItems = [
+            { path: '/', number: '00', label: 'Home' },
+            { path: '/destination', number: '01', label: 'Destination' },
+            { path: '/crew', number: '02', label: 'Crew' },
+            { path: '/technology', number: '03', label: 'Technology' },
+        ]
 
+
+        // Get active page
+        const isActive = (path) => {
+            return route.path === path
+        }
 
         // Open/close nav with hamburger button
         const toggleNavVisibility = () => {
             navVisible.value = !navVisible.value
         };
-
 
         // Computed property to set aria-expanded attribute
         const ariaExpanded = computed(() => String(navVisible.value))
@@ -69,6 +63,8 @@ export default {
             ariaExpanded,
             navVisible,
             toggleNavVisibility,
+            navItems,
+            isActive,
         }
     }
 }
@@ -175,7 +171,6 @@ export default {
             }
 
             @media (min-width: $breakpoint-min-tablet) {
-                //gap: clamp(1.5rem, 6vw, 3.5rem);
                 gap: clamp(2rem, 5vw, 7rem);
             }
 
@@ -189,21 +184,23 @@ export default {
             }
 
             @media (min-width: $breakpoint-min-desktop) {
-                //gap: clamp(2rem, 5vw, 7rem);
                 margin-block: 2rem;
-                //padding-inline: 3rem;
                 padding-inline: clamp(3rem, 7vw, 7rem);
             }
             
             & > * {
                 border-bottom: 0.2rem solid rgba($palette-color-light, 0);
                 cursor: pointer;
-                padding: 1rem 0;
 
                 &:hover, &:focus { border-color: rgba($palette-color-light, 0.25); }
                 &.active, &[aria-selected="true"] { border-color: rgba($palette-color-light, 1); }
 
-                @media (min-width: $breakpoint-min-tablet) { padding: 2rem 0; }
+                a {
+                    display: block;  
+                    padding: 1rem 0;
+
+                    @media (min-width: $breakpoint-min-tablet) { padding: 2rem 0; }
+                } 
             }
         }
 

@@ -2,7 +2,7 @@
 
     <Layout>
 
-        <main id="main" class="destination page-container">
+        <main id="main" class="destination page-container" :data-test="activeRoute">
             <div v-if="jsonData">
                 <h1 class="numbered-title">
                     <span aria-hidden="true" class="number">01</span>
@@ -10,16 +10,17 @@
                 </h1>
 
                 <div class="destination__main-container">
-                    <div class="destination__first-container">                        <!-- <img class="first-img" :src="selectedDestination.images.png" :alt="selectedDestination.name"> -->
+                    <div class="destination__first-container">
                         <img :src="selectedImage" :alt="selectedDestination.name">
                     </div>
 
                     <div class="destination__second-container">
-                        <div class="destination__tabs">
+                        <div class="destination__tabs" aria-label="destinations list">
                             <button
                                 v-for="(destination, index) in jsonData.destinations"
                                 :key="index"
                                 :aria-selected="index === selectedDestinationIndex"
+                                :aria-controls="`${destination.name.replace(/\s+/g, '-').toLowerCase()}-tab`"
                                 class="ff-sans-cond text-accent letter-spacing-02 uppercase"
                                 @click="selectDestination(index)"
                             >
@@ -62,7 +63,7 @@
 
 
 <script>
-import { computed, onBeforeMount, onMounted, ref } from 'vue';
+import { computed, onBeforeMount, onBeforeUnmount, onMounted, ref } from 'vue';
 import { useStore } from 'vuex';
 
 // @ is an alias to /src
@@ -94,18 +95,34 @@ export default {
             return require(`@/assets/img/destination/${selectedDestination.value.images.png}`)
         })
 
-        // Function to select a destination when a button/tag is clicked
+        // Function to select a destination when a button/tab is clicked
         const selectDestination = (index) => {
             selectedDestinationIndex.value = index
         }
 
+        // Change tabs with keyboard arrows
+        const handleKeyDown = (event) => {
+            if ( event.key === 'ArrowLeft' ) {
+                selectDestination(selectedDestinationIndex.value === 0 ? jsonData.value.destinations.length - 1 : selectedDestinationIndex.value - 1)
+                event.preventDefault()
+            } else if ( event.key === 'ArrowRight' ) {
+                selectDestination(selectedDestinationIndex.value === jsonData.value.destinations.length - 1 ? 0 : selectedDestinationIndex.value + 1)
+                event.preventDefault()
+            }
+        }
+
 
         onMounted(() => {
+            window.addEventListener('keydown', handleKeyDown)
             fetchData()  // Call the fetchData function when the component is mounted
         })
 
         onBeforeMount(() => {
             document.body.className = 'destination-page'; // Set a class on the body tag based on the current page
+        })
+
+        onBeforeUnmount(() => {
+            window.removeEventListener('keydown', handleKeyDown)
         })
 
 

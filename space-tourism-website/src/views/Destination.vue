@@ -2,7 +2,7 @@
 
     <Layout>
 
-        <main id="main" class="destination page-container" :data-test="activeRoute">
+        <main id="main" class="destination page-container">
             <div v-if="jsonData">
                 <h1 class="numbered-title">
                     <span aria-hidden="true" class="number">01</span>

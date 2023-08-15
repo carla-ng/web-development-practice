@@ -31,7 +31,7 @@
                         <article class="technology__info">
                             <h6 class="subheading-02">The terminology...</h6>
                             <h4>{{ selectedTechnology.name }}</h4>
-                            <p>{{ selectedTechnology.description }}</p>
+                            <p class="ff-sans text-accent">{{ selectedTechnology.description }}</p>
                         </article>
                     </div>
                 </div>
@@ -136,20 +136,18 @@ export default {
 @import '@/assets/styles/global.scss';
 
 .technology {
-    padding-inline: 0;
-
-    @media (min-width: $breakpoint-min-desktop) { max-width: none; }
-    @media (min-width: 1400px) { max-width: 80rem; }
+    @media (max-width: $breakpoint-max-mobile) { padding-inline: 0; }
 
     .numbered-title {
         margin-bottom: 2.5rem;
-        max-width: 85rem;
-        padding-inline: 1rem;
 
-        @media (max-width: $breakpoint-max-mobile) { text-align: center; }
+        @media (max-width: $breakpoint-max-mobile) {
+            padding-inline: 1rem;
+            text-align: center;
+        }
+
         @media (min-width: $breakpoint-min-tablet) { margin-bottom: 3.5rem; }
         @media (min-width: $breakpoint-min-desktop) { margin-inline: auto; }
-        @media (min-width: 1400px) { max-width: 80rem; }
     }
 
     .technology__main-container {
@@ -157,12 +155,10 @@ export default {
         flex-direction: column;
 
         @media (min-width: $breakpoint-min-desktop) {
-            align-items: center;
+            align-items: flex-start;
             flex-direction: row;
             justify-content: space-between;
         }
-
-        @media (min-width: 1400px) { justify-content: center; }
         
         .technology__first-container {
             @media (min-width: $breakpoint-min-desktop) {
@@ -184,11 +180,13 @@ export default {
         .technology__second-container {
             display: flex;
             flex-direction: column;
-            padding-inline: 1rem;
+
+            @media (max-width: $breakpoint-max-mobile) { padding-inline: 1rem; }
             
             @media (min-width: $breakpoint-min-desktop) {
                 align-items: flex-start;
                 flex-direction: row;
+                margin-top: 4rem;
                 order: 1;
                 width: 60%;
             }
@@ -210,10 +208,10 @@ export default {
                     border-radius: 50%;
                     color: $palette-color-light;
                     cursor: pointer;
-                    font-size: 16px;
-                    height: 40px;
+                    font-size: 1rem;
+                    height: 2.5rem;
                     text-align: center;
-                    width: 40px;
+                    width: 2.5rem;
 
                     &.active, &[aria-selected="true"] {
                         background-color: $palette-color-light;
@@ -221,18 +219,18 @@ export default {
                     }
 
                     @media (min-width: $breakpoint-min-tablet) {
-                        font-size: 24px;
-                        height: 60px;
-                        width: 60px;
+                        font-size: 1.5rem;
+                        height: 3.75rem;
+                        width: 3.75rem;
                     }
 
                     @media (max-width: $breakpoint-max-tablet) { margin-inline: 0.5rem;}
 
                     @media (min-width: $breakpoint-min-desktop) {
-                        font-size: 32px;
-                        height: 80px;
+                        font-size: 2rem;
+                        height: 5rem;
                         margin: 1rem 0;
-                        width: 80px;
+                        width: 5rem;
 
                         &:first-child { margin-top: 0; }
                         &:last-child { margin-bottom: 0; }
@@ -256,28 +254,19 @@ export default {
                 }
 
                 h4 {
-                    font-size: 24px;
                     margin-bottom: 1rem;
                     line-height: normal;
-
-                    @media (min-width: $breakpoint-min-tablet) { font-size: 40px; }
-                    @media (min-width: $breakpoint-min-desktop) {
-                        font-size: 56px;
-                        //white-space: nowrap;
-                    }
                 }
 
                 p {
-                    color: $palette-color-accent;
-                    font-family: $font-family-sans;
-                    font-size: 15px;
-                    line-height: 25px;
+                    font-size: 0.938rem;
+                    line-height: 1.563rem;
                     margin-bottom: 2rem;
                     max-width: 50ch;
 
-                    @media (min-width: $breakpoint-min-tablet) { font-size: 16px; }
+                    @media (min-width: $breakpoint-min-tablet) { font-size: 1rem; }
                     @media (max-width: $breakpoint-max-tablet) { margin-inline: auto; }
-                    @media (min-width: $breakpoint-min-desktop) { font-size: 18px; }
+                    @media (min-width: $breakpoint-min-desktop) { font-size: 1.125rem; }
                 }
             }
         }

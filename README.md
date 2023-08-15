@@ -26,10 +26,6 @@ HTML, SCSS
 HTML, SCSS, Vue, Vuex, JavaScript
 
 ### To Do
-* Add more general styles
-* Finish website
-* Use rem instead of px
-* Clean CSS and styles with classes
 * Add animations
 * Create smaller components
 

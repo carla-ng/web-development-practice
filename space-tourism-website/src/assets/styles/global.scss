@@ -23,9 +23,9 @@ $font-size-80px:  5rem;       // 80px
 $font-size-100px: 6.25rem;    // 100px
 $font-size-150px: 9.375rem;   // 150px
 
-$letter-spacing-01: 2.35px;
-$letter-spacing-02: 2.7px;
-$letter-spacing-03: 4.75px;
+$letter-spacing-01: 0.147rem;  // 2.35px
+$letter-spacing-02: 0.169rem;  // 2.7px
+$letter-spacing-03: 0.297rem;  // 4.75px
 
 /* Breakpoints */
 $breakpoint-max-mobile:  480px;
@@ -165,6 +165,12 @@ input, button, textarea, select {
     @media (min-width: $breakpoint-min-tablet) { padding-inline: 2em; }
 }
 
+#main {
+    margin-top: 1rem;
+    @media (min-width: $breakpoint-min-tablet) { margin-top: 3rem; }
+    @media (min-width: $breakpoint-min-desktop) { margin-top: 2.5rem; }
+}
+
 /* Colors */
 .bg-dark { background-color: $palette-color-dark; }
 .bg-accent { background-color: $palette-color-accent; }
@@ -200,76 +206,82 @@ input, button, textarea, select {
 /* Headings */
 h1 {
     font-family: $font-family-serif;
-    font-size: 80px;
-    line-height: 100px;
+    font-size: 5rem;
+    line-height: 6.25rem;
     text-transform: uppercase;
 
     @media (min-width: $breakpoint-min-tablet) {
-        font-size: 150px;
-        line-height: 150px;
+        font-size: 9.375rem;  // 150px
+        line-height: 9.375rem;
     }
 
     @media (min-width: $breakpoint-min-desktop) { line-height: normal; }
 }
 h2 {
     font-family: $font-family-serif;
-    font-size: 56px;
+    font-size: 3.5rem;
     text-transform: uppercase;
 
-    @media (min-width: $breakpoint-min-tablet) { font-size: 80px; }
-    @media (min-width: $breakpoint-min-desktop) { font-size: 100px; }
+    @media (min-width: $breakpoint-min-tablet) { font-size: 5rem; }
+    @media (min-width: $breakpoint-min-desktop) { font-size: 6.5rem; }
 }
 h3 {
     font-family: $font-family-serif;
-    font-size: 56px;
+    font-size: 3.5rem;
     text-transform: uppercase;
 }
 h4 {
     font-family: $font-family-serif;
-    font-size: 32px;
+    font-size: 1.5rem;
     text-transform: uppercase;
+
+    @media (min-width: $breakpoint-min-tablet) { font-size: 2.5rem; }
+    @media (min-width: $breakpoint-min-desktop) { font-size: 3.5rem; }
 }
 h5 {
     font-family: $font-family-sans-cond;
-    font-size: 28px;
+    font-size: 1rem;
     letter-spacing: $letter-spacing-03;
     text-transform: uppercase;
+
+    @media (min-width: $breakpoint-min-tablet) { font-size: 1.5rem; }
+    @media (min-width: $breakpoint-min-desktop) { font-size: 2rem; }
 }
 
 .subheading-01 {
     font-family: $font-family-serif;
-    font-size: 28px;
+    font-size: 1.75rem;
     text-transform: uppercase;
 }
 .subheading-02 {
     color: $palette-color-accent;
     font-family: $font-family-sans-cond;
-    font-size: 14px;
+    font-size: 0.875rem;
     letter-spacing: $letter-spacing-01;
     text-transform: uppercase;
 }
 .nav-text {
     font-family: $font-family-sans-cond;
-    font-size: 16px;
+    font-size: 1rem;
     letter-spacing: $letter-spacing-02;
     text-transform: uppercase;
 }
 
 .numbered-title {
     font-family: $font-family-sans-cond;
-    font-size: 16px;
-    letter-spacing: 2.7px;
+    font-size: 1rem;
+    letter-spacing: 0.169rem;
     line-height: normal;
     text-transform: uppercase;
 
     @media (min-width: $breakpoint-min-tablet) {
-        font-size: 20px;
-        letter-spacing: 3.375px;
+        font-size: 1.25rem;
+        letter-spacing: 0.211rem;
     }
 
     @media (min-width: $breakpoint-min-desktop) {
-        font-size: 28px;
-        letter-spacing: 4.725px;   
+        font-size: 1.75rem;
+        letter-spacing: 0.295rem;   
     }
 
     span.number {

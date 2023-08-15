@@ -31,17 +31,17 @@
                         <article class="destination__info">
                             <h2>{{ selectedDestination.name }}</h2>
 
-                            <p>{{ selectedDestination.description }}</p>
+                            <p class="text-accent">{{ selectedDestination.description }}</p>
 
                             <div class="destination__data">
                                 <div>
-                                    <h6>Avg. distance</h6>
-                                    <p>{{ selectedDestination.distance }}</p>
+                                    <h6 class="ff-sans-cond text-accent">Avg. distance</h6>
+                                    <p class="ff-serif">{{ selectedDestination.distance }}</p>
                                 </div>
 
                                 <div>
-                                    <h6>Est. travel time</h6>
-                                    <p>{{ selectedDestination.travel }}</p>
+                                    <h6 class="ff-sans-cond text-accent">Est. travel time</h6>
+                                    <p class="ff-serif">{{ selectedDestination.travel }}</p>
                                 </div>
                             </div>
                         </article>
@@ -142,11 +142,6 @@ export default {
 @import '@/assets/styles/global.scss';
 
 .destination {
-
-    // * {
-    //     border: 1px solid limegreen;
-    // }
-
     .numbered-title {
         margin-bottom: 2rem;
         @media (max-width: $breakpoint-max-mobile) { text-align: center; }
@@ -182,9 +177,7 @@ export default {
     }
 
     .destination__second-container {
-        @media (min-width: $breakpoint-min-desktop) {
-            width: 50%;
-        }
+        @media (min-width: $breakpoint-min-desktop) { width: 50%; }
 
         .destination__tabs {
             display: flex;
@@ -201,11 +194,11 @@ export default {
                 border-color: rgba($palette-color-light, 0);
                 color: $palette-color-accent;
                 cursor: pointer;
-                font-size: 14px;
+                font-size: 0.875rem;
                 font-weight: 400;
                 margin: 0 1.1rem;
                 padding: 0.7rem 0;
-                letter-spacing: 2.362px;
+                letter-spacing: 0.148rem;
                 line-height: normal;
 
                 &:first-child { margin-left: 0; }
@@ -219,8 +212,8 @@ export default {
                 }
 
                 @media (min-width: $breakpoint-min-tablet) {
-                    font-size: 16px;
-                    letter-spacing: 2.7px;
+                    font-size: 1rem;
+                    letter-spacing: 0.169rem;
                 }
             }     
         }
@@ -233,18 +226,17 @@ export default {
 
             & > p {
                 border-bottom: 1px solid rgba($palette-color-light, 0.3);
-                color: $palette-color-accent;
-                font-size: 15px;
+                font-size: 0.938rem;
                 font-weight: 400;
-                line-height: 25px;
+                line-height: 1.563rem;
                 margin-bottom: 1.5rem;
                 margin-inline: auto;
                 max-width: 65ch;
                 padding-bottom: 1.5rem;
 
                 @media (min-width: $breakpoint-min-tablet) {
-                    font-size: 16px;
-                    line-height: 28px;
+                    font-size: 1rem;
+                    line-height: 1.75rem;
                     margin-bottom: 2rem;
                     padding-bottom: 3rem;
                 }
@@ -252,8 +244,8 @@ export default {
                 @media (max-width: $breakpoint-max-tablet) { text-align: center; }
 
                 @media (min-width: $breakpoint-min-desktop) {
-                    font-size: 18px;
-                    line-height: 32px;
+                    font-size: 1.125rem;
+                    line-height: 2rem;
                 }
             }
 
@@ -266,9 +258,7 @@ export default {
                     justify-content: space-evenly;
                 }
 
-                @media (min-width: $breakpoint-min-desktop) {
-                    justify-content: flex-start;
-                }
+                @media (min-width: $breakpoint-min-desktop) { justify-content: flex-start; }
 
                 & > div {
                     margin-bottom: 2rem;
@@ -276,12 +266,10 @@ export default {
                     @media (min-width: $breakpoint-min-desktop) { width: 50%; }
 
                     & > h6 {
-                        color: $palette-color-accent;
-                        font-size: 14px;
+                        font-size: 0.875rem;
                         font-weight: 400;
-                        font-family: $font-family-sans-cond;
                         line-height: normal;
-                        letter-spacing: 2.362px;
+                        letter-spacing: 0.148rem;
                         margin-bottom: 0.9em;
                         text-transform: uppercase;
 
@@ -289,8 +277,7 @@ export default {
                     }
 
                     & > p {
-                        font-family: $font-family-serif;
-                        font-size: 28px;
+                        font-size: 1.75rem;
                         font-weight: 400;
                         line-height: normal;
                         text-transform: uppercase;

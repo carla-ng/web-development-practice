@@ -25,11 +25,11 @@
                         </div>
 
                         <article class="crew__info">
-                            <h2>{{ selectedCrewMember.role }}</h2>
+                            <h5 class="ff-serif">{{ selectedCrewMember.role }}</h5>
 
-                            <p class="crew__info-name">{{ selectedCrewMember.name }}</p>
+                            <p class="crew__info-name ff-serif text-light">{{ selectedCrewMember.name }}</p>
 
-                            <p class="crew__info-bio">{{ selectedCrewMember.bio }}</p>
+                            <p class="crew__info-bio ff-sans text-accent">{{ selectedCrewMember.bio }}</p>
                         </article>
                     </div>
 
@@ -132,7 +132,6 @@ export default {
         margin-bottom: 2rem;
         @media (max-width: $breakpoint-max-mobile) { text-align: center; }
         @media (min-width: $breakpoint-min-tablet) { margin-bottom: 3rem; }
-        //@media (min-width: $breakpoint-min-desktop) { margin-bottom: 0; }
         @media (min-width: $breakpoint-min-desktop) { margin-bottom: 1.5rem; }
     }
 
@@ -144,7 +143,7 @@ export default {
         @media (min-width: $breakpoint-min-desktop) {
             align-items: flex-end;
             flex-direction: row;
-            //margin-top: -2.5rem;
+            justify-content: space-between;
         }
 
         .crew__text-container {
@@ -193,47 +192,40 @@ export default {
                 @media (min-width: $breakpoint-min-tablet) { order: 1; }
                 @media (max-width: $breakpoint-max-tablet) { text-align: center; }
 
-                h2 {
+                h5 {
                     color: rgba($palette-color-light, 0.5);
-                    font-family: $font-family-serif;
-                    font-size: 16px;
                     line-height: normal;
                     margin-bottom: 0.5rem;
                     text-transform: uppercase;
-
-                    @media (min-width: $breakpoint-min-tablet) { font-size: 24px; }
-                    @media (min-width: $breakpoint-min-desktop) { font-size: 32px; }
                 }
 
                 p.crew__info-name {
-                    color: $palette-color-light;
-                    font-family: $font-family-serif;
-                    font-size: 24px;
+                    font-size: 1.5rem;
                     line-height: normal;
                     margin-bottom: 1rem;
                     text-transform: uppercase;
                     white-space: nowrap;
 
-                    @media (min-width: $breakpoint-min-tablet) { font-size: 40px; }
-                    @media (min-width: $breakpoint-min-desktop) { font-size: 56px; }
+                    @media (min-width: $breakpoint-min-tablet) { font-size: 2.5rem; }
+                    @media (min-width: $breakpoint-min-desktop) { font-size: 3.5rem; }
                 }
 
                 p.crew__info-bio {
-                    color: $palette-color-accent;
-                    font-family: $font-family-sans;
-                    font-size: 15px;
-                    line-height: 25px;
+                    font-size: 0.938rem;
+                    line-height: 1.563rem;
                     margin-bottom: 2rem;
                     max-width: 50ch;
 
                     @media (min-width: $breakpoint-min-tablet) {
                         font-size: 1rem;
-                        line-height: 28px;
+                        line-height: 1.75rem;
                         margin-bottom: 2.5rem;
                     }
 
+                    @media (min-width: $breakpoint-min-tablet) and (max-width: $breakpoint-max-tablet) { min-height: 7rem; }
+
                     @media (min-width: $breakpoint-min-desktop) {
-                        font-size: 18px;
+                        font-size: 1.125rem;
                         line-height: 2rem;
                         margin-bottom: 7.5rem;
                         max-width: 45ch;
@@ -258,11 +250,10 @@ export default {
             }
 
             img {
-                max-width: 65%;
+                height: 55vh;
 
-                @media (min-width: $breakpoint-min-tablet) { max-width: 75%; }
                 @media (max-width: $breakpoint-max-tablet) { margin: 0 auto; }
-                @media (min-width: $breakpoint-min-desktop) { max-width: 85%; }
+                @media (min-width: $breakpoint-min-desktop) { height: 85vh; }
             }
         }
 

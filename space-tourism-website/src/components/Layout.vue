@@ -2,8 +2,7 @@
     <div>
         <Header />
         <slot></slot>
-
-        <!-- Can add a footer component here if needed -->
+        
     </div>
 </template>
 

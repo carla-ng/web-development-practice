@@ -66,50 +66,51 @@ export default {
 
     .home__first-container {
         text-align: center;
+        @media (min-width: $breakpoint-min-tablet) and (max-width: $breakpoint-max-tablet) { margin-top: 2.5rem; }
         @media (min-width: $breakpoint-min-desktop) { text-align: left; }
 
         .home__heading {
             .home__heading-intro {
                 display: block;
-                font-size: 16px;
-                letter-spacing: 2.7px;
+                font-size: 1rem;
+                letter-spacing: 0.169rem;
                 line-height: normal;
-                margin-bottom: 16px;
+                margin-bottom: 1rem;
 
                 @media (min-width: $breakpoint-min-tablet) {
-                    font-size: 20px;
-                    letter-spacing: 3.375px;
-                    margin-bottom: 24px;
+                    font-size: 1.5rem;
+                    letter-spacing: 0.211rem;
+                    margin-bottom: 1.5rem;
                 }
 
                 @media (min-width: $breakpoint-min-desktop) {
-                    font-size: 28px;
-                    letter-spacing: 4.725px;
+                    font-size: 1.75rem;
+                    letter-spacing: 0.295rem;
                 }
             }
 
             .home__heading-text {
-                margin-bottom: 16px;
-                @media (min-width: $breakpoint-min-tablet) { margin-bottom: 24px; }
+                margin-bottom: 1rem;
+                @media (min-width: $breakpoint-min-tablet) { margin-bottom: 1.5rem; }
             }
         }
 
         .home__text {
-            font-size: 15px;
-            line-height: 25px;
+            font-size: 0.938rem;
+            line-height: 1.563rem;
             margin-inline: auto;
-            margin-bottom: 80px;
+            margin-bottom: 5rem;
             max-width: 45ch;
 
             @media (min-width: $breakpoint-min-tablet) {
-                font-size: 16px;
-                line-height: 28px;
+                font-size: 1rem;
+                line-height: 1.75rem;
                 margin-inline: unset;
             }
 
             @media (min-width: $breakpoint-min-desktop) {
-                font-size: 18px;
-                line-height: 32px;
+                font-size: 1.125rem;
+                line-height: 2rem;
                 margin-bottom: 0;
             }
         }
@@ -117,28 +118,29 @@ export default {
 
     .home__second-container {
         margin-inline: 2rem;
+
         .home__explore-button {
             aspect-ratio: 1;
             border-radius: 50%;
             cursor: pointer;
             display: inline-grid;
-            letter-spacing: 2px;
+            letter-spacing: 0.125rem;
             position: relative;
             place-items: center;
             text-decoration: none;
             z-index: 1;
 
-            height: 150px;
-            width: 150px;
+            height: 9.375rem;
+            width: 9.375rem;
 
             @media (min-width: $breakpoint-min-tablet) {
-                height: 242px;
-                width: 242px;
+                height: 15.125rem;
+                width: 15.125rem;
             }
 
             @media (min-width: $breakpoint-min-desktop) {
-                height: 274px;
-                width: 274px;
+                height: 17.125rem;
+                width: 17.125rem;
             }
 
             &::after {
@@ -161,18 +163,16 @@ export default {
             }
 
             span {
-                font-size: 20px;
+                font-size: 1.25rem;
                 line-height: normal;
-                letter-spacing: 1.25px;
+                letter-spacing: 0.078rem;
 
                 @media (min-width: $breakpoint-min-tablet) {
-                    font-size: 32px;
-                    letter-spacing: 2px;
+                    font-size: 2rem;
+                    letter-spacing: 0.125rem;
                 }
 
-                @media (min-width: $breakpoint-min-desktop) {
-                    font-size: 32px;
-                }
+                @media (min-width: $breakpoint-min-desktop) { font-size: 2rem; }
             }
         }
     }

@@ -16,16 +16,24 @@
 
                     <div class="destination__second-container">
                         <div class="destination__tabs" aria-label="destinations list">
-                            <button
+                            <!-- <button
                                 v-for="(destination, index) in jsonData.destinations"
                                 :key="index"
                                 :aria-selected="index === selectedDestinationIndex"
                                 :aria-controls="`${destination.name.replace(/\s+/g, '-').toLowerCase()}-tab`"
                                 class="ff-sans-cond text-accent letter-spacing-02 uppercase"
-                                @click="selectDestination(index)"
+                                @click="updateSelectedIndex(index)"
                             >
                                 {{ destination.name }}
-                            </button>
+                            </button> -->
+
+                            <Tabs
+                                :tabData="jsonData"
+                                :tabSelectedIndex="selectedDestinationIndex"
+                                tabType="destination"
+                                @update:tabSelectedIndex="updateSelectedIndex"
+                            />
+
                         </div>
 
                         <article class="destination__info">
@@ -68,11 +76,14 @@ import { useStore } from 'vuex';
 
 // @ is an alias to /src
 import Layout from '@/components/Layout.vue';
+import Tabs from '@/components/Tabs.vue';
+
 
 export default {
     name: 'Destination',
     components: {
-        Layout
+        Layout,
+        Tabs
     },
     setup() {
         const store = useStore()
@@ -96,17 +107,17 @@ export default {
         })
 
         // Function to select a destination when a button/tab is clicked
-        const selectDestination = (index) => {
+        const updateSelectedIndex = (index) => {
             selectedDestinationIndex.value = index
         }
 
         // Change tabs with keyboard arrows
         const handleKeyDown = (event) => {
             if ( event.key === 'ArrowLeft' ) {
-                selectDestination(selectedDestinationIndex.value === 0 ? jsonData.value.destinations.length - 1 : selectedDestinationIndex.value - 1)
+                updateSelectedIndex(selectedDestinationIndex.value === 0 ? jsonData.value.destinations.length - 1 : selectedDestinationIndex.value - 1)
                 event.preventDefault()
             } else if ( event.key === 'ArrowRight' ) {
-                selectDestination(selectedDestinationIndex.value === jsonData.value.destinations.length - 1 ? 0 : selectedDestinationIndex.value + 1)
+                updateSelectedIndex(selectedDestinationIndex.value === jsonData.value.destinations.length - 1 ? 0 : selectedDestinationIndex.value + 1)
                 event.preventDefault()
             }
         }
@@ -128,11 +139,11 @@ export default {
 
         return {
             jsonData,
-            selectDestination,
+            updateSelectedIndex,
             selectedDestination,
             selectedDestinationIndex,
             selectedImage,
-        };
+        }
     }
 }
 </script>
@@ -178,45 +189,6 @@ export default {
 
     .destination__second-container {
         @media (min-width: $breakpoint-min-desktop) { width: 50%; }
-
-        .destination__tabs {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 0.5rem;
-
-            @media (min-width: $breakpoint-min-tablet) { margin-bottom: 1rem; }
-            @media (min-width: $breakpoint-min-desktop) { justify-content: flex-start; }
-
-            & > * {
-                background-color: transparent;
-                border: 0;
-                border-bottom: 0.2rem solid;
-                border-color: rgba($palette-color-light, 0);
-                color: $palette-color-accent;
-                cursor: pointer;
-                font-size: 0.875rem;
-                font-weight: 400;
-                margin: 0 1.1rem;
-                padding: 0.7rem 0;
-                letter-spacing: 0.148rem;
-                line-height: normal;
-
-                &:first-child { margin-left: 0; }
-                &:last-child { margin-right: 0; }
-
-                &:hover, &:focus { border-color: rgba($palette-color-light, 0.5); }
-
-                &.active, &[aria-selected="true"] {
-                    border-color: rgba($palette-color-light, 1); 
-                    color: rgba($palette-color-light, 1);
-                }
-
-                @media (min-width: $breakpoint-min-tablet) {
-                    font-size: 1rem;
-                    letter-spacing: 0.169rem;
-                }
-            }     
-        }
 
         article.destination__info {
 

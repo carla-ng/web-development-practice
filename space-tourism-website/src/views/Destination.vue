@@ -16,21 +16,11 @@
 
                     <div class="destination__second-container">
                         <div class="destination__tabs" aria-label="destinations list">
-                            <!-- <button
-                                v-for="(destination, index) in jsonData.destinations"
-                                :key="index"
-                                :aria-selected="index === selectedDestinationIndex"
-                                :aria-controls="`${destination.name.replace(/\s+/g, '-').toLowerCase()}-tab`"
-                                class="ff-sans-cond text-accent letter-spacing-02 uppercase"
-                                @click="updateSelectedIndex(index)"
-                            >
-                                {{ destination.name }}
-                            </button> -->
-
+                            
                             <Tabs
                                 :tabData="jsonData"
                                 :tabSelectedIndex="selectedDestinationIndex"
-                                tabType="destination"
+                                tabType="destinations"
                                 @update:tabSelectedIndex="updateSelectedIndex"
                             />
 

@@ -13,15 +13,14 @@
 
                     <div class="crew__text-container">
                         <div class="crew__dot-indicators" aria-label="crew members list">
-                            <button
-                                v-for="(member, index) in jsonData.crew"
-                                :key="index"
-                                :aria-selected="index === selectedCrewMemberIndex"
-                                :aria-controls="`${member.role.replace(/\s+/g, '-').toLowerCase()}-tab`"
-                                @click="selectCrewMember(index)"
-                            >
-                                <span class="sr-only">{{ member.role }}</span>                                
-                            </button>
+
+                            <Tabs
+                                :tabData="jsonData"
+                                :tabSelectedIndex="selectedCrewMemberIndex"
+                                tabType="crew"
+                                @update:tabSelectedIndex="updateSelectedIndex"
+                            />
+                            
                         </div>
 
                         <article class="crew__info">
@@ -55,11 +54,13 @@ import { useStore } from 'vuex';
 
 // @ is an alias to /src
 import Layout from '@/components/Layout.vue';
+import Tabs from '@/components/Tabs.vue';
 
 export default {
     name: 'Crew',
     components: {
-        Layout
+        Layout,
+        Tabs
     },
     setup() {
         const store = useStore()
@@ -82,17 +83,17 @@ export default {
         })
 
         // Function to select a destination when a button/tab is clicked
-        const selectCrewMember = (index) => {
+        const updateSelectedIndex = (index) => {
             selectedCrewMemberIndex.value = index
         }
 
         // Change tabs with keyboard arrows
         const handleKeyDown = (event) => {
             if ( event.key === 'ArrowLeft' ) {
-                selectCrewMember(selectedCrewMemberIndex.value === 0 ? jsonData.value.crew.length - 1 : selectedCrewMemberIndex.value - 1)
+                updateSelectedIndex(selectedCrewMemberIndex.value === 0 ? jsonData.value.crew.length - 1 : selectedCrewMemberIndex.value - 1)
                 event.preventDefault()
             } else if ( event.key === 'ArrowRight' ) {
-                selectCrewMember(selectedCrewMemberIndex.value === jsonData.value.crew.length - 1 ? 0 : selectedCrewMemberIndex.value + 1)
+                updateSelectedIndex(selectedCrewMemberIndex.value === jsonData.value.crew.length - 1 ? 0 : selectedCrewMemberIndex.value + 1)
                 event.preventDefault()
             }
         }
@@ -114,7 +115,7 @@ export default {
 
         return {
             jsonData,
-            selectCrewMember,
+            updateSelectedIndex,
             selectedCrewMember,
             selectedCrewMemberIndex,
             selectedImage,
@@ -164,26 +165,6 @@ export default {
                 }
 
                 @media (min-width: $breakpoint-min-desktop) { margin-bottom: 3rem; }
-
-                & > button {
-                    aspect-ratio: 1;
-                    background-color: rgba($palette-color-light, 0.25);
-                    border-radius: 50%;
-                    border: 0;
-                    cursor: pointer;
-                    height: 0.75rem;
-                    margin: 0 0.5rem;
-                    width: 0.75rem;
-
-                    @media (min-width: $breakpoint-min-desktop) {
-                        height: 0.95rem;
-                        margin: 0 0.7rem;
-                        width: 0.95rem;
-                    }
-
-                    &:hover, &:focus { background-color: rgba($palette-color-light, 0.25); }
-                    &[aria-selected="true"] { background-color: rgba($palette-color-light, 1); }
-                }
             }
 
             article.crew__info {

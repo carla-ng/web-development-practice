@@ -27,7 +27,6 @@ HTML, SCSS, Vue, Vuex, JavaScript
 
 ### To Do
 * Add animations
-* Create smaller components
 
 ### Demo
 * Coming soon

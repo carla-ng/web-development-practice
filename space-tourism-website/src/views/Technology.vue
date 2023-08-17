@@ -17,15 +17,14 @@
 
                     <div class="technology__second-container">
                         <div class="technology__tabs" aria-label="technologys list">
-                            <button
-                                v-for="(technology, index) in jsonData.technology"
-                                :key="index"
-                                :aria-selected="index === selectedTechnologyIndex"
-                                :aria-controls="`${technology.name.replace(/\s+/g, '-').toLowerCase()}-tab`"
-                                @click="selectTechnology(index)"
-                            >
-                                {{ index + 1 }}
-                            </button>
+                            
+                            <Tabs
+                                :tabData="jsonData"
+                                :tabSelectedIndex="selectedTechnologyIndex"
+                                tabType="technology"
+                                @update:tabSelectedIndex="updateSelectedIndex"
+                            />
+
                         </div>
 
                         <article class="technology__info">
@@ -56,11 +55,13 @@ import { useStore } from 'vuex';
 
 // @ is an alias to /src
 import Layout from '@/components/Layout.vue';
+import Tabs from '@/components/Tabs.vue';
 
 export default {
     name: 'Technology',
     components: {
-        Layout
+        Layout,
+        Tabs
     },
     setup() {
         const store = useStore()
@@ -89,17 +90,17 @@ export default {
         })
 
         // Function to select a destination when a button/tab is clicked
-        const selectTechnology = (index) => {
+        const updateSelectedIndex = (index) => {
             selectedTechnologyIndex.value = index
         }
 
         // Change tabs with keyboard arrows
         const handleKeyDown = (event) => {
             if ( event.key === 'ArrowLeft' ) {
-                selectTechnology(selectedTechnologyIndex.value === 0 ? jsonData.value.technology.length - 1 : selectedTechnologyIndex.value - 1)
+                updateSelectedIndex(selectedTechnologyIndex.value === 0 ? jsonData.value.technology.length - 1 : selectedTechnologyIndex.value - 1)
                 event.preventDefault()
             } else if ( event.key === 'ArrowRight' ) {
-                selectTechnology(selectedTechnologyIndex.value === jsonData.value.technology.length - 1 ? 0 : selectedTechnologyIndex.value + 1)
+                updateSelectedIndex(selectedTechnologyIndex.value === jsonData.value.technology.length - 1 ? 0 : selectedTechnologyIndex.value + 1)
                 event.preventDefault()
             }
         }
@@ -121,7 +122,7 @@ export default {
 
         return {
             jsonData,
-            selectTechnology,
+            updateSelectedIndex,
             selectedTechnology,
             selectedTechnologyIndex,
             selectedImageDesktop,
@@ -189,58 +190,6 @@ export default {
                 margin-top: 4rem;
                 order: 1;
                 width: 60%;
-            }
-
-            .technology__tabs {
-                display: flex;
-                justify-content: center;
-                margin-bottom: 1.5rem;
-
-                @media (max-width: $breakpoint-max-tablet) { margin-bottom: 3rem; }
-                @media (min-width: $breakpoint-min-desktop) {
-                    flex-direction: column;
-                    margin-right: 5rem;
-                }
-                
-                button {
-                    background-color: $palette-color-dark;
-                    border: 1px solid rgba($palette-color-light, 0.25);
-                    border-radius: 50%;
-                    color: $palette-color-light;
-                    cursor: pointer;
-                    font-size: 1rem;
-                    height: 2.5rem;
-                    text-align: center;
-                    width: 2.5rem;
-
-                    &.active, &[aria-selected="true"] {
-                        background-color: $palette-color-light;
-                        color: $palette-color-dark;
-                    }
-
-                    @media (min-width: $breakpoint-min-tablet) {
-                        font-size: 1.5rem;
-                        height: 3.75rem;
-                        width: 3.75rem;
-                    }
-
-                    @media (max-width: $breakpoint-max-tablet) { margin-inline: 0.5rem;}
-
-                    @media (min-width: $breakpoint-min-desktop) {
-                        font-size: 2rem;
-                        height: 5rem;
-                        margin: 1rem 0;
-                        width: 5rem;
-
-                        &:first-child { margin-top: 0; }
-                        &:last-child { margin-bottom: 0; }
-
-                        &:hover {
-                            background-color: rgba($palette-color-light, 0.5);
-                            color: $palette-color-dark;
-                        }
-                    }
-                }
             }
 
             article.technology__info {

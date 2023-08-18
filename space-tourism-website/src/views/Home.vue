@@ -29,7 +29,7 @@
 
 
 <script>
-import { onBeforeMount } from 'vue';
+import { onMounted } from 'vue';
 
 import Layout from '@/components/Layout.vue';
 
@@ -40,11 +40,11 @@ export default {
     },
     setup() {
 
-        onBeforeMount(() => {
+        onMounted(() => {
             document.body.className = 'home-page'; // Set a class on the body tag based on the current page
-        });
+        })
 
-        return { };
+        return { }
     }
 }
 </script>
@@ -65,7 +65,16 @@ export default {
     }
 
     .home__first-container {
+        animation-name: text-to-bottom-load;
+        animation-duration: 400ms;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease-in;
+        animation-delay: 800ms;
+        opacity: 0;
+        transform: translateY(-20px);
+
         text-align: center;
+
         @media (min-width: $breakpoint-min-tablet) and (max-width: $breakpoint-max-tablet) { margin-top: 2.5rem; }
         @media (min-width: $breakpoint-min-desktop) { text-align: left; }
 
@@ -117,12 +126,19 @@ export default {
     }
 
     .home__second-container {
+        animation-name: scale-up-load;
+        animation-duration: 850ms;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease-in;
+        animation-delay: 800ms;
+        transform: scale(0);
+
         margin-inline: 2rem;
 
         .home__explore-button {
             aspect-ratio: 1;
             border-radius: 50%;
-            cursor: pointer;
+            cursor: default;
             display: inline-grid;
             letter-spacing: 0.125rem;
             position: relative;
@@ -177,4 +193,5 @@ export default {
         }
     }
 }
+
 </style>

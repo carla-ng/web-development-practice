@@ -15,7 +15,7 @@
                 <li v-for="item in navItems" :key="item.path" :class="{ active: isActive(item.path) }">
                     <router-link :to="item.path" class="text-light ff-sans-cond letter-spacing-02 uppercase">
                         <span class="number" aria-hidden="true">{{ item.number }}</span>
-                        <span>{{ item.label }}</span>
+                        <span class="text">{{ item.label }}</span>
                     </router-link>
                 </li>
             </ul>
@@ -27,7 +27,7 @@
 
 
 <script>
-import { computed, ref } from 'vue';
+import { computed, onMounted, ref } from 'vue';
 import { useRoute } from 'vue-router';
 
 export default {
@@ -53,7 +53,15 @@ export default {
         // Open/close nav with hamburger button
         const toggleNavVisibility = () => {
             navVisible.value = !navVisible.value
-        };
+        }
+
+        // After the page is mounted we wait for elements to show and then add class to show the nav > ul element
+        onMounted(() => {
+            setTimeout(() => {
+                const navElement = document.getElementsByTagName('ul')[0]
+                navElement.classList.add('show-loaded')
+            }, 1000)
+        })
 
         // Computed property to set aria-expanded attribute
         const ariaExpanded = computed(() => String(navVisible.value))
@@ -78,6 +86,10 @@ export default {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    animation-name: nav-load;
+    animation-duration: 650ms;
+    animation-timing-function: ease-in;
 
     @media (min-width: $breakpoint-min-desktop) {
         &::after {
@@ -129,11 +141,16 @@ export default {
     }
 
     .header__nav {
-
         @media (min-width: $breakpoint-min-desktop) { order: 2; }
 
         ul.header__nav-ul {
-            display: flex;
+            @media (max-width: $breakpoint-max-mobile) {
+                display: none;
+                &.show-loaded { display: flex; }
+            }
+
+            @media (min-width: $breakpoint-min-tablet) { display: flex; }
+
             list-style: none;
             margin: 0;
             padding: 0;
@@ -159,48 +176,54 @@ export default {
                 & > .active { border: 0; }
             }
 
-            li {
-                a {
-                    text-decoration: none;
-                
-                    & > .number {
-                        font-weight: 700;
-                        margin-right: 0.5em;
-                    }
-                }
-            }
-
             @media (min-width: $breakpoint-min-tablet) {
                 gap: clamp(2rem, 5vw, 7rem);
             }
 
             @media (min-width: $breakpoint-min-tablet) and (max-width: $breakpoint-max-tablet) {
-                padding-inline: 2rem;
-                li {
-                    a {
-                        .number { display: none; }
-                    }
-                }
+                padding-inline: 1.5rem;
             }
 
             @media (min-width: $breakpoint-min-desktop) {
                 margin-block: 2rem;
                 padding-inline: clamp(3rem, 7vw, 7rem);
             }
-            
-            & > * {
+
+            li {
                 border-bottom: 0.2rem solid rgba($palette-color-light, 0);
                 cursor: pointer;
 
                 &:hover, &:focus { border-color: rgba($palette-color-light, 0.25); }
                 &.active, &[aria-selected="true"] { border-color: rgba($palette-color-light, 1); }
 
+                @media (min-width: $breakpoint-min-tablet) {
+                    animation-name: nav-li-load;
+                    animation-duration: 1000ms;
+                    animation-timing-function: ease-in;
+                }
+
                 a {
                     display: block;  
                     padding: 1rem 0;
+                    text-decoration: none;
 
                     @media (min-width: $breakpoint-min-tablet) { padding: 2rem 0; }
-                } 
+                
+                    & > .number {
+                        font-weight: 700;
+                        margin-right: 0.5em;
+
+                        @media (min-width: $breakpoint-min-tablet) and (max-width: $breakpoint-max-tablet) {
+                            display: none;
+                        }
+                    }
+
+                    & > .text {
+                        font-size: 1rem;
+                        @media (min-width: $breakpoint-min-tablet) { font-size: 0.875rem; }
+                        @media (min-width: $breakpoint-min-desktop) { font-size: 1rem; }
+                    }
+                }
             }
         }
 
@@ -210,5 +233,17 @@ export default {
             }
         }
     }
+}
+
+// Animations
+@keyframes nav-load {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes nav-li-load {
+    0% { transform: scale(0); }
+    90% { transform: scale(1.1); }
+    100% { transform: scale(1); }
 }
 </style>

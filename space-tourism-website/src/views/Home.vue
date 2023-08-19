@@ -3,24 +3,28 @@
 
         <main id="main" class="home page-container">
 
-            <div class="home__first-container">
-                <h1 class="home__heading">
-                    <span class="home__heading-intro text-accent ff-sans-cond uppercase">So, you want to travel to</span>
-                    <span class="home__heading-text">space</span>
-                </h1>
+            <transition name="text-to-bottom" appear>
+                <div class="home__first-container">
+                    <h1 class="home__heading">
+                        <span class="home__heading-intro text-accent ff-sans-cond uppercase">So, you want to travel to</span>
+                        <span class="home__heading-text">space</span>
+                    </h1>
 
-                <p class="home__text text-accent">
-                    Let's face it; if you want to go to space, you might as well genuinely go to 
-                    outer space and not hover kind of on the edge of it. Well sit back, and relax 
-                    because we'll give you a truly out of this world experience!
-                </p>
-            </div>
+                    <p class="home__text text-accent">
+                        Let's face it; if you want to go to space, you might as well genuinely go to 
+                        outer space and not hover kind of on the edge of it. Well sit back, and relax 
+                        because we'll give you a truly out of this world experience!
+                    </p>
+                </div>
+            </transition>
 
-            <div class="home__second-container">
-                <a href="#" class="home__explore-button ff-serif text-dark bg-light uppercase">
-                    <span>Explore</span>
-                </a>
-            </div>
+            <transition name="scale-up" appear>
+                <div class="home__second-container">
+                    <a href="#" class="home__explore-button ff-serif text-dark bg-light uppercase">
+                        <span>Explore</span>
+                    </a>
+                </div>
+            </transition>
 
         </main>
 
@@ -29,7 +33,7 @@
 
 
 <script>
-import { onBeforeMount } from 'vue';
+import { onMounted } from 'vue';
 
 import Layout from '@/components/Layout.vue';
 
@@ -40,11 +44,11 @@ export default {
     },
     setup() {
 
-        onBeforeMount(() => {
+        onMounted(() => {
             document.body.className = 'home-page'; // Set a class on the body tag based on the current page
-        });
+        })
 
-        return { };
+        return { }
     }
 }
 </script>
@@ -66,6 +70,7 @@ export default {
 
     .home__first-container {
         text-align: center;
+
         @media (min-width: $breakpoint-min-tablet) and (max-width: $breakpoint-max-tablet) { margin-top: 2.5rem; }
         @media (min-width: $breakpoint-min-desktop) { text-align: left; }
 
@@ -122,7 +127,7 @@ export default {
         .home__explore-button {
             aspect-ratio: 1;
             border-radius: 50%;
-            cursor: pointer;
+            cursor: default;
             display: inline-grid;
             letter-spacing: 0.125rem;
             position: relative;
@@ -177,4 +182,5 @@ export default {
         }
     }
 }
+
 </style>

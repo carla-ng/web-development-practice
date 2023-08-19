@@ -4,52 +4,54 @@
 
         <main id="main" class="destination page-container">
             <div v-if="jsonData">
-                <h1 class="numbered-title">
-                    <span aria-hidden="true" class="number">01</span>
-                    <span>Pick your destination</span>
-                </h1>
+                <transition name="text-to-bottom" appear>
+                    <h1 class="numbered-title">
+                        <span aria-hidden="true" class="number">01</span>
+                        <span>Pick your destination</span>
+                    </h1>
+                </transition>
 
                 <div class="destination__main-container">
                     <div class="destination__first-container">
-                        <img :src="selectedImage" :alt="selectedDestination.name">
+                        <transition name="fade-up-rotate" appear>
+                            <img :src="selectedImage" :alt="selectedDestination.name">
+                        </transition>
                     </div>
 
-                    <div class="destination__second-container">
-                        <div class="destination__tabs" aria-label="destinations list">
-                            
-                            <Tabs
-                                :tabData="jsonData"
-                                :tabSelectedIndex="selectedDestinationIndex"
-                                tabType="destinations"
-                                @update:tabSelectedIndex="updateSelectedIndex"
-                            />
+                    <transition name="text-to-bottom" appear>
+                        <div class="destination__second-container">
+                            <div class="destination__tabs" aria-label="destinations list">
+                                
+                                <Tabs
+                                    :tabData="jsonData"
+                                    :tabSelectedIndex="selectedDestinationIndex"
+                                    tabType="destinations"
+                                    @update:tabSelectedIndex="updateSelectedIndex"
+                                />
 
-                        </div>
-
-                        <article class="destination__info">
-                            <h2>{{ selectedDestination.name }}</h2>
-
-                            <p class="text-accent">{{ selectedDestination.description }}</p>
-
-                            <div class="destination__data">
-                                <div>
-                                    <h6 class="ff-sans-cond text-accent">Avg. distance</h6>
-                                    <p class="ff-serif">{{ selectedDestination.distance }}</p>
-                                </div>
-
-                                <div>
-                                    <h6 class="ff-sans-cond text-accent">Est. travel time</h6>
-                                    <p class="ff-serif">{{ selectedDestination.travel }}</p>
-                                </div>
                             </div>
-                        </article>
-                    </div>
+
+                            <article class="destination__info">
+                                <h2>{{ selectedDestination.name }}</h2>
+
+                                <p class="text-accent">{{ selectedDestination.description }}</p>
+
+                                <div class="destination__data">
+                                    <div>
+                                        <h6 class="ff-sans-cond text-accent">Avg. distance</h6>
+                                        <p class="ff-serif">{{ selectedDestination.distance }}</p>
+                                    </div>
+
+                                    <div>
+                                        <h6 class="ff-sans-cond text-accent">Est. travel time</h6>
+                                        <p class="ff-serif">{{ selectedDestination.travel }}</p>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </transition>
                 </div>
 
-            </div>
-
-            <div v-else>
-                Loading...
             </div>
 
         </main>
@@ -78,6 +80,7 @@ export default {
     setup() {
         const store = useStore()
         const selectedDestinationIndex = ref(0)
+        //const imageChangeTrigger = ref(0)
 
 
         // Dispatch the action to fetch JSON data
@@ -93,6 +96,7 @@ export default {
 
         // Obtain the image of the selected destination
         const selectedImage = computed(() => {
+            //return require(`@/assets/img/destination/${selectedDestination.value.images.png}`) + `?trigger=${imageChangeTrigger.value}`
             return require(`@/assets/img/destination/${selectedDestination.value.images.png}`)
         })
 
@@ -115,7 +119,7 @@ export default {
 
         onMounted(() => {
             window.addEventListener('keydown', handleKeyDown)
-            fetchData()  // Call the fetchData function when the component is mounted
+            fetchData();  // Call the fetchData function when the component is mounted
         })
 
         onBeforeMount(() => {
@@ -181,7 +185,6 @@ export default {
         @media (min-width: $breakpoint-min-desktop) { width: 50%; }
 
         article.destination__info {
-
             & > h2 {
                 @media (max-width: $breakpoint-max-tablet) { text-align: center; }
             }

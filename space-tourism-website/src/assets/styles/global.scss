@@ -68,6 +68,7 @@ body {
     background-attachment: fixed;
     background-color: $palette-color-dark;
     background-position: bottom center;
+    background-repeat: no-repeat;
     background-size: cover;
     color: $palette-color-light;
     font-family: $font-family-sans;
@@ -298,4 +299,39 @@ h5 {
 .mobile {
     @media (max-width: $breakpoint-max-tablet) { display: block; }
     @media (min-width: $breakpoint-min-desktop) { display: none; }
+}
+
+
+
+/*************************
+ *       Animations      *
+ *************************/
+// Animate element scaling up while rotating 
+.fade-up-rotate-enter-from, .fade-up-rotate-leave-to {
+    transform: scale(0) rotate(180deg);
+    opacity: 0;
+}
+.fade-up-rotate-enter-active, .fade-up-rotate-leave-active {
+    transition: all 900ms ease-in;
+    transition-delay: 500ms;
+}
+
+// Animate text from top to bottom
+.text-to-bottom-enter-from, .text-to-bottom-leave-to {
+    opacity: 0;
+    transform: translateY(-20px);
+}
+.text-to-bottom-enter-active, .text-to-bottom-leave-active {
+    transition: all 800ms ease-in;
+    transition-delay: 500ms;
+}
+
+// Animate element scaling up
+.scale-up-enter-from, .scale-up-leave-to {
+    opacity: 0;
+    transform: scale(0);
+}
+.scale-up-enter-active, .scale-up-leave-active {
+    transition: all 850ms ease-in;
+    transition-delay: 500ms;
 }

@@ -306,18 +306,32 @@ h5 {
 /*************************
  *       Animations      *
  *************************/
-@keyframes text-to-bottom-load {
-    0% {
-        transform: translateY(-20px);
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
+// Animate element scaling up while rotating 
+.fade-up-rotate-enter-from, .fade-up-rotate-leave-to {
+    transform: scale(0) rotate(180deg);
+    opacity: 0;
+}
+.fade-up-rotate-enter-active, .fade-up-rotate-leave-active {
+    transition: all 900ms ease-in;
+    transition-delay: 500ms;
 }
 
-@keyframes scale-up-load {
-    0% { transform: scale(0); }
-    100% { transform: scale(1); }
+// Animate text from top to bottom
+.text-to-bottom-enter-from, .text-to-bottom-leave-to {
+    opacity: 0;
+    transform: translateY(-20px);
+}
+.text-to-bottom-enter-active, .text-to-bottom-leave-active {
+    transition: all 800ms ease-in;
+    transition-delay: 500ms;
+}
+
+// Animate element scaling up
+.scale-up-enter-from, .scale-up-leave-to {
+    opacity: 0;
+    transform: scale(0);
+}
+.scale-up-enter-active, .scale-up-leave-active {
+    transition: all 850ms ease-in;
+    transition-delay: 500ms;
 }

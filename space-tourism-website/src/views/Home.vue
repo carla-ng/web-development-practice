@@ -3,24 +3,28 @@
 
         <main id="main" class="home page-container">
 
-            <div class="home__first-container">
-                <h1 class="home__heading">
-                    <span class="home__heading-intro text-accent ff-sans-cond uppercase">So, you want to travel to</span>
-                    <span class="home__heading-text">space</span>
-                </h1>
+            <transition name="text-to-bottom" appear>
+                <div class="home__first-container">
+                    <h1 class="home__heading">
+                        <span class="home__heading-intro text-accent ff-sans-cond uppercase">So, you want to travel to</span>
+                        <span class="home__heading-text">space</span>
+                    </h1>
 
-                <p class="home__text text-accent">
-                    Let's face it; if you want to go to space, you might as well genuinely go to 
-                    outer space and not hover kind of on the edge of it. Well sit back, and relax 
-                    because we'll give you a truly out of this world experience!
-                </p>
-            </div>
+                    <p class="home__text text-accent">
+                        Let's face it; if you want to go to space, you might as well genuinely go to 
+                        outer space and not hover kind of on the edge of it. Well sit back, and relax 
+                        because we'll give you a truly out of this world experience!
+                    </p>
+                </div>
+            </transition>
 
-            <div class="home__second-container">
-                <a href="#" class="home__explore-button ff-serif text-dark bg-light uppercase">
-                    <span>Explore</span>
-                </a>
-            </div>
+            <transition name="scale-up" appear>
+                <div class="home__second-container">
+                    <a href="#" class="home__explore-button ff-serif text-dark bg-light uppercase">
+                        <span>Explore</span>
+                    </a>
+                </div>
+            </transition>
 
         </main>
 
@@ -65,14 +69,6 @@ export default {
     }
 
     .home__first-container {
-        animation-name: text-to-bottom-load;
-        animation-duration: 400ms;
-        animation-fill-mode: forwards;
-        animation-timing-function: ease-in;
-        animation-delay: 800ms;
-        opacity: 0;
-        transform: translateY(-20px);
-
         text-align: center;
 
         @media (min-width: $breakpoint-min-tablet) and (max-width: $breakpoint-max-tablet) { margin-top: 2.5rem; }
@@ -126,13 +122,6 @@ export default {
     }
 
     .home__second-container {
-        animation-name: scale-up-load;
-        animation-duration: 850ms;
-        animation-fill-mode: forwards;
-        animation-timing-function: ease-in;
-        animation-delay: 800ms;
-        transform: scale(0);
-
         margin-inline: 2rem;
 
         .home__explore-button {

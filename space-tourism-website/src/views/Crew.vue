@@ -4,36 +4,42 @@
 
         <main id="main" class="crew page-container">
             <div v-if="jsonData">
-                <h1 class="numbered-title">
-                    <span aria-hidden="true" class="number">02</span>
-                    <span>Meet your crew</span>
-                </h1>
+                <transition name="text-to-bottom" appear>
+                    <h1 class="numbered-title">
+                        <span aria-hidden="true" class="number">02</span>
+                        <span>Meet your crew</span>
+                    </h1>
+                </transition>
 
                 <div class="crew__main-container">
 
-                    <div class="crew__text-container">
-                        <div class="crew__dot-indicators" aria-label="crew members list">
+                    <transition name="text-to-bottom" appear>
+                        <div class="crew__text-container">
+                            <div class="crew__dot-indicators" aria-label="crew members list">
 
-                            <Tabs
-                                :tabData="jsonData"
-                                :tabSelectedIndex="selectedCrewMemberIndex"
-                                tabType="crew"
-                                @update:tabSelectedIndex="updateSelectedIndex"
-                            />
-                            
+                                <Tabs
+                                    :tabData="jsonData"
+                                    :tabSelectedIndex="selectedCrewMemberIndex"
+                                    tabType="crew"
+                                    @update:tabSelectedIndex="updateSelectedIndex"
+                                />
+                                
+                            </div>
+
+                            <article class="crew__info">
+                                <h5 class="ff-serif">{{ selectedCrewMember.role }}</h5>
+
+                                <p class="crew__info-name ff-serif text-light">{{ selectedCrewMember.name }}</p>
+
+                                <p class="crew__info-bio ff-sans text-accent">{{ selectedCrewMember.bio }}</p>
+                            </article>
                         </div>
-
-                        <article class="crew__info">
-                            <h5 class="ff-serif">{{ selectedCrewMember.role }}</h5>
-
-                            <p class="crew__info-name ff-serif text-light">{{ selectedCrewMember.name }}</p>
-
-                            <p class="crew__info-bio ff-sans text-accent">{{ selectedCrewMember.bio }}</p>
-                        </article>
-                    </div>
+                    </transition>
 
                     <div class="crew__image">
-                        <img :src="selectedImage" :alt="selectedCrewMember.name">
+                        <transition name="scale-up" appear>
+                            <img :src="selectedImage" :alt="selectedCrewMember.name">
+                        </transition>
                     </div>
 
                 </div>

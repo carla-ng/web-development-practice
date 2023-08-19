@@ -1,27 +1,30 @@
 <template>
 
-    <header class="header">
+    <transition name="nav-load" appear>
+        <header class="header">
 
-        <div class="header__logo">
-            <img src="../assets/shared/logo.svg" alt="Space Tourism logo" class="header__logo-img">
-        </div>
+            <div class="header__logo">
+                <img src="../assets/shared/logo.svg" alt="Space Tourism logo" class="header__logo-img">
+            </div>
 
-        <button class="header__hamburger" aria-controls="header__nav-ul" @click="toggleNavVisibility">
-            <span class="sr-only" :aria-expanded="ariaExpanded">Menu</span>
-        </button>
+            <button class="header__hamburger" aria-controls="header__nav-ul" @click="toggleNavVisibility">
+                <span class="sr-only" :aria-expanded="ariaExpanded">Menu</span>
+            </button>
 
-        <nav class="header__nav" :class="{ 'header--visible': navVisible }">
-            <ul class="header__nav-ul">
-                <li v-for="item in navItems" :key="item.path" :class="{ active: isActive(item.path) }">
-                    <router-link :to="item.path" class="text-light ff-sans-cond letter-spacing-02 uppercase">
-                        <span class="number" aria-hidden="true">{{ item.number }}</span>
-                        <span class="text">{{ item.label }}</span>
-                    </router-link>
-                </li>
-            </ul>
-        </nav>
+            <nav class="header__nav" :class="{ 'header--visible': navVisible }">
+                <transition-group class="header__nav-ul" tag="ul" name="nav-li-load" appear>
+                    <li v-for="item in navItems" :key="item.path" :class="{ active: isActive(item.path) }">
+                        <router-link :to="item.path" class="text-light ff-sans-cond letter-spacing-02 uppercase">
+                            <span class="number" aria-hidden="true">{{ item.number }}</span>
+                            <span class="text">{{ item.label }}</span>
+                        </router-link>
+                    </li>
+                </transition-group>
+            </nav>
 
-    </header>
+        </header>
+
+    </transition>
 
 </template>
 
@@ -32,48 +35,39 @@ import { useRoute } from 'vue-router';
 
 export default {
     name: 'Header',
-
     setup() {
-        const navVisible = ref(false)
-        const route = useRoute()
-
+        const navVisible = ref(false);
+        const route = useRoute();
         const navItems = [
             { path: '/', number: '00', label: 'Home' },
             { path: '/destination', number: '01', label: 'Destination' },
             { path: '/crew', number: '02', label: 'Crew' },
             { path: '/technology', number: '03', label: 'Technology' },
-        ]
-
-
+        ];
         // Get active page
         const isActive = (path) => {
-            return route.path === path
-        }
-
+            return route.path === path;
+        };
         // Open/close nav with hamburger button
         const toggleNavVisibility = () => {
-            navVisible.value = !navVisible.value
-        }
-
+            navVisible.value = !navVisible.value;
+        };
         // After the page is mounted we wait for elements to show and then add class to show the nav > ul element
         onMounted(() => {
             setTimeout(() => {
-                const navElement = document.getElementsByTagName('ul')[0]
-                navElement.classList.add('show-loaded')
-            }, 1000)
-        })
-
+                const navElement = document.getElementsByTagName('ul')[0];
+                navElement.classList.add('show-loaded');
+            }, 1000);
+        });
         // Computed property to set aria-expanded attribute
-        const ariaExpanded = computed(() => String(navVisible.value))
-
-
+        const ariaExpanded = computed(() => String(navVisible.value));
         return {
             ariaExpanded,
             navVisible,
             toggleNavVisibility,
             navItems,
             isActive,
-        }
+        };
     }
 }
 </script>
@@ -86,10 +80,6 @@ export default {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-    animation-name: nav-load;
-    animation-duration: 650ms;
-    animation-timing-function: ease-in;
 
     @media (min-width: $breakpoint-min-desktop) {
         &::after {
@@ -143,7 +133,7 @@ export default {
     .header__nav {
         @media (min-width: $breakpoint-min-desktop) { order: 2; }
 
-        ul.header__nav-ul {
+        .header__nav-ul {
             @media (max-width: $breakpoint-max-mobile) {
                 display: none;
                 &.show-loaded { display: flex; }
@@ -196,12 +186,6 @@ export default {
                 &:hover, &:focus { border-color: rgba($palette-color-light, 0.25); }
                 &.active, &[aria-selected="true"] { border-color: rgba($palette-color-light, 1); }
 
-                @media (min-width: $breakpoint-min-tablet) {
-                    animation-name: nav-li-load;
-                    animation-duration: 1000ms;
-                    animation-timing-function: ease-in;
-                }
-
                 a {
                     display: block;  
                     padding: 1rem 0;
@@ -235,15 +219,27 @@ export default {
     }
 }
 
-// Animations
-@keyframes nav-load {
-    0% { transform: translateY(-100%); }
-    100% { transform: translateY(0); }
+
+/* Animations */
+
+// Animate nav from top to bottom
+.nav-load-enter-from, .nav-load-leave-to {
+    transform: translateY(-100%);
+    opacity: 0;
+}
+.nav-load-enter-active, .nav-load-leave-active {
+    transition: all 700ms ease-in;
 }
 
+// Animate nav links to scale up
+@media (min-width: $breakpoint-min-tablet) {
+    .nav-li-load-enter-active, .nav-li-load-leave-active {
+        animation: nav-li-load 1000ms ease-in;
+    }
+}
 @keyframes nav-li-load {
-    0% { transform: scale(0); }
+    0% { transform: scale(0); opacity: 0; }
     90% { transform: scale(1.1); }
-    100% { transform: scale(1); }
+    100% { transform: scale(1); opacity: 1; }
 }
 </style>

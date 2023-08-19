@@ -25,9 +25,6 @@ HTML, SCSS
 ### Built with
 HTML, SCSS, Vue, Vuex, JavaScript
 
-### To Do
-* Add animations
-
 ### Demo
 * Coming soon
 

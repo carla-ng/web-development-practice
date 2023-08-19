@@ -4,41 +4,41 @@
 
         <main id="main" class="technology page-container">
             <div v-if="jsonData">
-                <h1 class="numbered-title">
-                    <span aria-hidden="true" class="number">03</span>
-                    <span>Space Launch 101</span>
-                </h1>
+                <transition name="text-to-bottom" appear>
+                    <h1 class="numbered-title">
+                        <span aria-hidden="true" class="number">03</span>
+                        <span>Space Launch 101</span>
+                    </h1>
+                </transition>
 
-                <div class="technology__main-container">
-                    <div class="technology__first-container">
-                        <img :src="selectedImageDesktop" :alt="selectedTechnology.name" class="desktop">
-                        <img :src="selectedImageMobile" :alt="selectedTechnology.name" class="mobile">
-                    </div>
-
-                    <div class="technology__second-container">
-                        <div class="technology__tabs" aria-label="technologys list">
-                            
-                            <Tabs
-                                :tabData="jsonData"
-                                :tabSelectedIndex="selectedTechnologyIndex"
-                                tabType="technology"
-                                @update:tabSelectedIndex="updateSelectedIndex"
-                            />
-
+                <transition name="text-to-bottom" appear>
+                    <div class="technology__main-container">
+                        <div class="technology__first-container">
+                            <img :src="selectedImageDesktop" :alt="selectedTechnology.name" class="desktop">
+                            <img :src="selectedImageMobile" :alt="selectedTechnology.name" class="mobile">
                         </div>
 
-                        <article class="technology__info">
-                            <h6 class="subheading-02">The terminology...</h6>
-                            <h4>{{ selectedTechnology.name }}</h4>
-                            <p class="ff-sans text-accent">{{ selectedTechnology.description }}</p>
-                        </article>
+                        <div class="technology__second-container">
+                            <div class="technology__tabs" aria-label="technologys list">
+                                
+                                <Tabs
+                                    :tabData="jsonData"
+                                    :tabSelectedIndex="selectedTechnologyIndex"
+                                    tabType="technology"
+                                    @update:tabSelectedIndex="updateSelectedIndex"
+                                />
+
+                            </div>
+
+                            <article class="technology__info">
+                                <h6 class="subheading-02">The terminology...</h6>
+                                <h4>{{ selectedTechnology.name }}</h4>
+                                <p class="ff-sans text-accent">{{ selectedTechnology.description }}</p>
+                            </article>
+                        </div>
                     </div>
-                </div>
+                </transition>
 
-            </div>
-
-            <div v-else>
-                Loading...
             </div>
 
         </main>

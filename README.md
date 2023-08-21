@@ -16,7 +16,8 @@ A repository where I'll be including many different small and medium sized proje
 https://carla-ng.github.io/web-development-practice/animated-profile-card/index.html
 
 ### Built with
-HTML, SCSS
+* HTML
+* SCSS
 
 ### Credits
 * [Tyler Potts](https://tylerpotts.co.uk/) <br/>
@@ -35,10 +36,14 @@ HTML, SCSS
 </p>
 
 ### Built with
-HTML, SCSS, Vue, Vuex, JavaScript
+* HTML
+* SCSS
+* Vue
+* Vuex
+* JavaScript
 
 ### Demo
-* Coming soon
+https://carla-ng-space-tourism.netlify.app/
 
 ### Credits
 * [Frontend Mentor's space tourism website challenge](https://www.frontendmentor.io/challenges/space-tourism-multipage-website-gRWj1URZ3)

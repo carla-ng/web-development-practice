@@ -76,11 +76,11 @@ body {
     width: 100vh;
 
     #app {
-        background-attachment: fixed;
+        background-attachment: initial;
         background-color: $palette-color-dark;
         background-position: bottom center;
         background-repeat: no-repeat;
-        background-size: 100% 100%;
+        background-size: cover;
 
         overflow-x: hidden;
         overflow-y: scroll;

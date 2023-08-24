@@ -65,57 +65,56 @@ html:focus-within {
 
 /* Set core body defaults */
 body {
-    background-attachment: fixed;
-    background-color: $palette-color-dark;
-    background-position: bottom center;
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-
-    overflow-x: hidden;
-    overflow-y: scroll;
-    position: sticky;
-    top: 0;
-    bottom: 0;
-    min-height: 100vh;
-    width: 100vw;
-
     color: $palette-color-light;
     font-family: $font-family-sans;
     font-size: $font-size-18px;
     line-height: 1.5;
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
     text-rendering: optimizeSpeed;
-    
-    @media (min-width: $breakpoint-min-tablet) { background-position: center center; }
+    width: 100vh;
 
     #app {
-        position: absolute;
-        left: 0;
-        right: 0;
+        background-attachment: fixed;
+        background-color: $palette-color-dark;
+        background-position: bottom center;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+
+        overflow-x: hidden;
         overflow-y: scroll;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        min-height: 100vh;
+        width: 100vw;
+
+        @media (min-width: $breakpoint-min-tablet) { background-position: center center; }
     }
 
 
     /* Background images for each page */
 
-    &.home-page {
+    &.home-page #app {
         background-image: url('~@/assets/img/home/background-home-mobile.jpg');
         @media (min-width: $breakpoint-min-tablet) { background-image: url('~@/assets/img/home/background-home-tablet.jpg'); }
         @media (min-width: $breakpoint-min-desktop) { background-image: url('~@/assets/img/home/background-home-desktop.jpg'); }
     }
 
-    &.destination-page {
+    &.destination-page #app {
         background-image: url('~@/assets/img/destination/background-destination-mobile.jpg');
         @media (min-width: $breakpoint-min-tablet) { background-image: url('~@/assets/img/destination/background-destination-tablet.jpg'); }
         @media (min-width: $breakpoint-min-desktop) { background-image: url('~@/assets/img/destination/background-destination-desktop.jpg'); }
     }
 
-    &.crew-page {
+    &.crew-page #app {
         background-image: url('~@/assets/img/crew/background-crew-mobile.jpg');
         @media (min-width: $breakpoint-min-tablet) { background-image: url('~@/assets/img/crew/background-crew-tablet.jpg'); }
         @media (min-width: $breakpoint-min-desktop) { background-image: url('~@/assets/img/crew/background-crew-desktop.jpg'); }
     }
 
-    &.technology-page {
+    &.technology-page #app {
         background-image: url('~@/assets/img/technology/background-technology-mobile.jpg');
         @media (min-width: $breakpoint-min-tablet) { background-image: url('~@/assets/img/technology/background-technology-tablet.jpg'); }
         @media (min-width: $breakpoint-min-desktop) { background-image: url('~@/assets/img/technology/background-technology-desktop.jpg'); }

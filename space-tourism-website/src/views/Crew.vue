@@ -41,10 +41,15 @@
                         </div>
                     </transition>
 
-                    <div class="crew__image">
-                        <transition name="scale-up" appear>
+                    <div class="crew__image"
+                         @touchstart="startTouch"
+                         @touchmove="handleTouch"
+                         @touchend="endTouch">
+                        
+                         <transition name="scale-up" appear>
                             <img :src="selectedImage" :alt="selectedCrewMember.name">
                         </transition>
+                        
                     </div>
 
                 </div>

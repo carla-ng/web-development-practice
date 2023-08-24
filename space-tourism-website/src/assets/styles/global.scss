@@ -69,7 +69,7 @@ body {
     background-color: $palette-color-dark;
     background-position: bottom center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100% 100%;
     color: $palette-color-light;
     font-family: $font-family-sans;
     font-size: $font-size-18px;
@@ -169,7 +169,7 @@ input, button, textarea, select {
 #main {
     margin-top: 1rem;
     @media (min-width: $breakpoint-min-tablet) { margin-top: 3rem; }
-    @media (min-width: $breakpoint-min-desktop) { margin-top: 2.5rem; }
+    @media (min-width: $breakpoint-min-desktop) { margin-top: 5%; }
 }
 
 /* Colors */

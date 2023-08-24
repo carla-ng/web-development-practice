@@ -20,9 +20,9 @@
 
             <transition name="scale-up" appear>
                 <div class="home__second-container">
-                    <a href="#" class="home__explore-button ff-serif text-dark bg-light uppercase">
+                    <router-link to="/destination" class="home__explore-button ff-serif text-dark bg-light uppercase">
                         <span>Explore</span>
-                    </a>
+                    </router-link>
                 </div>
             </transition>
 
@@ -127,7 +127,7 @@ export default {
         .home__explore-button {
             aspect-ratio: 1;
             border-radius: 50%;
-            cursor: default;
+            cursor: pointer;
             display: inline-grid;
             letter-spacing: 0.125rem;
             position: relative;

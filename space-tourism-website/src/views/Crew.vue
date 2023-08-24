@@ -26,12 +26,17 @@
                                 
                             </div>
 
-                            <article class="crew__info">
+                            <article class="crew__info"
+                                     @touchstart="startTouch"
+                                     @touchmove="handleTouch"
+                                     @touchend="endTouch">
+
                                 <h5 class="ff-serif">{{ selectedCrewMember.role }}</h5>
 
                                 <p class="crew__info-name ff-serif text-light">{{ selectedCrewMember.name }}</p>
 
                                 <p class="crew__info-bio ff-sans text-accent">{{ selectedCrewMember.bio }}</p>
+
                             </article>
                         </div>
                     </transition>
@@ -72,6 +77,9 @@ export default {
         const store = useStore()
         const selectedCrewMemberIndex = ref(0)
 
+        let startX = 0
+        let diffX = 0
+
         // Dispatch the action to fetch JSON data
         const fetchData = async () => {
             await store.dispatch('fetchJsonData')
@@ -89,18 +97,37 @@ export default {
         })
 
         // Function to select a destination when a button/tab is clicked
-        const updateSelectedIndex = (index) => {
+        const updateSelectedIndex = ( index ) => {
             selectedCrewMemberIndex.value = index
         }
 
         // Change tabs with keyboard arrows
-        const handleKeyDown = (event) => {
+        const handleKeyDown = ( event ) => {
             if ( event.key === 'ArrowLeft' ) {
                 updateSelectedIndex(selectedCrewMemberIndex.value === 0 ? jsonData.value.crew.length - 1 : selectedCrewMemberIndex.value - 1)
                 event.preventDefault()
             } else if ( event.key === 'ArrowRight' ) {
                 updateSelectedIndex(selectedCrewMemberIndex.value === jsonData.value.crew.length - 1 ? 0 : selectedCrewMemberIndex.value + 1)
                 event.preventDefault()
+            }
+        }
+
+        // Touch/slide events for mobile
+        const startTouch = ( event ) => {
+            startX = event.touches[0].clientX
+            diffX = 0
+        }
+        const handleTouch = ( event ) => {
+            const currentX = event.touches[0].clientX
+            diffX = currentX - startX
+        }
+        const endTouch = () => {
+            if ( Math.abs(diffX) > 50 ) {
+                if ( diffX > 0 ) {
+                    updateSelectedIndex(selectedCrewMemberIndex.value === 0 ? jsonData.value.crew.length - 1 : selectedCrewMemberIndex.value - 1)
+                } else {
+                    updateSelectedIndex(selectedCrewMemberIndex.value === jsonData.value.crew.length - 1 ? 0 : selectedCrewMemberIndex.value + 1)
+                }
             }
         }
 
@@ -125,6 +152,9 @@ export default {
             selectedCrewMember,
             selectedCrewMemberIndex,
             selectedImage,
+            startTouch,
+            handleTouch,
+            endTouch
         };
     }
 }
@@ -237,9 +267,16 @@ export default {
             }
 
             img {
-                height: 55vh;
+                @media (max-width: $breakpoint-max-tablet) {
+                    height: 55vh;
+                    margin: 0 auto;
+                }
 
-                @media (max-width: $breakpoint-max-tablet) { margin: 0 auto; }
+                @media (max-width: $breakpoint-max-mobile) {
+                    height: 50vh;
+                    max-height: 50vh;
+                }
+
                 @media (min-width: $breakpoint-min-desktop) { height: 85vh; }
             }
         }

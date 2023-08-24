@@ -4,7 +4,9 @@
         <header class="header">
 
             <div class="header__logo">
-                <img src="../assets/shared/logo.svg" alt="Space Tourism logo" class="header__logo-img">
+                <router-link to="/">
+                    <img src="../assets/shared/logo.svg" alt="Space Tourism logo" class="header__logo-img">
+                </router-link>
             </div>
 
             <button class="header__hamburger" aria-controls="header__nav-ul" @click="toggleNavVisibility">

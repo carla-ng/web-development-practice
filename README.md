@@ -66,3 +66,5 @@ https://carla-ng-space-tourism.netlify.app/
 * https://api.nasa.gov/
 * https://kaboomjs.com/
 * Esoteric app
+* Video Games app
+* Work with different APIs from [RapidAPI](https://rapidapi.com/hub)

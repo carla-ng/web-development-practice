@@ -23,7 +23,6 @@ https://carla-ng.github.io/web-development-practice/animated-profile-card/index.
 * [Tyler Potts](https://tylerpotts.co.uk/) <br/>
 * [Karsten Winegeart](https://unsplash.com/@karsten116?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/pet?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
-
 <br/><br/>
 
 ## 02. Space Tourism Website
@@ -34,6 +33,10 @@ https://carla-ng.github.io/web-development-practice/animated-profile-card/index.
 <p align="center">
   <img src="https://github.com/carla-ng/web-development-practice/blob/main/space-tourism-website/src/assets/readme_image_1.jpg?raw=true" alt="Space Tourism Website">
 </p>
+
+[README file](https://github.com/carla-ng/web-development-practice/blob/main/space-tourism-website/README.md)
+
+<br/>
 
 ### Built with
 * HTML
@@ -47,8 +50,6 @@ https://carla-ng-space-tourism.netlify.app/
 
 ### Credits
 * [Frontend Mentor's space tourism website challenge](https://www.frontendmentor.io/challenges/space-tourism-multipage-website-gRWj1URZ3)
-
-
 
 <br/><br/>
 

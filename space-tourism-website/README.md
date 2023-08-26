@@ -1,4 +1,7 @@
-# space-tourism-website
+# Space Tourism Website
+Simple website about space tourism made with Vue 3 (Composition API).
+
+<br>
 
 ## Project setup
 ```

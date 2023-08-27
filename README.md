@@ -47,7 +47,6 @@ https://carla-ng.github.io/web-development-practice/animated-profile-card/index.
 
 ### Demo
 https://carla-ng-space-tourism.netlify.app/
-
 <br/>
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/1b860ab6-9c9d-4d35-9d82-34969204dab5/deploy-status)](https://app.netlify.com/sites/carla-ng-space-tourism/deploys)

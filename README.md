@@ -45,6 +45,9 @@ https://carla-ng.github.io/web-development-practice/animated-profile-card/index.
 * Vuex
 * JavaScript
 
+## To Do List / Future Fixes
+* Fix iOS mobile scroll
+
 ### Demo
 https://carla-ng-space-tourism.netlify.app/
 

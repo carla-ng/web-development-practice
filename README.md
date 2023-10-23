@@ -59,6 +59,32 @@ https://carla-ng-space-tourism.netlify.app/
 
 <br/><br/>
 
+## 03. Tic-Tact-Toe
+**Small sized project**. Very simple tic-tac-toe game developed with React.
+
+<br/>
+
+<p align="center">
+  <!-- <img src="https://github.com/carla-ng/web-development-practice/blob/main/space-tourism-website/src/assets/readme_image_1.jpg?raw=true" alt="Space Tourism Website"> -->
+</p>
+
+[README file](https://github.com/carla-ng/web-development-practice/blob/main/tic-tac-toe/README.md)
+
+<br/>
+
+### Built with
+* HTML
+* CSS
+* React
+* JavaScript
+
+### Credits
+* [React's Tic-Tac-Toe Tutorial](https://react.dev/learn/tutorial-tic-tac-toe)
+
+
+<br/><br/>
+
+
 ## :bulb: Ideas to develop
 * [Random Meal Generator](https://github.com/florinpop17/app-ideas/blob/master/Projects/1-Beginner/Random-Meal-Generator.md)
 * [Chrome Theme Extension](https://github.com/florinpop17/app-ideas/blob/master/Projects/2-Intermediate/Chrome-Theme-Extension.md)

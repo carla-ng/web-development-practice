@@ -10,9 +10,13 @@
 ## Demo
 https://carla-ng.github.io/web-development-practice/animated-profile-card/index.html
 
+<br>
+
 ## Built with
 * HTML
 * SCSS
+
+<br>
 
 ## Credits
 * [Tyler Potts](https://tylerpotts.co.uk/) <br>

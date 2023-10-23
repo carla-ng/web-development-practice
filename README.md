@@ -1,12 +1,12 @@
 # Web Development Practice
 A repository where I'll be including many different small and medium sized projects to practice and learn new skills.
 
-<br/><br/>
+<br><br>
 
 ## 01. Animated Profile Card
 **Small sized project**. Hover animation of a profile Card and buttons with SCSS.
 
-<br/>
+<br>
 
 <p align="center">
   <img src="https://github.com/carla-ng/web-development-practice/blob/main/animated-profile-card/assets/readme_image_1.jpg?raw=true" alt="Profile Card">
@@ -20,15 +20,15 @@ https://carla-ng.github.io/web-development-practice/animated-profile-card/index.
 * SCSS
 
 ### Credits
-* [Tyler Potts](https://tylerpotts.co.uk/) <br/>
+* [Tyler Potts](https://tylerpotts.co.uk/) <br>
 * [Karsten Winegeart](https://unsplash.com/@karsten116?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/pet?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
-<br/><br/>
+<br><br>
 
 ## 02. Space Tourism Website
 **Medium sized project**. Simple website about space tourism made with Vue 3 (Composition API).
 
-<br/>
+<br>
 
 <p align="center">
   <img src="https://github.com/carla-ng/web-development-practice/blob/main/space-tourism-website/src/assets/readme_image_1.jpg?raw=true" alt="Space Tourism Website">
@@ -36,7 +36,7 @@ https://carla-ng.github.io/web-development-practice/animated-profile-card/index.
 
 [README file](https://github.com/carla-ng/web-development-practice/blob/main/space-tourism-website/README.md)
 
-<br/>
+<br>
 
 ### Built with
 * HTML
@@ -50,27 +50,27 @@ https://carla-ng.github.io/web-development-practice/animated-profile-card/index.
 
 ### Demo
 https://carla-ng-space-tourism.netlify.app/
-<br/>
+<br>
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/1b860ab6-9c9d-4d35-9d82-34969204dab5/deploy-status)](https://app.netlify.com/sites/carla-ng-space-tourism/deploys)
 
 ### Credits
 * [Frontend Mentor's space tourism website challenge](https://www.frontendmentor.io/challenges/space-tourism-multipage-website-gRWj1URZ3)
 
-<br/><br/>
+<br><br>
 
 ## 03. Tic-Tact-Toe
 **Small sized project**. Very simple tic-tac-toe game developed with React.
 
-<br/>
+<br>
 
 <p align="center">
-  <!-- <img src="https://github.com/carla-ng/web-development-practice/blob/main/space-tourism-website/src/assets/readme_image_1.jpg?raw=true" alt="Space Tourism Website"> -->
+  <img src="https://github.com/carla-ng/web-development-practice/blob/main/tic-tac-toe/src/assets/readme_image_1.jpg?raw=true" alt="React Tic Tac Toe">
 </p>
 
 [README file](https://github.com/carla-ng/web-development-practice/blob/main/tic-tac-toe/README.md)
 
-<br/>
+<br>
 
 ### Built with
 * HTML
@@ -82,7 +82,7 @@ https://carla-ng-space-tourism.netlify.app/
 * [React's Tic-Tac-Toe Tutorial](https://react.dev/learn/tutorial-tic-tac-toe)
 
 
-<br/><br/>
+<br><br>
 
 
 ## :bulb: Ideas to develop

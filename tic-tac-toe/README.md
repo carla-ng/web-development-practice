@@ -1,3 +1,30 @@
+# Tic-Tact-Toe
+**Small sized project**. Very simple tic-tac-toe game developed with React.
+
+<br>
+
+<p align="center">
+    <img src="https://github.com/carla-ng/web-development-practice/blob/main/tic-tac-toe/src/assets/readme_image_1.jpg?raw=true" alt="React Tic Tac Toe">
+</p>
+
+[README file](https://github.com/carla-ng/web-development-practice/blob/main/tic-tac-toe/README.md)
+
+<br>
+
+## Built with
+* HTML
+* CSS
+* React
+* JavaScript
+
+## Credits
+* [React's Tic-Tac-Toe Tutorial](https://react.dev/learn/tutorial-tic-tac-toe)
+
+
+<br><br><br>
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

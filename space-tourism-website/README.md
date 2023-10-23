@@ -1,7 +1,39 @@
 # Space Tourism Website
-Simple website about space tourism made with Vue 3 (Composition API).
+**Medium sized project**. Simple website about space tourism made with Vue 3 (Composition API).
 
 <br>
+
+<p align="center">
+  <img src="https://github.com/carla-ng/web-development-practice/blob/main/space-tourism-website/src/assets/readme_image_1.jpg?raw=true" alt="Space Tourism Website">
+</p>
+
+[README file](https://github.com/carla-ng/web-development-practice/blob/main/space-tourism-website/README.md)
+
+<br>
+
+## Built with
+* HTML
+* SCSS
+* Vue
+* Vuex
+* JavaScript
+
+## To Do List / Future Fixes
+* Fix iOS mobile scroll
+
+## Demo
+https://carla-ng-space-tourism.netlify.app/
+
+<br>
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/1b860ab6-9c9d-4d35-9d82-34969204dab5/deploy-status)](https://app.netlify.com/sites/carla-ng-space-tourism/deploys)
+
+## Credits
+* [Frontend Mentor's space tourism website challenge](https://www.frontendmentor.io/challenges/space-tourism-multipage-website-gRWj1URZ3)
+
+
+<br><br>
+
 
 ## Project setup
 ```

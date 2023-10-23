@@ -3,89 +3,34 @@ A repository where I'll be including many different small and medium sized proje
 
 <br><br>
 
+
 ## 01. Animated Profile Card
-**Small sized project**. Hover animation of a profile Card and buttons with SCSS.
+
+| Preview  | Project Size | Built with | Description | Demo | Credits | Detailed info |
+| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
+| <img src="https://github.com/carla-ng/web-development-practice/blob/main/animated-profile-card/assets/readme_image_1.jpg?raw=true" alt="Profile Card" width="300px" height="auto">  | Small | <ul><li>HTML</li><li>SCSS</li></ul> | Hover animation of a profile Card and buttons with SCSS. | [Github_Pages](https://carla-ng.github.io/web-development-practice/animated-profile-card/index.html) | <ul><li>[Tyler Potts](https://tylerpotts.co.uk/)</li><li>[Karsten Winegeart](https://unsplash.com/@karsten116?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)</li></ul> | [README](https://github.com/carla-ng/web-development-practice/blob/main/animated-profile-card/README.md)
 
 <br>
-
-<p align="center">
-  <img src="https://github.com/carla-ng/web-development-practice/blob/main/animated-profile-card/assets/readme_image_1.jpg?raw=true" alt="Profile Card">
-</p>
-
-### Demo
-https://carla-ng.github.io/web-development-practice/animated-profile-card/index.html
-
-### Built with
-* HTML
-* SCSS
-
-### Credits
-* [Tyler Potts](https://tylerpotts.co.uk/) <br>
-* [Karsten Winegeart](https://unsplash.com/@karsten116?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/pet?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
-
-<br><br>
 
 ## 02. Space Tourism Website
-**Medium sized project**. Simple website about space tourism made with Vue 3 (Composition API).
+
+| Preview | Project Size | Built with | Description | Demo | Credits | More info |
+| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
+| <img src="https://github.com/carla-ng/web-development-practice/blob/main/space-tourism-website/src/assets/readme_image_1.jpg?raw=true" alt="Space Tourism Website" width="300px" height="auto">  | Medium | <ul><li>HTML</li><li>SCSS</li><li>Vue</li><li>Vuex</li><li>JavaScript</li></ul> | Simple website about space tourism made with Vue 3 (Composition API). | [Netlify](https://carla-ng-space-tourism.netlify.app/) | <ul><li>[Frontend Mentor's space tourism website challenge](https://www.frontendmentor.io/challenges/space-tourism-multipage-website-gRWj1URZ3)</li></ul> | [README](https://github.com/carla-ng/web-development-practice/blob/main/space-tourism-website/README.md)
 
 <br>
 
-<p align="center">
-  <img src="https://github.com/carla-ng/web-development-practice/blob/main/space-tourism-website/src/assets/readme_image_1.jpg?raw=true" alt="Space Tourism Website">
-</p>
+## 03. React's Tic-Tac-Toe
 
-[README file](https://github.com/carla-ng/web-development-practice/blob/main/space-tourism-website/README.md)
-
-<br>
-
-### Built with
-* HTML
-* SCSS
-* Vue
-* Vuex
-* JavaScript
-
-### To Do List / Future Fixes
-* Fix iOS mobile scroll
-
-### Demo
-https://carla-ng-space-tourism.netlify.app/
-<br>
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/1b860ab6-9c9d-4d35-9d82-34969204dab5/deploy-status)](https://app.netlify.com/sites/carla-ng-space-tourism/deploys)
-
-### Credits
-* [Frontend Mentor's space tourism website challenge](https://www.frontendmentor.io/challenges/space-tourism-multipage-website-gRWj1URZ3)
-
-<br><br>
-
-## 03. Tic-Tact-Toe
-**Small sized project**. Very simple tic-tac-toe game developed with React.
-
-<br>
-
-<p align="center">
-  <img src="https://github.com/carla-ng/web-development-practice/blob/main/tic-tac-toe/src/assets/readme_image_1.jpg?raw=true" alt="React Tic Tac Toe">
-</p>
-
-[README file](https://github.com/carla-ng/web-development-practice/blob/main/tic-tac-toe/README.md)
-
-<br>
-
-### Built with
-* HTML
-* CSS
-* React
-* JavaScript
-
-### Credits
-* [React's Tic-Tac-Toe Tutorial](https://react.dev/learn/tutorial-tic-tac-toe)
+| Preview | Project Size | Built with | Description | Demo | Credits | More info |
+| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
+| <img src="https://github.com/carla-ng/web-development-practice/blob/main/tic-tac-toe/src/assets/readme_image_1.jpg?raw=true" alt="React Tic Tac Toe" width="300px" height="auto">  | Small | <ul><li>HTML</li><li>CSS</li><li>React</li><li>JavaScript</li></ul> | Very simple tic-tac-toe game developed with React. | - | <ul><li>[React's Tic-Tac-Toe tutorial](https://react.dev/learn/tutorial-tic-tac-toe)</li></ul> | [README](https://github.com/carla-ng/web-development-practice/blob/main/tic-tac-toe/README.md)
 
 
 <br><br>
 
 
-## :bulb: Ideas to develop
+## :bulb: More ideas to develop
 * [Random Meal Generator](https://github.com/florinpop17/app-ideas/blob/master/Projects/1-Beginner/Random-Meal-Generator.md)
 * [Chrome Theme Extension](https://github.com/florinpop17/app-ideas/blob/master/Projects/2-Intermediate/Chrome-Theme-Extension.md)
 * [Christmas Lights](https://github.com/florinpop17/app-ideas/blob/master/Projects/1-Beginner/Christmas-Lights-App.md)

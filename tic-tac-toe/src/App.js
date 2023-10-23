@@ -26,6 +26,7 @@ function calculateWinner( squares ) {
     return null;
 }
 
+
 // Squares of the board
 function Square({ value, onSquareClick }) {
     return <button className="square" onClick={ onSquareClick }> { value } </button>;
@@ -33,7 +34,7 @@ function Square({ value, onSquareClick }) {
 
 
 // Tic-tac-toe board with nine Squares
-function Board({ xIsNext, squares, onPlay }) {
+function Board({ xIsNext, squares, onPlay, currentMove }) {
     // const [xIsNext, setXIsNext] = useState(true);
     // const [squares, setSquares] = useState(Array(9).fill(null));
 
@@ -61,6 +62,8 @@ function Board({ xIsNext, squares, onPlay }) {
     let status;
     if ( winner ) {
         status = "The winner is: " + winner;
+    } else if ( !winner && currentMove === 9 ) {
+        status = "It's a draw!"
     } else {
         status = "Current player: " + ( xIsNext ? "X" : "O" );
     }
@@ -90,7 +93,7 @@ function Board({ xIsNext, squares, onPlay }) {
 }
 
 
-// 
+// Game history and info
 export default function Game() {
     const [history, setHistory] = useState([Array(9).fill(null)]);
     const [currentMove, setCurrentMove] = useState(0);
@@ -124,7 +127,7 @@ export default function Game() {
 
         return (
             <li key={ move }>
-                <button onClick={() => jumpTo( move )}>{description}</button>
+                <button onClick={() => jumpTo( move )}>{ description }</button>
             </li>
         );
     });
@@ -133,7 +136,7 @@ export default function Game() {
     return (
         <div className="game">
             <div className="game-board">
-                <Board xIsNext={ xIsNext } squares={ currentSquares } onPlay={ handlePlay }  />
+                <Board xIsNext={ xIsNext } squares={ currentSquares } onPlay={ handlePlay } currentMove={ currentMove }  />
             </div>
             <div className="game-info">
                 <ol>{moves}</ol>

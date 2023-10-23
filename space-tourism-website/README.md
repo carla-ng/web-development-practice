@@ -9,7 +9,7 @@
 
 <br>
 
-## Built with
+## :hammer_and_pick: Built With
 * HTML
 * SCSS
 * Vue
@@ -23,7 +23,7 @@
 
 <br>
 
-## Demo
+## :globe_with_meridians: Demo
 https://carla-ng-space-tourism.netlify.app/
 
 <br>
@@ -31,13 +31,6 @@ https://carla-ng-space-tourism.netlify.app/
 [![Netlify Status](https://api.netlify.com/api/v1/badges/1b860ab6-9c9d-4d35-9d82-34969204dab5/deploy-status)](https://app.netlify.com/sites/carla-ng-space-tourism/deploys)
 
 <br>
-
-## Credits
-* [Frontend Mentor's space tourism website challenge](https://www.frontendmentor.io/challenges/space-tourism-multipage-website-gRWj1URZ3)
-
-
-<br><br>
-
 
 ## Project setup
 ```
@@ -61,3 +54,9 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+<br>
+
+## :clap: Acknowledgments
+* [Frontend Mentor's space tourism website challenge](https://www.frontendmentor.io/challenges/space-tourism-multipage-website-gRWj1URZ3)
+

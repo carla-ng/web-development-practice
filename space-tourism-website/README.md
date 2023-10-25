@@ -9,6 +9,11 @@
 
 <br>
 
+## :globe_with_meridians: Demo
+[https://carla-ng-space-tourism.netlify.app/](https://carla-ng-space-tourism.netlify.app/)
+
+<br>
+
 ## :hammer_and_pick: Built With
 * HTML
 * SCSS
@@ -20,11 +25,6 @@
 
 ## To Do List / Future Fixes
 * Fix iOS mobile scroll
-
-<br>
-
-## :globe_with_meridians: Demo
-[https://carla-ng-space-tourism.netlify.app/](https://carla-ng-space-tourism.netlify.app/)
 
 <br>
 

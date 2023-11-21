@@ -30,9 +30,9 @@ A repository where I'll be including many different small and medium sized proje
 
 ## 04. QR Generator
 
-| Project Size | Built with | Description | Demo | More info |
-| ------------- | ------------- | ------------- | ------------- | ------------- |
-| Small | <ul><li>Node.js</li><li>npm</li></ul> | QR generator made with npm modules. | - | [README](https://github.com/carla-ng/web-development-practice/blob/main/qr-code-generator/README.md)
+| Preview | Project Size | Built with | Description | Demo | More info |
+| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
+| - | Small | <ul><li>Node.js</li><li>npm</li></ul> | QR generator made with npm modules. | - | [README](https://github.com/carla-ng/web-development-practice/blob/main/qr-code-generator/README.md)
 
 
 <br><br>

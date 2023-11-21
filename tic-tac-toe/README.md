@@ -1,13 +1,13 @@
-# React's Tic-Tact-Toe
-**Small sized project**. Very simple tic-tac-toe game developed with React.
-
-<br><br>
-
 <p align="center">
     <img src="https://github.com/carla-ng/web-development-practice/blob/main/tic-tac-toe/src/assets/readme_image_1.jpg?raw=true" alt="React Tic Tac Toe">
 </p>
 
 <br>
+
+# React's Tic-Tact-Toe
+**Small sized project**. Very simple tic-tac-toe game developed with React.
+
+<br><br>
 
 ## :hammer_and_pick: Built with
 * HTML
@@ -58,7 +58,7 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-<br>
+<br><br>
 
 ## :clap: Acknowledgments
 * [React's Tic-Tac-Toe tutorial](https://react.dev/learn/tutorial-tic-tac-toe)

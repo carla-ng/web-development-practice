@@ -6,7 +6,7 @@ A repository where I'll be including many different small and medium sized proje
 
 ## 01. Animated Profile Card
 
-| Preview  | Project Size | Built with | Description | Demo |Detailed info |
+| Preview  | Project Size | Built with | Description | Demo | More info |
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
 | <img src="https://github.com/carla-ng/web-development-practice/blob/main/animated-profile-card/assets/readme_image_1.jpg?raw=true" alt="Profile Card" width="300px" height="auto"> | Small | <ul><li>HTML</li><li>SCSS</li></ul> | Hover animation of a profile Card and buttons with SCSS. | [Github Pages](https://carla-ng.github.io/web-development-practice/animated-profile-card/index.html) | [README](https://github.com/carla-ng/web-development-practice/blob/main/animated-profile-card/README.md)
 
@@ -49,8 +49,8 @@ A repository where I'll be including many different small and medium sized proje
 <br>
 
 ### Ideas for bigger projects:
-* https://api.nasa.gov/
-* https://kaboomjs.com/
+* [https://api.nasa.gov/](https://api.nasa.gov/)
+* [https://kaboomjs.com/](https://kaboomjs.com/)
 * Esoteric app
 * Video Games app
 * Work with different APIs from [RapidAPI](https://rapidapi.com/hub)

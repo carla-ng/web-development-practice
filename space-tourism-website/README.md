@@ -1,11 +1,16 @@
+<p align="center">
+  <img src="https://github.com/carla-ng/web-development-practice/blob/main/space-tourism-website/src/assets/readme_image_1.jpg?raw=true" alt="Space Tourism Website">
+</p>
+
+<br>
+
 # Space Tourism Website
 **Medium sized project**. Simple website about space tourism made with Vue 3 (Composition API).
 
 <br>
 
-<p align="center">
-  <img src="https://github.com/carla-ng/web-development-practice/blob/main/space-tourism-website/src/assets/readme_image_1.jpg?raw=true" alt="Space Tourism Website">
-</p>
+## :globe_with_meridians: Demo
+[https://carla-ng-space-tourism.netlify.app/](https://carla-ng-space-tourism.netlify.app/)
 
 <br>
 
@@ -20,11 +25,6 @@
 
 ## To Do List / Future Fixes
 * Fix iOS mobile scroll
-
-<br>
-
-## :globe_with_meridians: Demo
-https://carla-ng-space-tourism.netlify.app/
 
 <br>
 
@@ -55,7 +55,7 @@ npm run lint
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
-<br>
+<br><br>
 
 ## :clap: Acknowledgments
 * [Frontend Mentor's space tourism website challenge](https://www.frontendmentor.io/challenges/space-tourism-multipage-website-gRWj1URZ3)

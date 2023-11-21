@@ -26,6 +26,14 @@ A repository where I'll be including many different small and medium sized proje
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
 | <img src="https://github.com/carla-ng/web-development-practice/blob/main/tic-tac-toe/src/assets/readme_image_1.jpg?raw=true" alt="React Tic Tac Toe" width="300px" height="auto"> | Small | <ul><li>HTML</li><li>CSS</li><li>React</li><li>JavaScript</li></ul> | Very simple tic-tac-toe game developed with React. | - | [README](https://github.com/carla-ng/web-development-practice/blob/main/tic-tac-toe/README.md)
 
+<br>
+
+## 04. QR Generator
+
+| Project Size | Built with | Description | Demo | More info |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| Small | <ul><li>Node.js</li><li>npm</li></ul> | QR generator made with npm modules. | - | [README](https://github.com/carla-ng/web-development-practice/blob/main/qr-code-generator/README.md)
+
 
 <br><br>
 

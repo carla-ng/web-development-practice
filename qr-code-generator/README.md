@@ -6,3 +6,8 @@
 ## :hammer_and_pick: Built with
 * Node.js
 * npm ( inquirer, qr-image )
+
+<br>
+
+## :clap: Acknowledgments
+* Project idea by [Dr Angela Yu](https://www.appbrewery.co/)

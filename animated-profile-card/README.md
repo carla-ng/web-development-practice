@@ -21,5 +21,5 @@
 <br>
 
 ## :clap: Acknowledgments
-* [Tyler Potts](https://tylerpotts.co.uk/)
+* Project idea by [Tyler Potts](https://tylerpotts.co.uk/)
 * [Karsten Winegeart](https://unsplash.com/@karsten116?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/pet?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

@@ -1,4 +1,10 @@
-# Keeper App
+<p align="center">
+  <img src="https://github.com/carla-ng/web-development-practice/blob/main/keeper/src/assets/readme_image_1.jpg?raw=true" alt="Kepper App">
+</p>
+
+<br>
+
+ Keeper App
 **Small sized project**. Simple notes app.
 
 <br><br>

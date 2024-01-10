@@ -40,7 +40,7 @@ A repository where I'll be including many different small and medium sized proje
 
 | Preview | Project Size | Built with | Description | Demo | More info |
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
-| - | Small | <ul><li>HTML</li><li>CSS</li><li>React</li><li>JavaScript</li></ul> | Simple notes app. | - | [README](https://github.com/carla-ng/web-development-practice/blob/main/keeper/README.md)
+| <img src="https://github.com/carla-ng/web-development-practice/blob/main/keeper/src/assets/readme_image_1.jpg?raw=true" alt="Keeper App" width="300px" height="auto"> | Small | <ul><li>HTML</li><li>CSS</li><li>React</li><li>JavaScript</li></ul> | Simple notes app. | - | [README](https://github.com/carla-ng/web-development-practice/blob/main/keeper/README.md)
 
 <br><br>
 

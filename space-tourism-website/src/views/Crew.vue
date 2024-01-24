@@ -182,7 +182,7 @@ export default {
         align-items: center;
         flex-direction: column;
 
-        @media (min-width: $breakpoint-min-desktop) {
+        @media (min-width: $breakpoint-min-desktop-big) {
             align-items: flex-end;
             flex-direction: row;
             justify-content: space-between;
@@ -193,28 +193,28 @@ export default {
             flex-direction: column;
             order: 2;
 
-            @media (max-width: $breakpoint-max-tablet) { align-items: center; }
+            @media (max-width: $breakpoint-max-desktop) { align-items: center; }
 
-            @media (min-width: $breakpoint-min-tablet) { width: 60%; }
+            @media (min-width: $breakpoint-min-desktop) { width: 60%; }
 
             .crew__dot-indicators {
                 display: flex;
                 margin-bottom: 2rem;
                 order: 1;
 
-                @media (min-width: $breakpoint-min-tablet) {
+                @media (min-width: $breakpoint-min-desktop) {
                     margin-bottom: 2.5rem;
                     order: 2;
                 }
 
-                @media (min-width: $breakpoint-min-desktop) { margin-bottom: 3rem; }
+                @media (min-width: $breakpoint-min-desktop-big) { margin-bottom: 3rem; }
             }
 
             article.crew__info {
                 order: 2;
 
-                @media (min-width: $breakpoint-min-tablet) { order: 1; }
-                @media (max-width: $breakpoint-max-tablet) { text-align: center; }
+                @media (min-width: $breakpoint-min-desktop) { order: 1; }
+                @media (max-width: $breakpoint-max-desktop) { text-align: center; }
 
                 h5 {
                     color: rgba($palette-color-light, 0.5);
@@ -229,8 +229,8 @@ export default {
                     margin-bottom: 1rem;
                     text-transform: uppercase;
 
-                    @media (min-width: $breakpoint-min-tablet) { font-size: 2.5rem; }
-                    @media (min-width: $breakpoint-min-desktop) { font-size: 3.5rem; }
+                    @media (min-width: $breakpoint-min-desktop) { font-size: 2.5rem; }
+                    @media (min-width: $breakpoint-min-desktop-big) { font-size: 3.5rem; }
                 }
 
                 p.crew__info-bio {
@@ -239,15 +239,15 @@ export default {
                     margin-bottom: 2rem;
                     max-width: 50ch;
 
-                    @media (min-width: $breakpoint-min-tablet) {
+                    @media (min-width: $breakpoint-min-desktop) {
                         font-size: 1rem;
                         line-height: 1.75rem;
                         margin-bottom: 2.5rem;
                     }
 
-                    @media (min-width: $breakpoint-min-tablet) and (max-width: $breakpoint-max-tablet) { min-height: 7rem; }
+                    @media (min-width: $breakpoint-min-desktop) and (max-width: $breakpoint-max-desktop) { min-height: 7rem; }
 
-                    @media (min-width: $breakpoint-min-desktop) {
+                    @media (min-width: $breakpoint-min-desktop-big) {
                         font-size: 1.125rem;
                         line-height: 2rem;
                         margin-bottom: 7.5rem;
@@ -260,14 +260,14 @@ export default {
         .crew__image {
             order: 1;
 
-            @media (min-width: $breakpoint-min-tablet) { order: 2; }
+            @media (min-width: $breakpoint-min-desktop) { order: 2; }
 
-            @media (max-width: $breakpoint-max-tablet) {
+            @media (max-width: $breakpoint-max-desktop) {
                 border-bottom: 1px solid rgba($palette-color-light, 0.3);
                 margin-bottom: 2rem;
             }
 
-            @media (min-width: $breakpoint-min-desktop) {
+            @media (min-width: $breakpoint-min-desktop-big) {
                 display: flex;
                 justify-content: flex-end;
             }
@@ -275,17 +275,17 @@ export default {
             img {
                 max-width: fit-content;
 
-                @media (max-width: $breakpoint-max-tablet) {
+                @media (max-width: $breakpoint-max-desktop) {
                     height: 55vh;
                     margin: 0 auto;
                 }
 
-                @media (max-width: $breakpoint-max-mobile) {
+                @media (max-width: $breakpoint-max-tablet) {
                     height: 50vh;
                     max-height: 50vh;
                 }
 
-                @media (min-width: $breakpoint-min-desktop) { height: 62vh; }
+                @media (min-width: $breakpoint-min-desktop-big) { height: 62vh; }
             }
         }
 

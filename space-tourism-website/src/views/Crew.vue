@@ -195,6 +195,8 @@ export default {
 
             @media (max-width: $breakpoint-max-tablet) { align-items: center; }
 
+            @media (min-width: $breakpoint-min-tablet) { width: 60%; }
+
             .crew__dot-indicators {
                 display: flex;
                 margin-bottom: 2rem;
@@ -226,7 +228,6 @@ export default {
                     line-height: normal;
                     margin-bottom: 1rem;
                     text-transform: uppercase;
-                    white-space: nowrap;
 
                     @media (min-width: $breakpoint-min-tablet) { font-size: 2.5rem; }
                     @media (min-width: $breakpoint-min-desktop) { font-size: 3.5rem; }
@@ -272,6 +273,8 @@ export default {
             }
 
             img {
+                max-width: fit-content;
+
                 @media (max-width: $breakpoint-max-tablet) {
                     height: 55vh;
                     margin: 0 auto;
@@ -282,7 +285,7 @@ export default {
                     max-height: 50vh;
                 }
 
-                @media (min-width: $breakpoint-min-desktop) { height: 85vh; }
+                @media (min-width: $breakpoint-min-desktop) { height: 62vh; }
             }
         }
 

@@ -44,12 +44,16 @@ A repository where I'll be including many different small and medium sized proje
 
 <br><br>
 
+## Others
+
+| Project Name | Built with | Description | More info |
+| ------------- | ------------- | ------------- | ------------- |
+| React Practice | <ul><li>React</li><li>Typescript</li><li>Vite</li><li>Bootstrap</li></ul> | Repository to practice React with Typescript. | [README](https://github.com/carla-ng/web-development-practice/blob/main/react-practice/README.md)
+
+<br><br>
+
 
 ## :bulb: More ideas to develop
-* [Random Meal Generator](https://github.com/florinpop17/app-ideas/blob/master/Projects/1-Beginner/Random-Meal-Generator.md)
-* [Chrome Theme Extension](https://github.com/florinpop17/app-ideas/blob/master/Projects/2-Intermediate/Chrome-Theme-Extension.md)
-* [Christmas Lights](https://github.com/florinpop17/app-ideas/blob/master/Projects/1-Beginner/Christmas-Lights-App.md)
-* [Elevator](https://github.com/florinpop17/app-ideas/blob/master/Projects/3-Advanced/Elevator-App.md)
 * [Movie Seat Booking](https://github.com/bradtraversy/vanillawebprojects/tree/master/movie-seat-booking)
 * [Simple Breathing App](https://github.com/bradtraversy/vanillawebprojects/tree/master/relaxer-app)
 

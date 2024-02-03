@@ -1,6 +1,6 @@
 # React Practice
 
-Repository to practice React with Typescript.
+Repository to practice React.
 
 <br>
 

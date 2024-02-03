@@ -6,10 +6,17 @@ Repository to practice React.
 
 ## :hammer_and_pick: Built with
 
+# ts-components-test
 * React
 * Typescript
 * Vite
 * Bootstrap
+
+<br>
+
+# fetching-test
+* React
+* Vite
 
 <br>
 

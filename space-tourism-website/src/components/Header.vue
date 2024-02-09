@@ -9,8 +9,8 @@
                 </router-link>
             </div>
 
-            <button class="header__hamburger" aria-controls="header__nav-ul" @click="toggleNavVisibility">
-                <span class="sr-only" :aria-expanded="ariaExpanded">Menu</span>
+            <button class="header__hamburger" aria-controls="header__nav" aria-label="Toggle Menu" :aria-expanded="ariaExpanded" @click="toggleNavVisibility">
+                <span class="sr-only"  role="button">Menu</span>
             </button>
 
             <nav class="header__nav" :class="{ 'header--visible': navVisible }">

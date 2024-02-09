@@ -9,7 +9,7 @@
                 </router-link>
             </div>
 
-            <button class="header__hamburger" role="button" aria-controls="header__nav" aria-label="Toggle Menu" :aria-expanded="ariaExpanded" @click="toggleNavVisibility">
+            <button class="header__hamburger" aria-controls="header__nav" aria-label="Toggle Menu" :aria-expanded="ariaExpanded" @click="toggleNavVisibility">
                 <span class="sr-only">Menu</span>
             </button>
 

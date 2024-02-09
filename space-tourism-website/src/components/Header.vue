@@ -9,11 +9,11 @@
                 </router-link>
             </div>
 
-            <button class="header__hamburger" aria-controls="header__nav" aria-label="Toggle Menu" :aria-expanded="ariaExpanded" @click="toggleNavVisibility">
-                <span class="sr-only"  role="button">Menu</span>
+            <button class="header__hamburger" role="button" aria-controls="header__nav" aria-label="Toggle Menu" :aria-expanded="ariaExpanded" @click="toggleNavVisibility">
+                <span class="sr-only">Menu</span>
             </button>
 
-            <nav class="header__nav" :class="{ 'header--visible': navVisible }">
+            <nav id="header__nav" class="header__nav" :class="{ 'header--visible': navVisible }">
                 <transition-group class="header__nav-ul" tag="ul" name="nav-li-load" appear>
                     <li v-for="item in navItems" :key="item.path" :class="{ active: isActive(item.path) }">
                         <router-link :to="item.path" class="text-light ff-sans-cond letter-spacing-02 uppercase">

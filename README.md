@@ -48,7 +48,7 @@ A repository where I'll be including many different small and medium sized proje
 
 | Project Name | Built with | Description | More info |
 | ------------- | ------------- | ------------- | ------------- |
-| React Practice | <ul><li>React</li><li>Typescript</li><li>Vite</li><li>Bootstrap</li></ul> | Repository to practice React with Typescript. | [README](https://github.com/carla-ng/web-development-practice/blob/main/react-practice/README.md)
+| React Practice | <ul><li>React</li><li>Typescript</li><li>Javascript</li><li>Vite</li><li>Bootstrap</li></ul> | Repository to practice React. | [README](https://github.com/carla-ng/web-development-practice/blob/main/react-practice/README.md)
 
 <br><br>
 

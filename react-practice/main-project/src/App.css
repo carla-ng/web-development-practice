@@ -9,6 +9,7 @@ body {
     font-size: 16px;
 }
 
+
 #airbnb-container {
     font-family: "Poppins", sans-serif;
 
@@ -124,6 +125,7 @@ body {
     }
 }
 
+
 #memegenerator-container {
     font-family: "Poppins", sans-serif;
     margin: 0 auto;
@@ -198,11 +200,47 @@ body {
             }
         }
 
-        .memegenerator-form-image {
-            display: flex;
+        .memegenerator-form-image-container {
             margin: 40px auto 10px auto;
             max-width: 500px;
-            width: 100%;
+            position: relative;
+
+            .memegenerator-form-image {
+                display: flex;
+                
+                width: 100%;
+            }
+
+            .memegenerator-form-toptext, .memegenerator-form-bottomtext {
+                color: #fff;
+                font-size: 2rem;
+                left: 0;
+                letter-spacing: 2px;
+                margin: 0;
+                padding: 20px;
+                position: absolute;
+                right: 0;
+                text-align: center;
+                text-shadow:
+                    2px 2px 0 #000,
+                    -2px -2px 0 #000,
+                    2px -2px 0 #000,
+                    -2px 2px 0 #000,
+                    0 2px 0 #000,
+                    2px 0 0 #000,
+                    0 -2px 0 #000,
+                    -2px 0 0 #000,
+                    2px 2px 5px #000;
+                text-transform: uppercase;
+            }
+
+            .memegenerator-form-toptext {
+                top: 0;
+            }
+
+            .memegenerator-form-bottomtext {
+                bottom: 0;
+            }
         }
     }
 }

@@ -1,11 +1,9 @@
-import { useState } from "react"
-import memesData from "./../assets/data/memegenerator/memesData.js"
+import { useEffect, useState } from "react"
+// import memesData from "./../assets/data/memegenerator/memesData.js"
 
 function MemeGenerator() {
 
-    //const [memeImage, setMemeImage] = useState("https://i.imgflip.com/3i7p.jpg")
-
-    const [allMemeImages, setAllMemeImages] = useState(memesData)
+    const [allMemes, setAllMemes] = useState([])
 
     const [meme, setMeme] = useState({
         topText: "",
@@ -13,21 +11,43 @@ function MemeGenerator() {
         randomImage: "https://i.imgflip.com/3i7p.jpg"
     })
 
+
+    useEffect(() => {
+        async function getMemes() {
+            const res = await fetch("https://api.imgflip.com/get_memes")
+            const data = await res.json()
+            setAllMemes(data.data.memes)
+        }
+        getMemes()
+    }, [])
+
+
     function getRandomMemeImage() {
-        const memes = allMemeImages.data.memes
-        const randomNumber = Math.floor(Math.random() * memes.length)
+        const randomNumber = Math.floor(Math.random() * allMemes.length)
 
         setMeme(prevMeme => ({
             ...prevMeme,
-            randomImage: memes[randomNumber].url
+            randomImage: allMemes[randomNumber].url
         }))
     }
 
+
+    function handleChange( event ) {
+        const { name, value } = event.target
+
+        setMeme(prevMeme => ({
+            ...prevMeme,
+            [name]: value
+        }))
+    }
+
+
     function onSubmit( event ) {
         event.preventDefault();
-        console.log('Form submitted!')
+
         getRandomMemeImage()
     }
+
 
     return (
         <main className="memegenerator-form-container">
@@ -38,18 +58,28 @@ function MemeGenerator() {
                     <input
                         type="text"
                         placeholder="Top text"
+                        name="topText"
+                        value={meme.topText}
+                        onChange={handleChange}
                     />
                     <input
                         type="text"
                         placeholder="Bottom text"
+                        name="bottomText"
+                        value={meme.bottomText}
+                        onChange={handleChange}
                     />                    
                 </div>
 
-                <button aria-label="Generate new meme image">Create meme</button>
+                <button aria-label="Generate new meme image">Get random image</button>
                 
             </form>
             
-            <img className="memegenerator-form-image" src={meme.randomImage} alt="Meme image" />
+            <div className="memegenerator-form-image-container">
+                <img className="memegenerator-form-image" src={meme.randomImage} alt="Meme image" />
+                <h2 className="memegenerator-form-toptext">{meme.topText}</h2>
+                <h2 className="memegenerator-form-bottomtext">{meme.bottomText}</h2>
+            </div>
 
         </main>
     )

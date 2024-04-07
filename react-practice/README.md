@@ -15,7 +15,8 @@ Collection of components and pages created with React + Javascript.
 
 
 #### Projects:
-* Airbnb homepage clone
+* Airbnb Experiences Clone
+* Meme Generator
 
 <br><hr><br>
 

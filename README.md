@@ -42,19 +42,17 @@ A repository where I'll be including many different small and medium sized proje
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
 | <img src="https://github.com/carla-ng/web-development-practice/blob/main/keeper/src/assets/readme_image_1.jpg?raw=true" alt="Keeper App" width="300px" height="auto"> | Small | <ul><li>HTML</li><li>CSS</li><li>React</li><li>JavaScript</li></ul> | Simple notes app. | - | [README](https://github.com/carla-ng/web-development-practice/blob/main/keeper/README.md)
 
+<br>
+
+## 06. React Practice
+
+| Preview | Project Size | Built with | Description | Demo | More info |
+| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
+| <img src="https://raw.githubusercontent.com/carla-ng/web-development-practice/main/react-practice/main-project/public/memegenerator/memegenerator-preview.jpg" alt="Meme Generator preview" width="300px" height="auto"> | Medium | <ul><li>React</li><li>Typescript</li><li>Javascript</li><li>Vite</li><li>Bootstrap</li></ul> | Repository to practice React. Also includes different types of pages and components (ex. Meme Generator) | - | [README](https://github.com/carla-ng/web-development-practice/blob/main/react-practice/README.md)
+
 <br><br>
-
-## Others
-
-| Project Name | Built with | Description | More info |
-| ------------- | ------------- | ------------- | ------------- |
-| React Practice | <ul><li>React</li><li>Typescript</li><li>Javascript</li><li>Vite</li><li>Bootstrap</li></ul> | Repository to practice React. | [README](https://github.com/carla-ng/web-development-practice/blob/main/react-practice/README.md)
-
-<br><br>
-
 
 ## :bulb: More ideas to develop
-* [Movie Seat Booking](https://github.com/bradtraversy/vanillawebprojects/tree/master/movie-seat-booking)
 * [Simple Breathing App](https://github.com/bradtraversy/vanillawebprojects/tree/master/relaxer-app)
 
 <br>

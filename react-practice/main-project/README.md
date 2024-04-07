@@ -17,11 +17,6 @@ A simple Airbnb Experiences page clone.
 
 <br>
 
-<!-- ### :globe_with_meridians: Demo
-[https://carla-ng-frontend-mentor.netlify.app/job-listings/](https://carla-ng-frontend-mentor.netlify.app/job-listings/) -->
-
-<!-- <br> -->
-
 ### Files that belong to the project
 * Pages:
     * views/AirbnbExperiencesPage.jsx

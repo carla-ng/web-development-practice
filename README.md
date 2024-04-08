@@ -48,7 +48,7 @@ A repository where I'll be including many different small and medium sized proje
 
 | Preview | Project Size | Built with | Description | Demo | More info |
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
-| <img src="https://raw.githubusercontent.com/carla-ng/web-development-practice/main/react-practice/main-project/public/memegenerator/memegenerator-preview.jpg" alt="Meme Generator preview" width="300px" height="auto"> | Medium | <ul><li>React</li><li>Typescript</li><li>Javascript</li><li>Vite</li><li>Bootstrap</li></ul> | Repository to practice React. Also includes different types of pages and components (ex. Meme Generator) | [Netlify](https://carla-ng.github.io/web-development-practice/) | [README](https://github.com/carla-ng/web-development-practice/blob/main/react-practice/README.md)
+| <img src="https://raw.githubusercontent.com/carla-ng/web-development-practice/main/react-practice/main-project/public/memegenerator/memegenerator-preview.jpg" alt="Meme Generator preview" width="300px" height="auto"> | Medium | <ul><li>React</li><li>Typescript</li><li>Javascript</li><li>Vite</li><li>Bootstrap</li></ul> | Repository to practice React. Also includes different types of pages and components (ex. Meme Generator) | [Github Pages](https://carla-ng.github.io/web-development-practice/) | [README](https://github.com/carla-ng/web-development-practice/blob/main/react-practice/README.md)
 
 <br><br>
 

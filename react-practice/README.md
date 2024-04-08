@@ -7,7 +7,7 @@ Repository to practice React.
 ## :hammer_and_pick: Built with + Description
 
 
-### main-project
+### main-project - [README](https://github.com/carla-ng/web-development-practice/blob/main/react-practice/main-project/README.md)
 Collection of components and pages created with React + Javascript.
 * React
 * Vite

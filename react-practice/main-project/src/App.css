@@ -157,7 +157,7 @@ body {
                 flex-direction: column;
                 justify-content: space-between;
 
-                @media ( min-width: 768px) {
+                @media ( min-width: 768px ) {
                     flex-direction: row;
                 }
 
@@ -170,7 +170,7 @@ body {
                     text-indent: 12px;
                     width: 100%;
 
-                    @media ( min-width: 768px) {
+                    @media ( min-width: 768px ) {
                         height: 45px;
                         margin-block-start: 0;
                         width: 49%;
@@ -188,7 +188,7 @@ body {
                 color: #fff;
                 cursor: pointer;
                 font-family: "Poppins", sans-serif;
-                font-size: 1.2rem;
+                font-size: 1rem;
                 font-weight: bold;
                 letter-spacing: 3px;
                 margin: 40px auto 0 auto;
@@ -198,6 +198,10 @@ body {
 
                 &:hover { background-color: rgba(233, 52, 143, 0.7); }
                 &:active { background-color: rgba(233, 52, 143, 1); }
+
+                @media ( min-width: 768px ) {
+                    font-size: 1.2rem;
+                }
             }
         }
 
@@ -208,7 +212,6 @@ body {
 
             .memegenerator-form-image {
                 display: flex;
-                
                 width: 100%;
             }
 

@@ -12,6 +12,7 @@ body {
 
 #airbnb-container {
     font-family: "Poppins", sans-serif;
+    margin-bottom: 20px;
 
     .bold { font-weight: bold; }
 

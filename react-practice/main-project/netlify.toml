@@ -1,0 +1,3 @@
+[build]
+base = "react-practice/main-project/"
+publish = "dist"

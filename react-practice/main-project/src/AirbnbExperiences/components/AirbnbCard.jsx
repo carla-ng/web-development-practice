@@ -14,7 +14,7 @@ function AirbnbCard( props ) {
             { badgeText && <div className="card-badge">{ badgeText }</div> }
 
             <img
-                src={`/assets/images/airbnb/${props.coverImg}`}
+                src={`src/AirbnbExperiences/assets/images/${props.coverImg}`}
                 className="card-img"
                 alt="Card image"
             />

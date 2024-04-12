@@ -1,4 +1,4 @@
-import star from './../assets/images/airbnb/airbnb_card-star.png';
+import star from './../assets/images/airbnb_card-star.png';
 
 function AirbnbCard( props ) {
 

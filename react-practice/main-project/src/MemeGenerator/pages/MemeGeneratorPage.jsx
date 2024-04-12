@@ -1,5 +1,5 @@
-import MemeGeneratorHeader from './../components/MemeGeneratorHeader'
-import MemeGenerator from './../components/MemeGenerator'
+import MemeGeneratorHeader from '../components/MemeGeneratorHeader'
+import MemeGenerator from '../components/MemeGenerator'
 
 function MemeGeneratorPage() {
 

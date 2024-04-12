@@ -1,7 +1,7 @@
-import AirbnbCard from './../components/AirbnbCard'
-import AirbnbHero from './../components/AirbnbHero'
-import AirbnbNavbar from './../components/AirbnbNavbar'
-import data from './../assets/data/airbnb/data';
+import AirbnbCard from '../components/AirbnbCard'
+import AirbnbHero from '../components/AirbnbHero'
+import AirbnbNavbar from '../components/AirbnbNavbar'
+import data from '../data/data';
 
 function AirbnbExperiencesPage() {
 

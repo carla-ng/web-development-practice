@@ -17,15 +17,13 @@ A simple Airbnb Experiences page clone.
 
 <br>
 
-### Files that belong to the project
-* Pages:
-    * views/AirbnbExperiencesPage.jsx
-* Components:
-    * compontents/AirbnbCard.jsx
-    * compontents/AirbnbHero.jsx
-    * compontents/AirbnbNavbar.jsx
-* Data:
-    * assets/data/airbnb/data.js
+### Project folder
+AirbnbExperiences
+
+<br>
+
+### :globe_with_meridians: Demo
+[https://carla-ng-react.netlify.app/airbnbexperiences](https://carla-ng-react.netlify.app/airbnbexperiences)
 
 <br>
 <hr>
@@ -41,21 +39,15 @@ A simple Airbnb Experiences page clone.
 
 Classic meme generator built with the newest React features.
 
-<!-- <br> -->
+<br>
 
-<!-- ### :globe_with_meridians: Demo
-[https://carla-ng-frontend-mentor.netlify.app/job-listings/](https://carla-ng-frontend-mentor.netlify.app/job-listings/) -->
+### Project folder
+MemeGenerator
 
 <br>
 
-### Files that belong to the project
-* Pages:
-    * views/MemeGeneratorPage.jsx
-* Components:
-    * compontents/MemeGenerator.jsx
-    * compontents/MemeGeneratorHeader.jsx
-* Data:
-    * assets/data/memegenerator/data.js
+### :globe_with_meridians: Demo
+[https://carla-ng-react.netlify.app/memegenerator](https://carla-ng-react.netlify.app/memegenerator)
 
 <br>
 <hr>

@@ -4,8 +4,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import Home from './pages/Home.jsx'
 import NotFoundPage from './pages/NotFoundPage.jsx';
-import MemeGeneratorPage from './pages/MemeGeneratorPage.jsx';
-import AirbnbExperiencesPage from './pages/AirbnbExperiencesPage.jsx';
+import MemeGeneratorPage from './MemeGenerator/pages/MemeGeneratorPage.jsx';
+import AirbnbExperiencesPage from './AirbnbExperiences/pages/AirbnbExperiencesPage.jsx';
 
 const router = createBrowserRouter([
     {

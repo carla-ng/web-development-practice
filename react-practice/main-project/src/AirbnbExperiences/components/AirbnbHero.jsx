@@ -1,4 +1,4 @@
-import hero from './../assets/images/airbnb/airbnb_hero.png';
+import hero from './../assets/images/airbnb_hero.png';
 
 function AirbnbHero() {
     return (

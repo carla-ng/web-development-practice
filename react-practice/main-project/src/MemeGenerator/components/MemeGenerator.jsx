@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react"
-// import memesData from "./../assets/data/memegenerator/memesData.js"
 
 function MemeGenerator() {
 

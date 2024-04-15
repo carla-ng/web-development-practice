@@ -11,6 +11,8 @@ function Home() {
             <Link to="airbnbexperiences">Airbnb Experiences Page Clone</Link>
             <br /><br />
             <Link to="memegenerator">Meme Generator</Link>
+            <br /><br />
+            <Link to="tenzies">Tenzies Game</Link>
         </div>
     )
 }

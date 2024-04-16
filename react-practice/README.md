@@ -17,6 +17,7 @@ Collection of components and pages created with React + Javascript.
 #### Projects:
 * Airbnb Experiences Clone
 * Meme Generator
+* Tenzies Game
 
 <br><hr><br>
 

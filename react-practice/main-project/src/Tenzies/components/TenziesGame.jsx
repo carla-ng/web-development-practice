@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import { nanoid } from 'nanoid';
+import Confetti from 'react-confetti'
+
 import TenziesDie from './TenziesDie';
 
 
@@ -33,9 +35,13 @@ function TenziesGame() {
 
     // Roll dice (get new dice numbers)
     function rollDice() {
-        setDice(prevDice => prevDice.map(die => {
-            return ( die.isFrozen === false ) ? generateNewDie() : die
-        }))
+        if ( tenzies ) {
+            restartGame()
+        } else {
+            setDice(prevDice => prevDice.map(die => {
+                return ( die.isFrozen === false ) ? generateNewDie() : die
+            }))
+        }
     }
 
 
@@ -44,6 +50,13 @@ function TenziesGame() {
         setDice(prevDice => prevDice.map(die => {
             return ( die.id === id ) ? {...die, isFrozen: !die.isFrozen} : die
         }))
+    }
+
+
+    // Restart game
+    function restartGame() {
+        setDice( getDiceNumbers() )
+        setTenzies( false )
     }
 
 
@@ -61,7 +74,6 @@ function TenziesGame() {
         const allSameValue = dice.every(die => die.value === firstDieValue)
 
         if ( allFrozen && allSameValue) {
-            console.log('Winner!')
             setTenzies(true)
         }
 
@@ -70,6 +82,9 @@ function TenziesGame() {
 
     return (
         <main className="tenzies-game">
+
+            { tenzies && <Confetti /> }
+
             <div className="tenzies-box">
 
                 <h1 className="tenzies-title">Tenzies</h1>
@@ -78,7 +93,7 @@ function TenziesGame() {
                 <div className="tenzies-dice">
                     { diceComponents }
                 </div>
-                <button className="tenzies-button" onClick={rollDice}>Roll</button>
+                <button className="tenzies-button" onClick={rollDice}>{ tenzies ? "Play Again" : "Roll" }</button>
             </div>
             
         </main>

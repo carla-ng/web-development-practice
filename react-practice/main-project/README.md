@@ -53,6 +53,30 @@ MemeGenerator
 <hr>
 <br>
 
+## Tenzies Game
+
+<p align="center">
+    <img src="https://raw.githubusercontent.com/carla-ng/web-development-practice/main/react-practice/main-project/public/tenzies/tenzies-preview.jpg" alt="Tenzies Game preview">
+</p>
+
+<br>
+
+A simple game of Tenzies (dice game).
+
+<br>
+
+### Project folder
+Tenzies
+
+<br>
+
+### :globe_with_meridians: Demo
+[https://carla-ng-react.netlify.app/tenzies](https://carla-ng-react.netlify.app/tenzies)
+
+<br>
+<hr>
+<br>
+
 ## :hammer_and_pick: Built with
 * React
 * Vite
@@ -62,4 +86,5 @@ MemeGenerator
 <br>
 
 ## :clap: Acknowledgments
-* Project ideas by [Scrimba](https://scrimba.com/) (Airbnb Experiences Clone, Meme Generator)
+* Project ideas by [Scrimba](https://scrimba.com/) (Airbnb Experiences Clone, Meme Generator, Tenzies)
+* [React Conffeti](https://github.com/alampros/react-confetti) (Tenzies)

@@ -7,6 +7,7 @@ import NotFoundPage from './pages/NotFoundPage.jsx';
 import MemeGeneratorPage from './MemeGenerator/pages/MemeGeneratorPage.jsx';
 import AirbnbExperiencesPage from './AirbnbExperiences/pages/AirbnbExperiencesPage.jsx';
 import TenziesPage from './Tenzies/pages/TenziesPage.jsx';
+import FoodieLandingPage from './FoodieLandingPage/pages/FoodieLandingPage.jsx';
 
 const router = createBrowserRouter([
     {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
     {
         path: '/tenzies',
         element: <TenziesPage />,
+    },
+    {
+        path: '/foodielandingpage',
+        element: <FoodieLandingPage />,
     },
 ]);
 

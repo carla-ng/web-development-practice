@@ -13,6 +13,8 @@ function Home() {
             <Link to="memegenerator">Meme Generator</Link>
             <br /><br />
             <Link to="tenzies">Tenzies Game</Link>
+            <br /><br />
+            <Link to="foodielandingpage">Foodie Landing Page</Link>
         </div>
     )
 }

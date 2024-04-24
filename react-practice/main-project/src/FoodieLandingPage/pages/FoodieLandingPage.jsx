@@ -1,6 +1,7 @@
-import FoodieNavbar from "../components/FoodieNavbar"
-import FoodieMainSection from "../components/FoodieMainSection"
-import FoodieAboutSection from "../components/FoodAboutSection"
+import FoodieNavbar from "../components/FoodieNavbar";
+import FoodieMainSection from "../components/FoodieMainSection";
+import FoodieAboutSection from "../components/FoodieAboutSection";
+import FoodieWorkSection from "../components/FoodieWorkSection";
 
 const FoodieLandingPage = () => {
 
@@ -10,6 +11,7 @@ const FoodieLandingPage = () => {
             <FoodieNavbar />
             <FoodieMainSection />
             <FoodieAboutSection />
+            <FoodieWorkSection />
 
         </div>
     )

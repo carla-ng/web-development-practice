@@ -51,19 +51,19 @@ const FoodieNavbar = () => {
             </div>
             <ul className="navbar-links-container">
                 <li>
-                    <a href="">Home</a>
+                    <a href="#" onClick={(event) => event.preventDefault()}>Home</a>
                 </li>
                 <li>
-                    <a href="">About</a>
+                    <a href="#" onClick={(event) => event.preventDefault()}>About</a>
                 </li>
                 <li>
-                    <a href="">Testimonials</a>
+                    <a href="#" onClick={(event) => event.preventDefault()}>Testimonials</a>
                 </li>
                 <li>
-                    <a href="">Contact</a>
+                    <a href="#" onClick={(event) => event.preventDefault()}>Contact</a>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="#" onClick={(event) => event.preventDefault()}>
                         <BsCart2 className="navbar-cart-icon" />
                     </a>
                 </li>

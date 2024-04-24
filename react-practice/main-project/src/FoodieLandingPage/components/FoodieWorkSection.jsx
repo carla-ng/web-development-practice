@@ -2,7 +2,7 @@ import PickMeals from "../assets/images/pick-meals-image.png";
 import ChooseMeals from "../assets/images/choose-image.png";
 import DeliveryMeals from "../assets/images/delivery-image.png";
 
-const Work = () => {
+const FoodieWorkSection = () => {
 
     const workInfoData = [
         {
@@ -54,4 +54,4 @@ const Work = () => {
     );
 };
 
-export default Work;
+export default FoodieWorkSection;

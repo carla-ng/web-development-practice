@@ -68,7 +68,7 @@ const FoodieNavbar = () => {
                     </a>
                 </li>
                 <li>
-                    <button className="primary-button">Booking Now</button>
+                    <button className="primary-button">Book Now</button>
                 </li>
             </ul>
 

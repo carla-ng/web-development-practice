@@ -7,7 +7,7 @@ const FoodieMainSection = () =>  {
         <section className="main-section-container">
 
             <div className="main-bannerImage-container">
-                <img src={BannerBackground} alt="Background image" />
+                <img src={BannerBackground} alt="Main section background image" />
             </div>
 
             <div className="main-text-section">

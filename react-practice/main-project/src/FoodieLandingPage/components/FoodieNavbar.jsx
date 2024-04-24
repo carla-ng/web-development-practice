@@ -6,7 +6,6 @@ import {
     Box,
     Drawer,
     List,
-    Divider,
     ListItem,
     ListItemButton,
     ListItemIcon,
@@ -69,7 +68,7 @@ const FoodieNavbar = () => {
                     </a>
                 </li>
                 <li>
-                    <button className="primary-button">Bookings Now</button>
+                    <button className="primary-button">Booking Now</button>
                 </li>
             </ul>
 

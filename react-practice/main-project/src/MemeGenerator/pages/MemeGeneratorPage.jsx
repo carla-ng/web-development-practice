@@ -1,3 +1,5 @@
+import '../css/MemeGenerator.css'
+
 import MemeGeneratorHeader from '../components/MemeGeneratorHeader'
 import MemeGenerator from '../components/MemeGenerator'
 

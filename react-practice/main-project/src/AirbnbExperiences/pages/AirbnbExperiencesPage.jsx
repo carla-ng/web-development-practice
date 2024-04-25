@@ -1,7 +1,10 @@
+import '../css/AirbnbExperiences.css'
+import data from '../data/data'
+
 import AirbnbCard from '../components/AirbnbCard'
 import AirbnbHero from '../components/AirbnbHero'
 import AirbnbNavbar from '../components/AirbnbNavbar'
-import data from '../data/data';
+
 
 function AirbnbExperiencesPage() {
 

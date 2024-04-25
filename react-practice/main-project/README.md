@@ -25,6 +25,20 @@ AirbnbExperiences
 ### :globe_with_meridians: Demo
 [https://carla-ng-react.netlify.app/airbnbexperiences](https://carla-ng-react.netlify.app/airbnbexperiences)
 
+
+<br>
+
+### :hammer_and_pick: Built with
+* React
+* Vite
+* JavaScript
+* CSS
+
+<br>
+
+### :clap: Acknowledgments
+* Project ideas by [Scrimba](https://scrimba.com/)
+
 <br>
 <hr>
 <br>
@@ -48,6 +62,19 @@ MemeGenerator
 
 ### :globe_with_meridians: Demo
 [https://carla-ng-react.netlify.app/memegenerator](https://carla-ng-react.netlify.app/memegenerator)
+
+<br>
+
+### :hammer_and_pick: Built with
+* React
+* Vite
+* JavaScript
+* CSS
+
+<br>
+
+### :clap: Acknowledgments
+* Project ideas by [Scrimba](https://scrimba.com/)
 
 <br>
 <hr>
@@ -74,17 +101,55 @@ Tenzies
 [https://carla-ng-react.netlify.app/tenzies](https://carla-ng-react.netlify.app/tenzies)
 
 <br>
-<hr>
-<br>
 
-## :hammer_and_pick: Built with
+### :hammer_and_pick: Built with
 * React
 * Vite
 * JavaScript
 * CSS
+* [React Confetti](https://github.com/alampros/react-confetti)
+
+<br>
+
+### :clap: Acknowledgments
+* Project ideas by [Scrimba](https://scrimba.com/)
+
+<br>
+<hr>
+<br>
+
+## Foodie Landing Page
+
+<p align="center">
+    <img src="https://raw.githubusercontent.com/carla-ng/web-development-practice/main/react-practice/main-project/public/foodielandingpage/foodie-preview.jpg" alt="Foodie Landing Page preview">
+</p>
+
+<br>
+
+A landing page for a food delivery service.
+
+<br>
+
+### Project folder
+FoodielandingPage
+
+<br>
+
+### :globe_with_meridians: Demo
+[https://carla-ng-react.netlify.app/foodielandingpage](https://carla-ng-react.netlify.app/foodielandingpage)
+
+<br>
+
+### :hammer_and_pick: Built with
+* React
+* Vite
+* JavaScript
+* CSS
+* Material UI
+* React Icons
 
 <br>
 
 ## :clap: Acknowledgments
-* Project ideas by [Scrimba](https://scrimba.com/) (Airbnb Experiences Clone, Meme Generator, Tenzies)
-* [React Conffeti](https://github.com/alampros/react-confetti) (Tenzies)
+* Project idea and design by [TheHyperArt](https://www.thehyperart.com/)
+

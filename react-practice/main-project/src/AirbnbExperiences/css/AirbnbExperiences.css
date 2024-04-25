@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+
+#airbnb-container {
+    font-family: "Poppins", sans-serif;
+    margin-bottom: 20px;
+
+    .bold { font-weight: bold; }
+
+    h2 {
+        font-size: 0.75rem;
+        font-weight: normal;
+    }
+
+    .airbnb-navbar {
+        box-shadow: 0px 2.98px 7.46px rgba(0, 0, 0, 0.1);
+        display: flex;
+        height: 70px;
+        margin: 0 auto;
+        max-width: 1000px;
+        padding: 20px 36px;
+
+        .navbar-logo { max-width: 100px; }
+    }
+
+    .airbnb-hero {
+        display: flex;
+        flex-direction: column;
+        
+        margin: 0 auto;
+        max-width: 700px;
+        padding: 20px;
+
+        img {
+            display: flex;
+            align-self: flex-end;
+
+            padding: 30px 0;
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 2.3rem;
+            line-height: 1;
+            margin-block-start: 20px;
+            margin-block-end: 16px;
+        }
+
+        p {
+            font-size: 1rem;
+            margin-block-start: 0;
+            margin-block-end: 0;
+            max-width: 320px;
+        }
+    }
+
+    .airbnb-card-list {
+        display: flex;
+        flex-wrap: nowrap;
+        
+        margin: 0 auto;
+        max-width: 700px;
+        overflow-x: auto;
+
+        .airbnb-card {
+            display: flex;
+            flex: 0 0 auto;
+            flex-direction: column;
+    
+            font-size: 0.75rem;
+            margin: 0 1rem;
+            position: relative;
+            width: 175px;
+
+            .card-badge {
+                background-color: #fff;
+                border-radius: 2px;
+                font-weight: bold;
+                left: 8px;
+                padding: 2px 6px;
+                position: absolute;
+                top: 8px;
+            }
+    
+            .card-img {
+                border-radius: 10px;
+                height: 243px;
+                margin-bottom: 10px;
+                width: 100%;
+            }
+    
+            .card-info {
+                display: flex;
+                align-items: center;
+    
+                img {
+                    height: 14px;
+                    margin-right: 4px;
+                }
+    
+                span {
+                    &:not(:first-of-type) {
+                        color: #918E9B;
+                        margin: 0 3px;
+                    }
+    
+                    &:not(:last-of-type) {
+                        display: flex;
+                        align-items: center;
+                    }
+                }
+            }
+    
+            h2 {
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+    
+            p { margin-top: auto; }
+        }
+    }
+}

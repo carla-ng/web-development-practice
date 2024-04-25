@@ -1,3 +1,5 @@
+import '../css/Tenzies.css'
+
 import TenziesGame from '../components/TenziesGame'
 
 function TenziesPage() {

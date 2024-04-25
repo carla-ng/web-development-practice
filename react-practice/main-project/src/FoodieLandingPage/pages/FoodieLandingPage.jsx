@@ -1,10 +1,12 @@
-import FoodieNavbar from "../components/FoodieNavbar";
-import FoodieMainSection from "../components/FoodieMainSection";
-import FoodieAboutSection from "../components/FoodieAboutSection";
-import FoodieWorkSection from "../components/FoodieWorkSection";
-import FoodieTestimonialsSection from "../components/FoodieTestimonialsSection";
-import FoodieContactSection from "../components/FoodieContactSection";
-import FoodieFooter from "../components/FoodieFooter";
+import '../css/FoodieLandingPage.css'
+
+import FoodieNavbar from "../components/FoodieNavbar"
+import FoodieMainSection from "../components/FoodieMainSection"
+import FoodieAboutSection from "../components/FoodieAboutSection"
+import FoodieWorkSection from "../components/FoodieWorkSection"
+import FoodieTestimonialsSection from "../components/FoodieTestimonialsSection"
+import FoodieContactSection from "../components/FoodieContactSection"
+import FoodieFooter from "../components/FoodieFooter"
 
 const FoodieLandingPage = () => {
 

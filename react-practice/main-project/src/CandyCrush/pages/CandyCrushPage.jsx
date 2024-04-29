@@ -18,6 +18,7 @@ const CandyCrushPage = () => {
     const [currentColorArrangement, setCurrentColorArrangement] = useState([])
 
 
+    /* Creates game board */
     const createBoard = () => {
         const randomColorArrangement = []
         
@@ -32,6 +33,7 @@ const CandyCrushPage = () => {
     }
 
 
+    /* Checks matches: columns of 3 and 4, rows of 3 and 4 */
     const checkForColumnOfFour = () => {
         for ( let i = 0; i < 39; i++ ) {
             const columnOfFour = [i, i + WIDTH, i + WIDTH * 2, i + WIDTH * 3]
@@ -43,7 +45,6 @@ const CandyCrushPage = () => {
         }
     }
 
-
     const checkForColumnOfThree = () => {
         for ( let i = 0; i < 47; i++ ) {
             const columnOfThree = [i, i + WIDTH, i + WIDTH * 2]
@@ -54,7 +55,6 @@ const CandyCrushPage = () => {
             }
         }
     }
-
 
     const checkForRowOfFour = () => {
         for ( let i = 0; i < 64; i++ ) {
@@ -70,7 +70,6 @@ const CandyCrushPage = () => {
         }
     }
 
-
     const checkForRowOfThree = () => {
         for ( let i = 0; i < 64; i++ ) {
             const rowOfThree = [i, i + 1, i + 2]
@@ -85,26 +84,48 @@ const CandyCrushPage = () => {
         }
     }
 
-    
+
+    /* Move pieces */
+    const moveIntoSquareBelow = () => {
+        for ( let i = 0; i < 64 - WIDTH; i++ ) {
+            const firstRow = [0, 1, 2, 3, 4, 5, 6, 7]
+            const isFirstRow = firstRow.includes(i)
+
+            if ( isFirstRow && currentColorArrangement[i] === '' ) {
+                let randomNumber = Math.floor(Math.random() * CANDY_COLORS.length)
+                currentColorArrangement[i] = CANDY_COLORS[randomNumber]
+            }
+
+            if ( (currentColorArrangement[i + WIDTH]) === '' ) {
+                currentColorArrangement[i + WIDTH] = currentColorArrangement[i]
+                currentColorArrangement[i] = ''
+            }
+        }
+    }
+
+
+    / * useEffect Hook */
     useEffect(() => {
         createBoard()
 
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
-
     useEffect(() => {
         const timer = setInterval(() => {
             checkForColumnOfFour()
             checkForRowOfFour()
+
             checkForColumnOfThree()
             checkForRowOfThree()
+
+            moveIntoSquareBelow()
 
             setCurrentColorArrangement([...currentColorArrangement])
         }, 100)
         return () => clearInterval(timer)
 
-    }, [checkForColumnOfFour, checkForRowOfFour, checkForColumnOfThree, checkForRowOfThree, currentColorArrangement])
+    }, [checkForColumnOfFour, checkForRowOfFour, checkForColumnOfThree, checkForRowOfThree, moveIntoSquareBelow, currentColorArrangement])
 
     console.log(currentColorArrangement)
 

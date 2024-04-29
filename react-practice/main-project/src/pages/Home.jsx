@@ -15,6 +15,8 @@ function Home() {
             <Link to="tenzies">Tenzies Game</Link>
             <br /><br />
             <Link to="foodielandingpage">Foodie Landing Page</Link>
+            <br /><br />
+            <Link to="candycrush">Candy Crush</Link>
         </div>
     )
 }

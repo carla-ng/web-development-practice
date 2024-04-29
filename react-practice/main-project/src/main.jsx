@@ -8,6 +8,7 @@ import MemeGeneratorPage from './MemeGenerator/pages/MemeGeneratorPage.jsx';
 import AirbnbExperiencesPage from './AirbnbExperiences/pages/AirbnbExperiencesPage.jsx';
 import TenziesPage from './Tenzies/pages/TenziesPage.jsx';
 import FoodieLandingPage from './FoodieLandingPage/pages/FoodieLandingPage.jsx';
+import CandyCrushPage from './CandyCrush/pages/CandyCrushPage.jsx';
 
 const router = createBrowserRouter([
     {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
     {
         path: '/foodielandingpage',
         element: <FoodieLandingPage />,
+    },
+    {
+        path: '/candycrush',
+        element: <CandyCrushPage />,
     },
 ]);
 

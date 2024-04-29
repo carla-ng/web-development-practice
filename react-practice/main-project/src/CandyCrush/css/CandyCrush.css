@@ -1,0 +1,16 @@
+
+.candycrush-container {
+
+    .game {
+        display: flex;
+        flex-wrap: wrap;
+
+        height: 560px;
+        width: 560px;
+
+        img {
+            height: 70px;
+            width: 70px;
+        }
+    }
+}

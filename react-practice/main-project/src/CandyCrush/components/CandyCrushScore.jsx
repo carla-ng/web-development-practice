@@ -1,7 +1,8 @@
 const CandyCrushScore = ({score}) => {
     return (
         <div className="score">
-            <h2>Score: {score}</h2>
+            <h1>Score</h1>
+            <h2>{score}</h2>
         </div>
     )
 }

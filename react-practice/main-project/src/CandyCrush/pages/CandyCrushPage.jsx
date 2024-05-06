@@ -214,25 +214,27 @@ const CandyCrushPage = () => {
 
     return (
         <main className="candycrush-container">
-            <div className="game">
-                { currentColorArrangement.map((candyColor, index) => (
-                    <img
-                        key={index}
-                        src={candyColor}
-                        alt={candyColor}
-                        data-id={index}
-                        draggable={true}
-                        onDragStart={dragStart}
-                        onDragOver={(e) => e.preventDefault()}
-                        onDragEnter={(e) => e.preventDefault()}
-                        onDragLeave={(e) => e.preventDefault()}
-                        onDrop={dragDrop}
-                        onDragEnd={dragEnd}
-                    />
-                ))}
-            </div>
-
             <CandyCrushScore score={scoreDisplay} />
+
+            <div className="game-container">
+                <div className="game">
+                    { currentColorArrangement.map((candyColor, index) => (
+                        <img
+                            key={index}
+                            src={candyColor}
+                            alt={candyColor}
+                            data-id={index}
+                            draggable={true}
+                            onDragStart={dragStart}
+                            onDragOver={(e) => e.preventDefault()}
+                            onDragEnter={(e) => e.preventDefault()}
+                            onDragLeave={(e) => e.preventDefault()}
+                            onDrop={dragDrop}
+                            onDragEnd={dragEnd}
+                        />
+                    ))}
+                </div>
+            </div>
         </main>
     )
 }

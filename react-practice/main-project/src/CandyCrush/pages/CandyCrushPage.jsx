@@ -1,16 +1,26 @@
 import '../css/CandyCrush.css'
 
-import { useEffect, useState } from 'react'
+import CandyCrushScore from '../components/CandyCrushScore'
+
+import blueCandy from '../assets/images/blue-candy.png'
+import greenCandy from '../assets/images/green-candy.png'
+import orangeCandy from '../assets/images/orange-candy.png'
+import purpleCandy from '../assets/images/purple-candy.png'
+import redCandy from '../assets/images/red-candy.png'
+import yellowCandy from '../assets/images/yellow-candy.png'
+import blank from '../assets/images/blank.png'
+
+import { useCallback, useEffect, useState } from 'react'
 
 
 const WIDTH = 8
 const CANDY_COLORS = [
-    'blue',
-    'green',
-    'orange',
-    'purple',
-    'red',
-    'yellow',
+    blueCandy,
+    greenCandy,
+    orangeCandy,
+    purpleCandy,
+    redCandy,
+    yellowCandy,
 ]
 
 
@@ -18,6 +28,7 @@ const CandyCrushPage = () => {
     const [currentColorArrangement, setCurrentColorArrangement] = useState([])
     const [squareBeingDragged, setSquareBeingDragged] = useState(null)
     const [squareBeingReplaced, setSquareBeingReplaced] = useState(null)
+    const [scoreDisplay, setScoreDisplay] = useState(0)
 
 
     /* Creates game board */
@@ -35,106 +46,111 @@ const CandyCrushPage = () => {
     }
 
 
+
     /* Checks matches: columns of 3 and 4, rows of 3 and 4 */
-    const checkForColumnOfFour = () => {
+
+    const checkForColumnOfFour = useCallback(() => {
         for ( let i = 0; i <= 39; i++ ) {
             const columnOfFour = [i, i + WIDTH, i + WIDTH * 2, i + WIDTH * 3]
             const chosenColor = currentColorArrangement[i]
+            const isBlank = ( currentColorArrangement[i] === blank )
 
-            if ( columnOfFour.every( number => currentColorArrangement[number] === chosenColor ) ) {
-                columnOfFour.forEach( number => currentColorArrangement[number] = '' )
+            if ( columnOfFour.every( number => currentColorArrangement[number] === chosenColor ) && !isBlank ) {
+                setScoreDisplay( prevScore => parseInt(prevScore) + 4 )
+                columnOfFour.forEach( number => currentColorArrangement[number] = blank )
                 return true
             }
         }
-    }
+    }, [currentColorArrangement])
 
-    const checkForRowOfFour = () => {
+    const checkForRowOfFour = useCallback(() => {
         for ( let i = 0; i < 64; i++ ) {
             const rowOfFour = [i, i + 1, i + 2, i + 3]
             const chosenColor = currentColorArrangement[i]
             const notValid = [5, 6, 7, 13, 14, 15, 21, 22, 23, 29, 30, 31, 37, 38, 39, 45, 46, 47, 53, 54, 55, 61, 62, 63]
+            const isBlank = ( currentColorArrangement[i] === blank )
 
             if ( notValid.includes(i) ) continue
 
-            if ( rowOfFour.every( number => currentColorArrangement[number] === chosenColor ) ) {
-                rowOfFour.forEach( number => currentColorArrangement[number] = '' )
+            if ( rowOfFour.every( number => currentColorArrangement[number] === chosenColor ) && !isBlank ) {
+                setScoreDisplay(prevScore => parseInt(prevScore) + 4)
+                rowOfFour.forEach( number => currentColorArrangement[number] = blank )
                 return true
             }
         }
-    }
+    }, [currentColorArrangement])
 
-    const checkForColumnOfThree = () => {
+    const checkForColumnOfThree = useCallback(() => {
         for ( let i = 0; i <= 47; i++ ) {
             const columnOfThree = [i, i + WIDTH, i + WIDTH * 2]
             const chosenColor = currentColorArrangement[i]
+            const isBlank = ( currentColorArrangement[i] === blank )
 
-            if ( columnOfThree.every( number => currentColorArrangement[number] === chosenColor ) ) {
-                columnOfThree.forEach( number => currentColorArrangement[number] = '' )
+            if ( columnOfThree.every( number => currentColorArrangement[number] === chosenColor ) && !isBlank ) {
+                setScoreDisplay(prevScore => parseInt(prevScore) + 3)
+                columnOfThree.forEach( number => currentColorArrangement[number] = blank )
                 return true
             }
         }
-    }
+    }, [currentColorArrangement])
 
-    const checkForRowOfThree = () => {
+    const checkForRowOfThree = useCallback(() => {
         for ( let i = 0; i < 64; i++ ) {
             const rowOfThree = [i, i + 1, i + 2]
             const chosenColor = currentColorArrangement[i]
             const notValid = [6, 7, 14, 15, 22, 23, 30, 31, 38, 39, 46, 47, 54, 55, 63, 64]
+            const isBlank = ( currentColorArrangement[i] === blank )
 
             if ( notValid.includes(i) ) continue
 
-            if ( rowOfThree.every( number => currentColorArrangement[number] === chosenColor ) ) {
-                rowOfThree.forEach( number => currentColorArrangement[number] = '' )
+            if ( rowOfThree.every( number => currentColorArrangement[number] === chosenColor ) && !isBlank ) {
+                setScoreDisplay(prevScore => parseInt(prevScore) + 3)
+                rowOfThree.forEach( number => currentColorArrangement[number] = blank )
                 return true
             }
         }
-    }
+    }, [currentColorArrangement])
 
 
     /* Move pieces */
-    const moveIntoSquareBelow = () => {
+    const moveIntoSquareBelow = useCallback(() => {
         for ( let i = 0; i <= 55; i++ ) {
             const firstRow = [0, 1, 2, 3, 4, 5, 6, 7]
             const isFirstRow = firstRow.includes(i)
 
-            if ( isFirstRow && currentColorArrangement[i] === '' ) {
+            if ( isFirstRow && currentColorArrangement[i] === blank ) {
                 let randomNumber = Math.floor(Math.random() * CANDY_COLORS.length)
                 currentColorArrangement[i] = CANDY_COLORS[randomNumber]
             }
 
-            if ( (currentColorArrangement[i + WIDTH]) === '' ) {
+            if ( (currentColorArrangement[i + WIDTH]) === blank ) {
                 currentColorArrangement[i + WIDTH] = currentColorArrangement[i]
-                currentColorArrangement[i] = ''
+                currentColorArrangement[i] = blank
             }
         }
-    }
+    }, [currentColorArrangement])
+
 
 
     /* Drag and Drop */
+
     const dragStart = (e) => {
-        console.log('dragStart')
-        console.log(e.target)
         setSquareBeingDragged(e.target)
     }
 
     const dragDrop = (e) => {
-        console.log('dragDrop')
-        console.log(e.target)
         setSquareBeingReplaced(e.target)
     }
 
-    const dragEnd = (e) => {
-        console.log('dragEnd')
-        console.log(e.target)
-
+    const dragEnd = () => {
         const squareBeingDraggedId = parseInt(squareBeingDragged.getAttribute('data-id'))
         const squareBeingReplacedId = parseInt(squareBeingReplaced.getAttribute('data-id'))
 
-        currentColorArrangement[squareBeingReplacedId] = squareBeingDragged.style.backgroundColor
-        currentColorArrangement[squareBeingDraggedId] = squareBeingReplaced.style.backgroundColor
+        //currentColorArrangement[squareBeingReplacedId] = squareBeingDragged.getAttribute('src')
+        //currentColorArrangement[squareBeingDraggedId] = squareBeingReplaced.getAttribute('src')
     
-        console.log('squareBeingDraggedId: ',squareBeingDraggedId)
-        console.log('squareBeingReplacedId: ',squareBeingReplacedId)
+        //console.log('squareBeingDraggedId: ',squareBeingDraggedId)
+        //console.log('squareBeingReplacedId: ',squareBeingReplacedId)
 
         const validMoves = [
             squareBeingDraggedId + 1,
@@ -145,28 +161,33 @@ const CandyCrushPage = () => {
 
         const validMove = validMoves.includes(squareBeingReplacedId)
 
-        console.log('validMove: ',validMove)
+        if ( validMove ) {
+            currentColorArrangement[squareBeingReplacedId] = squareBeingDragged.getAttribute('src')
+            currentColorArrangement[squareBeingDraggedId] = squareBeingReplaced.getAttribute('src')
 
-        const isColumnOfFour = checkForColumnOfFour()
-        const isRowOfFour = checkForRowOfFour()
-        const isColumnOfThree = checkForColumnOfThree()
-        const isRowOfThree = checkForRowOfThree()
+            const isColumnOfFour = checkForColumnOfFour()
+            const isRowOfFour = checkForRowOfFour()
+            const isColumnOfThree = checkForColumnOfThree()
+            const isRowOfThree = checkForRowOfThree()
 
-        if ( squareBeingReplacedId
-            && validMove
-            && ( isColumnOfFour || isRowOfFour || isColumnOfThree || isRowOfThree )
-            ) {
-                setSquareBeingDragged(null)
-                setSquareBeingReplaced(null)
-        } else {
-            currentColorArrangement[squareBeingReplacedId] = squareBeingReplaced.style.backgroundColor
-            currentColorArrangement[squareBeingDraggedId] = squareBeingDragged.style.backgroundColor
-            setCurrentColorArrangement([...currentColorArrangement])
+            if ( squareBeingReplacedId
+                && ( isColumnOfFour || isRowOfFour || isColumnOfThree || isRowOfThree )
+                ) {
+                    setSquareBeingDragged(null)
+                    setSquareBeingReplaced(null)
+            } else {
+                currentColorArrangement[squareBeingReplacedId] = squareBeingReplaced.getAttribute('src')
+                currentColorArrangement[squareBeingDraggedId] = squareBeingDragged.getAttribute('src')
+                setCurrentColorArrangement([...currentColorArrangement])
+            }
         }
+            
     }
 
 
+
     / * useEffect Hook */
+
     useEffect(() => {
         createBoard()
 
@@ -189,7 +210,7 @@ const CandyCrushPage = () => {
 
     }, [checkForColumnOfFour, checkForRowOfFour, checkForColumnOfThree, checkForRowOfThree, moveIntoSquareBelow, currentColorArrangement])
 
-    //console.log(currentColorArrangement)
+
 
     return (
         <main className="candycrush-container">
@@ -197,8 +218,8 @@ const CandyCrushPage = () => {
                 { currentColorArrangement.map((candyColor, index) => (
                     <img
                         key={index}
-                        style={{backgroundColor: candyColor}}
-                        alt={index}
+                        src={candyColor}
+                        alt={candyColor}
                         data-id={index}
                         draggable={true}
                         onDragStart={dragStart}
@@ -208,8 +229,10 @@ const CandyCrushPage = () => {
                         onDrop={dragDrop}
                         onDragEnd={dragEnd}
                     />
-                ))};
+                ))}
             </div>
+
+            <CandyCrushScore score={scoreDisplay} />
         </main>
     )
 }

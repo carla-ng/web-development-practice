@@ -1,4 +1,4 @@
-const CandyCrushScore = ({score}) => {
+const CandyCrushScore = ({ score }) => {
     return (
         <div className="score">
             <h1>Score</h1>

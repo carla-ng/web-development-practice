@@ -1,5 +1,6 @@
 import '../css/CandyCrush.css'
 
+import CandyCrushPopup from '../components/CandyCrushPopup'
 import CandyCrushScore from '../components/CandyCrushScore'
 
 import blueCandy from '../assets/images/blue-candy.png'
@@ -29,6 +30,25 @@ const CandyCrushPage = () => {
     const [squareBeingDragged, setSquareBeingDragged] = useState(null)
     const [squareBeingReplaced, setSquareBeingReplaced] = useState(null)
     const [scoreDisplay, setScoreDisplay] = useState(0)
+
+
+    /* Popup */
+    const [isPopupOpen, setIsPopupOpen] = useState(false)
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth)
+
+    const isDeviceSupported = useCallback(() => {
+        const isTouchDevice = ('ontouchstart' in window || navigator.maxTouchPoints) && windowWidth <= 768
+        const isSupportedScreenSize = window.matchMedia('(min-width: 769px)').matches
+    
+        const isSupported = !isTouchDevice && isSupportedScreenSize
+
+        !isSupported ? setIsPopupOpen(true) : setIsPopupOpen(false)
+    }, [windowWidth])
+
+    const handleResize = useCallback(() => {
+        setWindowWidth(window.innerWidth)
+        isDeviceSupported()
+    }, [isDeviceSupported])
 
 
     /* Creates game board */
@@ -146,12 +166,6 @@ const CandyCrushPage = () => {
         const squareBeingDraggedId = parseInt(squareBeingDragged.getAttribute('data-id'))
         const squareBeingReplacedId = parseInt(squareBeingReplaced.getAttribute('data-id'))
 
-        //currentColorArrangement[squareBeingReplacedId] = squareBeingDragged.getAttribute('src')
-        //currentColorArrangement[squareBeingDraggedId] = squareBeingReplaced.getAttribute('src')
-    
-        //console.log('squareBeingDraggedId: ',squareBeingDraggedId)
-        //console.log('squareBeingReplacedId: ',squareBeingReplacedId)
-
         const validMoves = [
             squareBeingDraggedId + 1,
             squareBeingDraggedId + WIDTH,
@@ -190,9 +204,18 @@ const CandyCrushPage = () => {
 
     useEffect(() => {
         createBoard()
+        isDeviceSupported()
 
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
+
+    useEffect(() => {
+        window.addEventListener('resize', handleResize)
+
+        return () => {
+            window.removeEventListener('resize', handleResize)
+        }
+    }, [windowWidth, handleResize])
 
     useEffect(() => {
         const timer = setInterval(() => {
@@ -214,6 +237,8 @@ const CandyCrushPage = () => {
 
     return (
         <main className="candycrush-container">
+            <CandyCrushPopup isOpen={isPopupOpen} />
+
             <CandyCrushScore score={scoreDisplay} />
 
             <div className="game-container">

@@ -18,6 +18,7 @@ Collection of components and pages created with React + Javascript.
 * Airbnb Experiences Clone
 * Meme Generator
 * Tenzies Game
+* Candy Crush Clone
 
 <br><hr><br>
 

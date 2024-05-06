@@ -153,3 +153,41 @@ FoodielandingPage
 ## :clap: Acknowledgments
 * Project idea and design by [TheHyperArt](https://www.thehyperart.com/)
 
+
+<br>
+<hr>
+<br>
+
+## Candy Crush Simple Clone
+
+<p align="center">
+    <img src="https://raw.githubusercontent.com/carla-ng/web-development-practice/main/react-practice/main-project/public/candycrush/candycrush-preview.jpg" alt="Candy Crush Clone preview">
+</p>
+
+<br>
+
+A simple clone of the renowned mobile game.
+
+<br>
+
+### Project folder
+CandyCrush
+
+<br>
+
+### :globe_with_meridians: Demo
+[https://carla-ng-react.netlify.app/candycrush](https://carla-ng-react.netlify.app/candycrush)
+
+<br>
+
+### :hammer_and_pick: Built with
+* React
+* Vite
+* JavaScript
+* CSS
+
+<br>
+
+## :clap: Acknowledgments
+* Project idea by [Ania Kubów](https://www.codewithania.com/)
+

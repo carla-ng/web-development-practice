@@ -17,6 +17,8 @@ function Home() {
             <Link to="foodielandingpage">Foodie Landing Page</Link>
             <br /><br />
             <Link to="candycrush">Candy Crush</Link>
+            <br /><br />
+            <Link to="reactessentials">React Essentials</Link>
         </div>
     )
 }

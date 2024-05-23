@@ -9,6 +9,7 @@ import AirbnbExperiencesPage from './AirbnbExperiences/pages/AirbnbExperiencesPa
 import TenziesPage from './Tenzies/pages/TenziesPage.jsx';
 import FoodieLandingPage from './FoodieLandingPage/pages/FoodieLandingPage.jsx';
 import CandyCrushPage from './CandyCrush/pages/CandyCrushPage.jsx';
+import ReactEssentialsPage from './ReactEssentials/pages/ReactEssentialsPage.jsx';
 
 const router = createBrowserRouter([
     {
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
     {
         path: '/candycrush',
         element: <CandyCrushPage />,
+    },
+    {
+        path: '/reactessentials',
+        element: <ReactEssentialsPage />,
     },
 ]);
 

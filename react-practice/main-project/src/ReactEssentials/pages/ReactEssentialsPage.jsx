@@ -1,18 +1,29 @@
 import '../css/ReactEssentials.css'
-import { CORE_CONCEPTS } from '../data/data.js'
+import { CORE_CONCEPTS, EXAMPLES } from '../data/data.js'
 
-/*import { useState } from 'react' */
+import { useState } from 'react'
 
 import ReactEssentialsHeader from '../components/ReactEssentialsHeader.jsx'
 import ReactEssentialsCoreConcept from '../components/ReactEssentialsCoreConcept.jsx'
 import ReactEssentialsTabButton from '../components/ReactEssentialsTabButton.jsx'
 
 function ReactEssentialsPage() {
-    let currentTabContent = ''
+    const [selectedTopic, setSelectedTopic] = useState()
 
     const handleSelect = ( selectedButton ) => {
-        console.log(selectedButton)
-        currentTabContent = selectedButton
+        setSelectedTopic(selectedButton)
+    }
+
+    let tabContent = <p> Please, select a topic.</p>
+
+    if ( selectedTopic ) {
+        tabContent = (
+            <div id="tab-content">
+                <h3>{ EXAMPLES[selectedTopic].title }</h3>
+                <p>{ EXAMPLES[selectedTopic].description }</p>
+                <code>{ EXAMPLES[selectedTopic].code }</code>
+            </div>
+        )
     }
 
     return (
@@ -22,26 +33,20 @@ function ReactEssentialsPage() {
                 <section id="core-concepts">
                     <h2>Core Concepts</h2>
                     <ul>
-                        <ReactEssentialsCoreConcept
-                            title={CORE_CONCEPTS[0].title}
-                            description={CORE_CONCEPTS[0].description}
-                            image={CORE_CONCEPTS[0].image}
-                        />
-                        <ReactEssentialsCoreConcept { ...CORE_CONCEPTS[1] } />
-                        <ReactEssentialsCoreConcept { ...CORE_CONCEPTS[2] } />
-                        <ReactEssentialsCoreConcept { ...CORE_CONCEPTS[3] } />
+                        {CORE_CONCEPTS.map(concept => <ReactEssentialsCoreConcept key={concept.title} { ...concept } />)}
                     </ul>
                 </section>
                 
                 <section id="examples">
                     <h2>Examples</h2>
                     <menu>
-                        <ReactEssentialsTabButton onSelect={() => handleSelect('components')}>Components</ReactEssentialsTabButton>
-                        <ReactEssentialsTabButton onSelect={() => handleSelect('jsx')}>JSX</ReactEssentialsTabButton>
-                        <ReactEssentialsTabButton onSelect={() => handleSelect('props')}>Props</ReactEssentialsTabButton>
-                        <ReactEssentialsTabButton onSelect={() => handleSelect('state')}>State</ReactEssentialsTabButton>
+                        <ReactEssentialsTabButton isSelected={selectedTopic === 'components'} onSelect={() => handleSelect('components')}>Components</ReactEssentialsTabButton>
+                        <ReactEssentialsTabButton isSelected={selectedTopic === 'jsx'} onSelect={() => handleSelect('jsx')}>JSX</ReactEssentialsTabButton>
+                        <ReactEssentialsTabButton isSelected={selectedTopic === 'props'} onSelect={() => handleSelect('props')}>Props</ReactEssentialsTabButton>
+                        <ReactEssentialsTabButton isSelected={selectedTopic === 'state'} onSelect={() => handleSelect('state')}>State</ReactEssentialsTabButton>
                     </menu>
-                    { currentTabContent }
+                    
+                    { tabContent }
                 </section>
             </main>
         </div>

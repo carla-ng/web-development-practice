@@ -1,4 +1,4 @@
-const ReactEssentialsHeader = ({ title, description, image }) => {
+const ReactEssentialsCoreConcept = ({ title, description, image }) => {
     return (
         <li>
             <img src={image} alt={title} />
@@ -8,4 +8,4 @@ const ReactEssentialsHeader = ({ title, description, image }) => {
     )
 }
 
-export default ReactEssentialsHeader
+export default ReactEssentialsCoreConcept

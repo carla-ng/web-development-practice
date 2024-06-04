@@ -10,6 +10,7 @@ import TenziesPage from './Tenzies/pages/TenziesPage.jsx';
 import FoodieLandingPage from './FoodieLandingPage/pages/FoodieLandingPage.jsx';
 import CandyCrushPage from './CandyCrush/pages/CandyCrushPage.jsx';
 import ReactEssentialsPage from './ReactEssentials/pages/ReactEssentialsPage.jsx';
+import TicTacToePage from './TicTacToe/pages/TicTacToePage.jsx';
 
 const router = createBrowserRouter([
     {
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
     {
         path: '/reactessentials',
         element: <ReactEssentialsPage />,
+    },
+    {
+        path: '/tictactoe',
+        element: <TicTacToePage />,
     },
 ]);
 

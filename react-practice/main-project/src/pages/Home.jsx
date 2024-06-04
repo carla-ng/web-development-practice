@@ -19,6 +19,8 @@ function Home() {
             <Link to="candycrush">Candy Crush</Link>
             <br /><br />
             <Link to="reactessentials">React Essentials</Link>
+            <br /><br />
+            <Link to="tictactoe">Tic-Tac-Toe</Link>
         </div>
     )
 }

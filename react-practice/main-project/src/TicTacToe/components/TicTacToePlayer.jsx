@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-const TicTacToePlayer = function({ initialName, symbol }) {
+const TicTacToePlayer = function({ initialName, symbol, isActive }) {
     const [isEditing, setIsEditing] = useState(false)
     const [playerName, setPlayerName] = useState(initialName)
 
@@ -18,7 +18,7 @@ const TicTacToePlayer = function({ initialName, symbol }) {
     }
 
     return (
-        <li>
+        <li className={ isActive ? 'active' : undefined }>
             <span className="player">
                 { playerNameContainer }
                 <span className="player-symbol">{ symbol }</span>

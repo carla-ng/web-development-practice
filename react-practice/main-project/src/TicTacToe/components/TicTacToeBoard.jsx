@@ -1,12 +1,6 @@
-import { useState } from 'react';
 
-const initialBoard = [
-    [null, null, null],
-    [null, null, null],
-    [null, null, null],
-]
-
-const TicTacToeBoard = function({ onSelectSquare, activePlayerSymbol }) {
+const TicTacToeBoard = function({ onSelectSquare, board }) {
+    /*
     const [board, setBoard] = useState(initialBoard)
 
     const handleSelectSquare = function(rowIndex, colIndex) {
@@ -18,12 +12,13 @@ const TicTacToeBoard = function({ onSelectSquare, activePlayerSymbol }) {
 
         onSelectSquare()
     }
+    */
 
     return <ol id="game-board">
         { board.map((row, rowIndex) => <li key={rowIndex}>
             <ol>
             { row.map((playerSymbol, colIndex) => <li key={colIndex}>
-                <button onClick={() => handleSelectSquare(rowIndex, colIndex)}>{ playerSymbol }</button>
+                <button onClick={() => onSelectSquare(rowIndex, colIndex)} disabled={playerSymbol !== null}>{ playerSymbol }</button>
             </li> )}
             </ol>
         </li> )}

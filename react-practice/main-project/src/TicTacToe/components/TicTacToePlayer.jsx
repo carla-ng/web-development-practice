@@ -1,11 +1,15 @@
 import { useState } from "react"
 
-const TicTacToePlayer = function({ initialName, symbol, isActive }) {
+const TicTacToePlayer = function({ initialName, symbol, isActive, onChangeName }) {
     const [isEditing, setIsEditing] = useState(false)
     const [playerName, setPlayerName] = useState(initialName)
 
     const handleEditing = function() {
         setIsEditing(editing => !editing)
+
+        if ( isEditing ) {
+            onChangeName(symbol, playerName)
+        }  
     }
 
     const handleChange = function( event ) {

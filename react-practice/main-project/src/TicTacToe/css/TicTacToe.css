@@ -19,7 +19,7 @@
     ),
     url('../assets/images/bg-pattern-dark.png');
     background-repeat: repeat;
-    background-size: 100% 100%, 30% 30%, 100% 100%;
+    background-size: auto;
     min-height: 100vh;
 
     header {
@@ -248,8 +248,8 @@
         max-width: 20rem;
         color: #3f3b00;
         list-style: none;
-        margin: 2rem auto;
-        padding: 0;
+        margin: 0 auto;
+        padding: 0.5rem 0 2rem 0;
         text-align: center;
     }
       

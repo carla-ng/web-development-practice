@@ -191,3 +191,40 @@ CandyCrush
 ## :clap: Acknowledgments
 * Project idea by [Ania Kubów](https://www.codewithania.com/)
 
+<br>
+<hr>
+<br>
+
+## Tic-Tac-Toe
+
+<p align="center">
+    <img src="https://raw.githubusercontent.com/carla-ng/web-development-practice/main/react-practice/main-project/public/tictactoe/tictactoe-preview.jpg" alt="Tic-Tac-Toe preview">
+</p>
+
+<br>
+
+A simple game of Tic-Tac-Toe.
+
+<br>
+
+### Project folder
+TicTacToe
+
+<br>
+
+### :globe_with_meridians: Demo
+[https://carla-ng-react.netlify.app/tictactoe](https://carla-ng-react.netlify.app/tictactoe)
+
+<br>
+
+### :hammer_and_pick: Built with
+* React
+* Vite
+* JavaScript
+* CSS
+
+<br>
+
+### :clap: Acknowledgments
+* Project ideas by [Academind](https://academind.com/)
+

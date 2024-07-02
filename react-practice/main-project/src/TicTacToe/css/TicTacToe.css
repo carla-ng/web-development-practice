@@ -31,6 +31,10 @@
         font-size: 3rem;
         margin: 0 auto 3rem auto;
         color: #3f3b00;
+
+        @media (max-width: 768px) {
+            font-size: 2rem;
+        }
     }
 
     .header-content {
@@ -40,11 +44,20 @@
 
         padding-top: 3rem;
 
+        @media (max-width: 768px) {
+            align-items: center;
+            flex-direction: column;
+        }
+
         img {
             width: 4rem;
             margin: 0 2rem;
             object-fit: contain;
             filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.4));
+
+            @media (max-width: 768px) {
+                margin: 0 0 1rem 0;
+            }
         }
 
         h1 {
@@ -60,6 +73,10 @@
         background: linear-gradient(#383624, #282617);
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
         position: relative;
+
+        @media (max-width: 768px) {
+            padding: 1.5rem;
+        }
     }
       
     #players {
@@ -69,7 +86,13 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-direction: row;
         gap: 2rem;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+            gap: 1rem;
+        }
     }
       
     #players li {
@@ -77,6 +100,10 @@
         align-items: center;
         width: 50%;
         border: 2px solid transparent;
+
+        @media (max-width: 768px) {
+            width: 100%;
+        }
     }
       
     #players.highlight-player li.active {
@@ -98,7 +125,7 @@
         cursor: pointer;
         transition: color 0.2s;
         padding: 0.5rem 0.25rem 0.25rem 0.25rem;
-        text-align: center;
+        text-align: right;
     }
       
     #players button:hover {
@@ -193,6 +220,12 @@
         cursor: pointer;
         font-family: 'Caprasimo', cursive;
         padding: 1rem;
+
+        @media (max-width: 768px) {
+            width: 4rem;
+            height: 4rem;
+            font-size: 2rem;
+        }
     }
       
     #game-over {

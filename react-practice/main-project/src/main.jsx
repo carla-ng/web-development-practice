@@ -11,6 +11,7 @@ import FoodieLandingPage from './FoodieLandingPage/pages/FoodieLandingPage.jsx';
 import CandyCrushPage from './CandyCrush/pages/CandyCrushPage.jsx';
 import ReactEssentialsPage from './ReactEssentials/pages/ReactEssentialsPage.jsx';
 import TicTacToePage from './TicTacToe/pages/TicTacToePage.jsx';
+import InvestmentCalculatorPage from './InvestmentCalculator/pages/InvestmentCalculatorPage.jsx';
 
 const router = createBrowserRouter([
     {
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
     {
         path: '/tictactoe',
         element: <TicTacToePage />,
+    },
+    {
+        path: '/investmentcalculator',
+        element: <InvestmentCalculatorPage />,
     },
 ]);
 

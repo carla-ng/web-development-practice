@@ -21,6 +21,8 @@ function Home() {
             <Link to="reactessentials">React Essentials</Link>
             <br /><br />
             <Link to="tictactoe">Tic-Tac-Toe</Link>
+            <br /><br />
+            <Link to="investmentcalculator">Investment Calculator</Link>
         </div>
     )
 }
